@@ -117,14 +117,19 @@ WARN="-Wall -Wundef -W -Wno-parentheses"
 PEDANTIC=""
 OPTIMIZATION="-O2"
 
-# Default is clang
-SCRIPT_C_COMPILER=clang
-SCRIPT_CXX_COMPILER=clang++
-C_FLAGS="-fcolor-diagnostics -ferror-limit=4"
+# clang
+#SCRIPT_C_COMPILER=clang
+#SCRIPT_CXX_COMPILER=clang++
+#C_FLAGS="-fcolor-diagnostics -ferror-limit=4"
+#CXX_FLAGS=$C_FLAGS
+
+# gnu
+SCRIPT_C_COMPILER=gcc
+SCRIPT_CXX_COMPILER=g++
+C_FLAGS="-fmax-errors=5 -fdiagnostics-color=always"
 CXX_FLAGS=$C_FLAGS
 
 SCRIPT_BUILD_TYPE=RelWithDebInfo
-
 SCRIPT_ENABLE_UNIT_TESTS="ON"
 
 #------------------------------------------------------------------------------#
@@ -164,6 +169,10 @@ do
       SCRIPT_GENERATOR="Ninja"
       ;;
     clang)
+      SCRIPT_C_COMPILER=clang
+      SCRIPT_CXX_COMPILER=clang++
+      C_FLAGS="-fcolor-diagnostics -ferror-limit=4"
+      CXX_FLAGS=$C_FLAGS
       ;;
     gnu)
       SCRIPT_C_COMPILER=gcc
