@@ -22,15 +22,15 @@ if [ "$#" -ne 1 ] ; then
   echo "Usage:" `echo $0 | sed 's,^.*/,,g'` "<command (st|ft|pl|ad|an|pu|cm)>"
   echo
   echo -e "$C5""Commands:""$P"
-  echo -e "$C13""  st git status""$P"
-  echo -e "$C13""  df git diff""$P"
-  echo -e "$C13""  ft git fetch""$P"
-  echo -e "$C13""  pl git pull""$P"
-  echo -e "$C13""  ad git add -u""$P"
-  echo -e "$C13""  aa git add -A""$P"
-  echo -e "$C13""  pu git push""$P"
-  echo -e "$C13""  cm git commit -m 'Updates'""$P"
-  echo -e "$C13""  al aa && cm && pu""$P"
+  echo -e "$C7""  st""$C13 git status""$P"
+  echo -e "$C7""  df""$C13 git diff""$P"
+  echo -e "$C7""  ft""$C13 git fetch""$P"
+  echo -e "$C7""  pl""$C13 git pull""$P"
+  echo -e "$C7""  ad""$C13 git add -u""$P"
+  echo -e "$C7""  aa""$C13 git add -A""$P"
+  echo -e "$C7""  pu""$C13 git push""$P"
+  echo -e "$C7""  cm""$C13 git commit -m 'Updates'""$P"
+  echo -e "$C7""  al""$C13 aa && cm && pu""$P"
   echo
   (cd ~/.config/bergen && git status)
   exit
