@@ -1,0 +1,4 @@
+xterm*foreground: ivory
+xterm*background: #222222
+xterm*geometry: 80x50
+xterm*font: 10x20

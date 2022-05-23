@@ -1,0 +1,35 @@
+################################################################################
+# Host-specific configuration
+################################################################################
+
+#------------------------------------------------------------------------------#
+# Environment modules.
+#------------------------------------------------------------------------------#
+
+#------------------------------------------------------------------------------#
+# Prompt colors.
+#------------------------------------------------------------------------------#
+
+# Date
+P_BG_DATE=$BG_BLACK
+P_FG_DATE=$FG_WHITE
+
+# User & Host
+P_BG_HOST=$BG_DKGREY2
+P_FG_USER=$FG_WHITE
+P_FG_AT=$FG_DKCYAN
+P_FG_HOST=$FG_LTGREY
+
+# Extra
+P_BG_EXTRA=$BG_DKGREY2
+P_FG_EXTRA=$FG_CYAN
+extra_pinfo="VM"
+P_FG_EXTRA=$FG_GREEN
+P_FG_SPACK=$FG_BLACK
+
+# Spack
+P_FG_SPACK=$FG_WHITE
+
+# Current directory
+P_BG_PWD=$BG_DKGREY
+P_FG_PWD=$FG_YELLOW

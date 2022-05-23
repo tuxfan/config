@@ -1,0 +1,49 @@
+[user]
+	name = Ben Bergen
+	email = bergen@lanl.gov
+
+[color]
+    ui = auto
+
+[column]
+  ui = auto
+
+[core]
+	editor = vim
+
+[diff]
+  tool = vimdiff
+
+[push]
+	default = simple
+
+[merge]
+  conflectStyle = diff3
+  tool = vimdiff
+
+[url "git@gitlab.lanl.gov"]
+  insteadOf = gl
+
+[alias]
+  st = status
+  sst = submodule status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  dc = diff --cached
+  lg = log -p
+  rls = remote -v
+  who = shortlog -s --
+  sstash = stash save --keep-index
+  astash = stash apply stash@{0}
+  cfs = diff --name-only --diff-filter=U
+  tree = log --graph --pretty=oneline --abbrev-commit --all
+  plog = log --pretty=oneline --abbrev-commit
+  mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
+  mb = merge --no-ff --no-commit
+  mbc = !sh -c 'find . -name "*.orig" -delete'
+  wls = worktree list
+  wrm = worktree remove
+  wadd = worktree add --track -b
+  wmv = worktree move
