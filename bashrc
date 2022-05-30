@@ -75,7 +75,7 @@ fi
 
 # Need to check to make sure that these aren't loaded by subsequent
 # shells or lmod complains
-if [ -f /opt/intel/oneapi/modulefiles ] && \
+if [ -d /opt/intel/oneapi/modulefiles ] && \
   [[ "$MODULEPATH" != *"/opt/intel/oneapi/modulefiles"* ]]; then
   export MODULEPATH=$MODULEPATH:/opt/intel/oneapi/modulefiles
 fi
