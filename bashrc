@@ -73,7 +73,19 @@ if [ $os == "Darwin" ] ; then
   fi
 fi
 
-export MODULEPATH=$MODULEPATH:$HOME/.modulefiles
+# Need to check to make sure that these aren't loaded by subsequent
+# shells or lmod complains
+if [ -f /opt/intel/oneapi/modulefiles ] && \
+  [[ "$MODULEPATH" != *"/opt/intel/oneapi/modulefiles"* ]]; then
+  export MODULEPATH=$MODULEPATH:/opt/intel/oneapi/modulefiles
+fi
+if [[ "$MODULEPATH" != *"$HOME/.modulefiles"* ]]; then
+  export MODULEPATH=$MODULEPATH:$HOME/.modulefiles
+fi
+print_env_var "MODULEPATH" $MODULEPATH
+
+export LMOD_PAGER="less -+e -+E"
+
 module load aliases
 
 #------------------------------------------------------------------------------#
