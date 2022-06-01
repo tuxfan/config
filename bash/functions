@@ -4,7 +4,7 @@
 
 function print_env_var() {
   if [[ -z "${BASHRC_SILENT}" ]] ; then
-	  echo -e "$FG_RED""$1""$NEUTRAL""=""$FG_YELLOW""$2""$NEUTRAL"
+	  echo -e "$FG_21""$1""$NEUTRAL""=""$FG_39""$2""$NEUTRAL"
   fi
 } # print_env_var
 
