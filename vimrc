@@ -7,6 +7,7 @@
 "------------------------------------------------------------------------------"
 
 syntax on
+set background=dark
 
 "------------------------------------------------------------------------------"
 " Italic comments.
@@ -30,16 +31,17 @@ filetype plugin indent on
 "   et (expandtab)
 "   ai (auto indent)
 "   si (smart indent)
+"   ci (cindent)
 "------------------------------------------------------------------------------"
 
-set ts=2 sts=2 sw=2 et ai si
+set ts=2 sts=2 sw=2 et ai si ci
 
 "------------------------------------------------------------------------------"
 " Set relative line numbers
 "------------------------------------------------------------------------------"
 
 set rnu
-highlight LineNr ctermfg=red
+highlight LineNr ctermfg=gray
 
 "------------------------------------------------------------------------------"
 " Highlight cursor line underneath the cursor horizontally.
@@ -48,10 +50,26 @@ highlight LineNr ctermfg=red
 set cursorline
 
 "------------------------------------------------------------------------------"
+" Highlight search and show pattern matching.
+"------------------------------------------------------------------------------"
+
+set hlsearch
+set incsearch
+
+"------------------------------------------------------------------------------"
 " Give more space for displaying messages.
 "------------------------------------------------------------------------------"
 
 set cmdheight=2
+
+"------------------------------------------------------------------------------"
+" Preserve editing position.
+"------------------------------------------------------------------------------"
+
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \ | exe "normal! g`\"" | endif
+endif
 
 "------------------------------------------------------------------------------"
 " Plugins
@@ -79,6 +97,16 @@ nmap <silent> gr <Plug>(coc-references)
 "------------------------------------------------------------------------------"
 
 let g:airline_theme='raven'
+
+highlight CocErrorHighlight ctermfg=Red
+highlight CocInfoSign ctermfg=Black
+highlight CocInfoSign ctermfg=Green
+highlight CocInfoSign ctermbg=Black
+highlight CocWarningSign ctermfg=Yellow
+highlight CocWarningSign ctermbg=Black
+highlight CocErrorSign ctermfg=Red guifg=Red
+highlight CocErrorSign ctermbg=Black guibg=Black
+highlight CocErrorFloat ctermbg=Black
 
 "------------------------------------------------------------------------------"
 " Use <tab> for trigger completion and navigate to the next complete item.
