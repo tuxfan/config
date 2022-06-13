@@ -41,7 +41,7 @@ set ts=2 sts=2 sw=2 et ai si ci
 "------------------------------------------------------------------------------"
 
 set rnu
-highlight LineNr ctermfg=gray
+highlight LineNr ctermfg=lightblue
 
 "------------------------------------------------------------------------------"
 " Highlight cursor line underneath the cursor horizontally.
@@ -83,7 +83,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
 call plug#end()
 
-hi! Pmenu ctermbg=black
+hi! Pmenu ctermfg=white ctermbg=25
 
 "------------------------------------------------------------------------------"
 " GoTo code navigation.
@@ -100,15 +100,15 @@ nmap <silent> gr <Plug>(coc-references)
 
 let g:airline_theme='raven'
 
-highlight CocErrorHighlight ctermfg=Red
-highlight CocInfoSign ctermfg=Black
-highlight CocInfoSign ctermfg=Green
-highlight CocInfoSign ctermbg=Black
-highlight CocWarningSign ctermfg=Yellow
-highlight CocWarningSign ctermbg=Black
-highlight CocErrorSign ctermfg=Red guifg=Red
-highlight CocErrorSign ctermbg=Black guibg=Black
-highlight CocErrorFloat ctermbg=Black
+"highlight CocErrorHighlight ctermfg=Red
+"highlight CocInfoSign ctermfg=Red
+"highlight CocInfoSign ctermfg=Green
+"highlight CocInfoSign ctermbg=Black
+"highlight CocWarningSign ctermfg=Yellow
+"highlight CocWarningSign ctermbg=Black
+"highlight CocErrorSign ctermfg=Red guifg=Red
+"highlight CocErrorSign ctermbg=Black guibg=Black
+"highlight CocErrorFloat ctermbg=Black
 
 "------------------------------------------------------------------------------"
 " Use <tab> for trigger completion and navigate to the next complete item.
