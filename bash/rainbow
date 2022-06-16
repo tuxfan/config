@@ -1,0 +1,50 @@
+################################################################################
+# Host-specific configuration
+################################################################################
+
+#------------------------------------------------------------------------------#
+# Set clang-format for configure utility
+#------------------------------------------------------------------------------#
+
+export CLANG_FORMAT_EXECUTABLE=/opt/llvm/13.0.0/bin/clang-format
+export CONFIG_INSTALL_PREFIX=/home/bergen/packages/flecsi/core/leg-mpi
+export CONFIG_SCRIPT_GENERATOR=Ninja
+export CMAKE_EXPORT_COMPILE_COMMANDS=1
+
+#------------------------------------------------------------------------------#
+# Environment modules
+#------------------------------------------------------------------------------#
+
+module load compiler/latest
+
+#------------------------------------------------------------------------------#
+# Prompt colors
+#------------------------------------------------------------------------------#
+
+# Date
+P_BG_DATE=$BG_BLACK
+P_FG_DATE=$FG_GREEN
+
+# User & Host
+P_BG_HOST=$BG_DKGREY2
+P_FG_USER=$FG_220
+P_FG_AT=$FG_DKCYAN
+P_FG_HOST=$FG_208
+
+# Extra
+P_BG_EXTRA=$BG_DKGREY2
+P_FG_EXTRA=$FG_CYAN
+extra_pinfo="VM (Mac Pro)"
+P_FG_EXTRA=$FG_RED
+P_FG_SPACK=$FG_BLACK
+
+# Spack
+P_FG_SPACK=$FG_WHITE
+
+# Current directory
+P_BG_PWD=$BG_240
+P_FG_PWD=$FG_YELLOW
+
+#------------------------------------------------------------------------------#
+# vim: syntax=sh
+#------------------------------------------------------------------------------#
