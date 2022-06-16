@@ -1,0 +1,37 @@
+#! /usr/bin/env bash
+
+C1="\033[0;30m" # Black
+C2="\033[1;30m" # Dark Gray
+C3="\033[0;31m" # Red
+C4="\033[1;31m" # Light Red
+C5="\033[0;32m" # Green
+C6="\033[1;32m" # Light Green
+C7="\033[0;33m" # Brown
+C8="\033[1;33m" # Yellow
+C9="\033[0;34m" # Blue
+C10="\033[1;34m" # Light Blue
+C11="\033[0;35m" # Purple
+C12="\033[1;35m" # Light Purple
+C13="\033[0;36m" # Cyan
+C14="\033[1;36m" # Light Cyan
+C15="\033[0;37m" # Light Gray
+C16="\033[1;37m" # White
+P="\033[0m" # Neutral
+
+if [ "$#" -ne 1 ] ; then
+  echo -e "$C16""Current:$C6" `ls -l $HOME/.spack | sed 's,^.*/,,g'`"$P"
+  echo
+  echo -e "$C16""Available:$P"
+  echo -e "$C13"`ls $HOME/.spack.d`"$P"
+  echo
+  echo "Usage:" `echo $0 | sed 's,^.*/,,g'` "<spack label>"
+  exit 0
+fi
+
+[ ! -d "$HOME/.spack.d/$1" ] && \
+  echo "$1 does not exist" && \
+  exit 1
+
+[ -h $HOME/.spack ] && unlink $HOME/.spack
+ln -s $HOME/.spack.d/$1 $HOME/.spack
+. $HOME/.spack/share/spack/setup-env.sh

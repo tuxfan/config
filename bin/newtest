@@ -1,0 +1,88 @@
+#!/usr/bin/perl
+################################################################################
+# Create new test project
+################################################################################
+use Getopt::Std;
+
+# get command line options
+getopts('c:f:', \%opts);
+
+$command = $0; $command =~ s/^.*\///g;
+$usage = "$command version 1.0\n" .
+	"usage: $command -c c++ compiler -f CXXFLAGS <directory name>\n";
+
+die $usage if $#ARGV < 0;
+
+$directory = $ARGV[0];
+$compiler = $opts{'c'};
+$cxxflags = $opts{'f'};
+
+if(!$compiler) {
+	$compiler = "g++";
+}
+
+if(!$cxxflags) {
+	$cxxflags = "-g -O2 -std=c++17 -I.";
+}
+
+# create new directory for project
+mkdir($directory);
+
+# create Makefile
+&create_Makefile;
+
+# create main.cc
+&create_main;
+
+`cd $directory; make`;
+
+################################################################################
+# subroutines
+################################################################################
+
+sub create_Makefile {
+open(MAKEFILE, "> $directory/Makefile") || die "Failed opening Makefile\n";
+select(MAKEFILE);
+
+print<<"EOF";
+################################################################################
+# Test Project Makefile
+################################################################################
+
+TARGET=test
+
+CXX=$compiler
+CXXFLAGS=$cxxflags
+
+OBJECTS=main.o
+
+all: \${TARGET}
+
+%.o: %.cc
+	\${CXX} \${CXXFLAGS} -c \$< -o \$@
+
+\${TARGET}: \${OBJECTS}
+	\${CXX} \${CXXFLAGS} -o \${TARGET} \${OBJECTS}
+
+clean:
+	rm -rf \${OBJECTS} \${TARGET}
+EOF
+
+close(MAKEFILE);
+}
+
+sub create_main {
+open(MAIN, "> $directory/main.cc") || die "Failed opening main.cc\n";
+select(MAIN);
+
+print<<"EOF";
+#include <iostream>
+
+int main(int argc, char ** argv) {
+
+	return 0;
+} // main
+EOF
+
+close(MAIN);
+}

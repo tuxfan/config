@@ -1,0 +1,4 @@
+#! /usr/bin/env bash
+
+echo -e "Executing\n \033[0;32m mpirun -np $1 xterm -e cgdb $2\033[0m"
+mpirun -np $1 xterm -e cgdb $2

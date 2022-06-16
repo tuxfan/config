@@ -1,0 +1,6 @@
+#! /usr/bin/env bash
+
+if [[ -n "${SPACK_ENV}" ]]; then
+  echo -ne "Spack ENV: "
+  echo -ne $SPACK_ENV | sed 's,.*\/,,g'
+fi
