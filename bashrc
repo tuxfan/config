@@ -49,6 +49,7 @@ shopt -s checkwinsize
 
 host=`hostname`
 os=`uname -a | awk '{print $1}'`
+arch=`uname -a | awk '{print $15}'`
 
 if [ $host == *cn* ] ; then
   host_simple=`echo $host | sed 's,\..*$,,g;s,[0-9],,g'`
@@ -67,11 +68,8 @@ fi
 # Add local modulefile path and modules.
 #------------------------------------------------------------------------------#
 
-if [ $os == "Darwin" ] ; then
-  if [ -f /opt/homebrew/opt/lmod/init/profile ] ; then
-    . /opt/homebrew/opt/lmod/init/profile
-  fi
-fi
+[ -f /usr/local/opt/lmod/init/profile ] && . /usr/local/opt/lmod/init/profile
+[ -f /opt/homebrew/opt/lmod/init/profile ] && . /opt/homebrew/opt/lmod/init/profile
 
 # Need to check to make sure that these aren't loaded by subsequent
 # shells or lmod complains
@@ -82,6 +80,7 @@ fi
 if [[ "$MODULEPATH" != *"$HOME/.modulefiles"* ]]; then
   export MODULEPATH=$MODULEPATH:$HOME/.modulefiles
 fi
+
 print_env_var "MODULEPATH" $MODULEPATH
 
 export LMOD_PAGER="less -+e -+E"
@@ -101,10 +100,17 @@ module load aliases
 
 prepend_path "$HOME/.local/bin"
 
-if [ $os = "Darwin" ] ; then
-  prepend_path "/opt/homebrew/bin"
-  prepend_path "/opt/homebrew/sbin"
-  prepend_path "/opt/homebrew/opt/coreutils/libexec/gnubin"
+if [ $os == "Darwin" ] ; then
+  if [ $arch == "x86_64" ] ; then
+    prepend_path "/Applications/VMware Fusion.app/Contents/Library"
+    prepend_path "/usr/local/bin"
+    prepend_path "/usr/local/opt/coreutils/libexec/gnubin"
+    prepend_path "/opt/local/bin"
+  elif [ $arch == "arm64" ] ; then
+    prepend_path "/opt/homebrew/bin"
+    prepend_path "/opt/homebrew/sbin"
+    prepend_path "/opt/homebrew/opt/coreutils/libexec/gnubin"
+  fi
 fi
 
 prepend_path "$HOME/bin"
@@ -113,7 +119,6 @@ prepend_path "$HOME/bin"
 # Directory colors.
 #------------------------------------------------------------------------------#
 
-#[ -f $HOME/.dircolors ] && eval `dircolors -b $HOME/.dircolors`
 eval `dircolors -b ~/.dircolors`
 
 #------------------------------------------------------------------------------#
