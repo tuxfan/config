@@ -21,7 +21,7 @@ module load lanl-tunnels
 # Prompt colors
 #------------------------------------------------------------------------------#
 
-. $HOME/.config/bergen/bash.d/themes/rainbow
+. $HOME/.config/bergen/bash.d/themes/gray
 
 extra_pinfo="VM"
 
