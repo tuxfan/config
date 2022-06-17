@@ -140,7 +140,6 @@ export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
 # Config state.
 #------------------------------------------------------------------------------#
 
-echo "Checking config status"
 change=`(cd $HOME/.config/bergen; git status --porcelain)`
 if [[ -n $change ]]; then
   echo "$change"
