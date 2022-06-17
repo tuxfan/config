@@ -26,6 +26,7 @@ P_FG_SPACK=$FG_WHITE
 P_BG_PWD=$BG_24
 P_FG_PWD=$FG_WHITE
 
+# Prompt
 P1="\[\e[38;5;17m\]"
 P2="\[\e[38;5;18m\]"
 P3="\[\e[38;5;19m\]"
