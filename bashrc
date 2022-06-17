@@ -137,6 +137,19 @@ export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
 
 #------------------------------------------------------------------------------#
+# Config state.
+#------------------------------------------------------------------------------#
+
+echo "Checking config status"
+change=`(cd $HOME/.config/bergen; git status --porcelain)`
+if [[ -n $change ]]; then
+  echo "$change"
+  echo "Accept changes? [Y/n]:"
+  read accept
+  [ "$name" != "n" ] && (cd $HOME/.config/bergen; git pull)
+fi
+
+#------------------------------------------------------------------------------#
 # Set prompt.
 #------------------------------------------------------------------------------#
 
@@ -147,10 +160,3 @@ extra_pinfo=""
 
 export PROMPT_COMMAND='echo -ne "\033];"${PWD##*/}"\007"; echo -e "$P_BG_DATE$P_FG_DATE" `date +%H:%M:%S` "$P_BG_HOST$P_FG_USER $USER$P_FG_AT@$P_FG_HOST$host $P_BG_EXTRA$P_FG_EXTRA $extra_pinfo $P_FG_SPACK`spack-env` $P_BG_EXTRA$P_FG_PWD$TOEND\n$P_BG_PWD$P_FG_PWD$TOEND" `pwd` "$NEUTRAL"'
 PS1="$P1>$P2>$P3>$P4>$P5>$P6>$P "
-
-#------------------------------------------------------------------------------#
-# Output config state.
-#------------------------------------------------------------------------------#
-
-(echo "Coniguration Status"; cd $HOME/.config/bergen; \
-  git fetch > /dev/null; git status)
