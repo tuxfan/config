@@ -1,0 +1,25 @@
+if timeout 0.2 bash -c ": > /dev/tcp/proxyout/8080" &>/dev/null; then
+  export http_proxy="http://proxyout.lanl.gov:8080"
+  export https_proxy="$http_proxy"
+  export ftp_proxy="$http_proxy"
+  export no_proxy="lanl.gov"
+  export HTTP_PROXY="$http_proxy"
+  export HTTPS_PROXY="$http_proxy"
+  export FTP_PROXY="$http_proxy"
+  export RSYNC_PROXY="proxyout.lanl.gov:8080"
+  export GIT_PROXY_COMMAND="/usr/libexec/git-core/git-proxy"
+  export ECVS_PROXY=proxyout.lanl.gov
+  export ECVS_PROXY_PORT=8080
+else
+  unset http_proxy
+  unset https_proxy
+  unset ftp_proxy
+  unset no_proxy
+  unset HTTP_PROXY
+  unset HTTPS_PROXY
+  unset FTP_PROXY
+  unset RSYNC_PROXY
+  unset GIT_PROXY_COMMAND
+  unset ECVS_PROXY
+  unset ECVS_PROXY_PORT
+fi
