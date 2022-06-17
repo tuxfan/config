@@ -1,0 +1,51 @@
+#! /usr/bin/env bash
+
+C1="\033[0;30m" # Black
+C2="\033[1;30m" # Dark Gray
+C3="\033[0;31m" # Red
+C4="\033[1;31m" # Light Red
+C5="\033[0;32m" # Green
+C6="\033[1;32m" # Light Green
+C7="\033[0;33m" # Brown
+C8="\033[1;33m" # Yellow
+C9="\033[0;34m" # Blue
+C10="\033[1;34m" # Light Blue
+C11="\033[0;35m" # Purple
+C12="\033[1;35m" # Light Purple
+C13="\033[0;36m" # Cyan
+C14="\033[1;36m" # Light Cyan
+C15="\033[0;37m" # Light Gray
+C16="\033[1;37m" # White
+P="\033[0m" # Neutral
+
+if [ "$#" -ne 1 ]; then
+  echo "Usage:" `echo $0 | sed 's,^.*/,,g'` "<vim style>[simple,medium,coc]"
+  exit 0
+fi
+
+function link_dotfile() {
+  echo -e "$C5""relinking ${1}""$P"
+  [ -f $HOME/.${1} ] || [ -h $HOME/.${1} ] || [ -d $HOME/.${1} ] && rm -rf .${1}
+  ln -s $HOME/.config/bergen/${1} $HOME/.${1}
+}
+
+function link_file() {
+  echo -e "$C5""relinking ${1}""$P"
+  [ -f $HOME/${1} ] || [ -h $HOME/${1} ] || [ -d $HOME/${1} ] && rm -rf ${1}
+  ln -s $HOME/.config/bergen/${1} $HOME/${1}
+}
+
+function link_vimrc() {
+  echo -e "$C5""relinking vimrc -> vimrc-${1}""$P"
+  [ -f $HOME/.${1} ] || [ -h $HOME/.vimrc ] && rm -rf $HOME/.vimrc
+  ln -s $HOME/.config/bergen/vimrc-$1 $HOME/.vimrc
+}
+
+link_dotfile "bashrc"
+link_dotfile "bash"
+link_file "bin"
+link_dotfile "dircolors"
+link_dotfile "gitconfig"
+link_dotfile "modulefiles"
+link_dotfile "Xdefaults"
+link_vimrc $1
