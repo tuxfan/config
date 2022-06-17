@@ -11,9 +11,6 @@ set-alias rm "rm -i"
 set-alias cp "cp -i"
 set-alias mv "mv -i"
 
-set-alias vim "nvim"
-set-alias vi "nvim"
-
 #------------------------------------------------------------------------------#
 # Environemtn Modules
 #------------------------------------------------------------------------------#
@@ -29,20 +26,13 @@ set-alias sc "systemctl"
 set-alias ssh "ssh -YA"
 
 #------------------------------------------------------------------------------#
-# SSH Tunnels
+# Vim
 #------------------------------------------------------------------------------#
 
-set-alias gl-up "ssh -fNTML 2022:gitlab.lanl.gov:22 gl-tunnel"
-set-alias gl-st "ssh -TO check gl-tunnel"
-set-alias gl-dn "ssh -TO exit gl-tunnel"
-
-set-alias ci-up "ssh -fNTML 3022:flecsi-ci.lanl.gov:22 ci-tunnel"
-set-alias ci-st "ssh -TO check ci-tunnel"
-set-alias ci-dn "ssh -TO exit ci-tunnel"
-
-set-alias aux-up "ssh -fNTML 4022:flecsi-auxiliary.lanl.gov:22 aux-tunnel"
-set-alias aux-st "ssh -TO check aux-tunnel"
-set-alias aux-dn "ssh -TO exit aux-tunnel"
+set-alias vim "nvim"
+set-alias vi "nvim"
+set-alias vsplit "nvim -O"
+set-alias view "nvim -R"
 
 #------------------------------------------------------------------------------#
 # Make
