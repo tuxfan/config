@@ -6,7 +6,7 @@
 # Prompt colors.
 #------------------------------------------------------------------------------#
 
-. $HOME/.config/bergen/bash/themes/black-and-blue
+. $HOME/.config/bergen/bash.d/themes/black-and-blue
 
 extra_pinfo="M1-MAX"
 

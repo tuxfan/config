@@ -61,8 +61,8 @@ fi
 # Source custom configuration files.
 #------------------------------------------------------------------------------#
 
-[ -f $HOME/.bash/colors ] && . $HOME/.bash/colors
-[ -f $HOME/.bash/functions ] && . $HOME/.bash/functions
+[ -f $HOME/.bash.d/colors ] && . $HOME/.bash.d/colors
+[ -f $HOME/.bash.d/functions ] && . $HOME/.bash.d/functions
 
 #------------------------------------------------------------------------------#
 # Add local modulefile path and modules.
@@ -139,9 +139,9 @@ export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
 #------------------------------------------------------------------------------#
 
 extra_pinfo=""
-[ -f $HOME/.bash/$host_simple ] && [[ -z "${BASHRC_SILENT}" ]] &&
+[ -f $HOME/.bash.d/$host_simple ] && [[ -z "${BASHRC_SILENT}" ]] &&
   echo -e "$FG_28""Configuration""$FG_39"" $host_simple""$NEUTRAL" &&
-  . $HOME/.bash/$host_simple
+  . $HOME/.bash.d/$host_simple
 
 export PROMPT_COMMAND='echo -ne "\033];"${PWD##*/}"\007"; echo -e "$P_BG_DATE$P_FG_DATE" `date +%H:%M:%S` "$P_BG_HOST$P_FG_USER $USER$P_FG_AT@$P_FG_HOST$host $P_BG_EXTRA$P_FG_EXTRA$extra_pinfo $P_FG_SPACK`spack-env` $P_BG_EXTRA$P_FG_PWD$TOEND\n$P_BG_PWD$P_FG_PWD$TOEND" `pwd` "$NEUTRAL"'
 PS1="$P1>$P2>$P3>$P4>$P5>$P6>$P "

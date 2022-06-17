@@ -25,13 +25,15 @@ fi
 
 function link_dotfile() {
   echo -e "$C5""relinking ${1}""$P"
-  [ -f $HOME/.${1} ] || [ -h $HOME/.${1} ] || [ -d $HOME/.${1} ] && rm -rf .${1}
+  [ -f $HOME/.${1} ] || [ -h $HOME/.${1} ] || [ -d $HOME/.${1} ] && \
+    rm -rf $HOME/.${1}
   ln -s $HOME/.config/bergen/${1} $HOME/.${1}
 }
 
 function link_file() {
   echo -e "$C5""relinking ${1}""$P"
-  [ -f $HOME/${1} ] || [ -h $HOME/${1} ] || [ -d $HOME/${1} ] && rm -rf ${1}
+  [ -f $HOME/${1} ] || [ -h $HOME/${1} ] || [ -d $HOME/${1} ] && \
+    rm -rf $HOME/${1}
   ln -s $HOME/.config/bergen/${1} $HOME/${1}
 }
 
@@ -41,11 +43,14 @@ function link_vimrc() {
   ln -s $HOME/.config/bergen/vimrc-$1 $HOME/.vimrc
 }
 
+link_dotfile "bash.d"
 link_dotfile "bashrc"
-link_dotfile "bash"
 link_file "bin"
 link_dotfile "dircolors"
+link_dotfile "gdb"
+link_dotfile "gdbinit"
 link_dotfile "gitconfig"
 link_dotfile "modulefiles"
 link_dotfile "Xdefaults"
 link_vimrc $1
+link_dotfile "vim_colors"
