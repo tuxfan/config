@@ -15,7 +15,7 @@ P_FG_HOST=$FG_LTGREY
 # Extra
 P_BG_EXTRA=$BG_DKGREY2
 P_FG_EXTRA=$FG_CYAN
-extra_pinfo="VM"
+extra_pinfo=""
 P_FG_EXTRA=$FG_GREEN
 P_FG_SPACK=$FG_BLACK
 
