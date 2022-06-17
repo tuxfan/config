@@ -37,11 +37,13 @@ filetype plugin indent on
 set ts=2 sts=2 sw=2 et ai si ci
 
 "------------------------------------------------------------------------------"
-" Set relative line numbers
+" Set relative line numbers and column color.
 "------------------------------------------------------------------------------"
 
 set rnu
 highlight LineNr ctermfg=lightblue
+set colorcolumn=80
+highlight ColorColumn ctermbg=241
 
 "------------------------------------------------------------------------------"
 " Highlight cursor line underneath the cursor horizontally.
