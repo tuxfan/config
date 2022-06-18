@@ -1,0 +1,39 @@
+#------------------------------------------------------------------------------#
+# Black and Blue Theme.
+#------------------------------------------------------------------------------#
+
+# Date
+P_BG_DATE=$BG_BLACK
+P_FG_DATE=$FG_WHITE
+
+# User & Host
+P_BG_HOST=$BG_BLACK
+P_FG_USER=$FG_WHITE
+P_FG_AT=$FG_WHITE
+P_FG_HOST=$FG_WHITE
+
+# Extra
+P_BG_EXTRA=$BG_BLACK
+P_FG_EXTRA=$FG_WHITE
+extra_pinfo="M1-MAX"
+P_FG_EXTRA=$FG_WHITE
+P_FG_SPACK=$FG_WHITE
+
+# Spack
+P_FG_SPACK=$FG_WHITE
+
+# Current directory
+P_BG_PWD=$BG_BLACK
+P_FG_PWD=$FG_WHITE
+
+# Prompt
+P1="\[\e[38;5;240m\]"
+P2="\[\e[38;5;242m\]"
+P3="\[\e[38;5;244m\]"
+P4="\[\e[38;5;246m\]"
+P5="\[\e[38;5;248m\]"
+P6="\[\e[38;5;250m\]"
+
+#------------------------------------------------------------------------------#
+# vim: syntax=sh
+#------------------------------------------------------------------------------#
