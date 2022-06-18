@@ -47,3 +47,4 @@
   wrm = worktree remove
   wadd = worktree add --track -b
   wmv = worktree move
+  ac = !git add -u && git commit
