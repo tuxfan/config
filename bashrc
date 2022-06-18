@@ -141,7 +141,7 @@ export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
 #------------------------------------------------------------------------------#
 
 echo -e "$FG_40""Checking configuration status...""$NEUTRAL"
-(cd $HOME/.config/bergen; git fetch > /dev/null)
+(cd $HOME/.config/bergen; git fetch 2>&1 > /dev/null)
 change=`(cd $HOME/.config/bergen; git status --porcelain)`
 [[ -n $change ]] && echo -e "$FG_160""$change""$NEUTRAL"
 
