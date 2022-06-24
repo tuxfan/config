@@ -34,38 +34,29 @@ mkdir($directory);
 # create main.cc
 &create_main;
 
-`cd $directory; make`;
+`cd $directory; mkdir build; cd build; cmake ..; make`;
 
 ################################################################################
 # subroutines
 ################################################################################
 
 sub create_Makefile {
-open(MAKEFILE, "> $directory/Makefile") || die "Failed opening Makefile\n";
+open(MAKEFILE, "> $directory/CMakeLists.txt") || die "Failed opening Makefile\n";
 select(MAKEFILE);
 
 print<<"EOF";
-################################################################################
-# Test Project Makefile
-################################################################################
+#------------------------------------------------------------------------------#
+# CMakeLists.txt
+#------------------------------------------------------------------------------#
 
-TARGET=test
+cmake_minimum_required(VERSION 3.12)
 
-CXX=$compiler
-CXXFLAGS=$cxxflags
+project(Test LANGUAGES CXX C)
 
-OBJECTS=main.o
+set(CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_STANDARD 17)
 
-all: \${TARGET}
-
-%.o: %.cc
-	\${CXX} \${CXXFLAGS} -c \$< -o \$@
-
-\${TARGET}: \${OBJECTS}
-	\${CXX} \${CXXFLAGS} -o \${TARGET} \${OBJECTS}
-
-clean:
-	rm -rf \${OBJECTS} \${TARGET}
+add_executable(test main.cc)
 EOF
 
 close(MAKEFILE);
