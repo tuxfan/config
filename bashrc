@@ -142,8 +142,7 @@ export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
 #------------------------------------------------------------------------------#
 
 if [[ $me != "root" ]] ; then
-  echo -e "GET http://github.com HTTP/1.0\n\n" | \
-    nc github.com 80 > /dev/null 2>&1
+  nc -z github.com 80 > /dev/null 2>&1
 
   if [ $? -eq 0 ]; then
     echo -e "$FG_40""Checking configuration status...""$NEUTRAL"
