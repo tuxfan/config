@@ -3,19 +3,44 @@
 ################################################################################
 
 #------------------------------------------------------------------------------#
-# Environment modules
+# Environment modules.
 #------------------------------------------------------------------------------#
 
-module load lanl-tunnels
-
 #------------------------------------------------------------------------------#
-# Prompt colors
+# Prompt colors.
 #------------------------------------------------------------------------------#
 
-. $HOME/.config/bergen/bash.d/themes/lanl-black
-[ `whoami` == "root" ] && . $HOME/.config/bergen/bash.d/themes/red-orange
+# Date
+P_BG_DATE=$BG_BLACK
+P_FG_DATE=$FG_GREEN
 
-extra_pinfo="LANL Mac Pro"
+# User & Host
+P_BG_HOST=$BG_WHITE
+P_FG_USER=$FG_BLACK
+P_FG_AT=$FG_DKCYAN
+P_FG_HOST=$FG_BLACK
+
+# Extra
+P_BG_EXTRA=$BG_16
+P_FG_EXTRA=$FG_CYAN
+extra_pinfo=" LANL Mac Pro"
+P_FG_EXTRA=$FG_WHITE
+P_FG_SPACK=$FG_BLACK
+
+# Spack
+P_FG_SPACK=$FG_WHITE
+
+# Current directory
+P_BG_PWD=$BG_DKGREY
+P_FG_PWD=$FG_YELLOW
+
+# Prompt
+P1="\[\e[38;5;240m\]"
+P2="\[\e[38;5;242m\]"
+P3="\[\e[38;5;244m\]"
+P4="\[\e[38;5;246m\]"
+P5="\[\e[38;5;248m\]"
+P6="\[\e[38;5;250m\]"
 
 #------------------------------------------------------------------------------#
 # vim: syntax=sh
