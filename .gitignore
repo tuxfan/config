@@ -1,1 +1,3 @@
 .DS_Store
+gdb/python/libstdcxx/__pycache__
+gdb/python/libstdcxx/v6/__pycache__
