@@ -10,6 +10,7 @@
 
 [core]
 	editor = vim
+	excludesfile = /home/bergen/.gitignore
 
 [diff]
   tool = vimdiff
