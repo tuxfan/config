@@ -33,7 +33,7 @@ set-alias vim "nvim"
 set-alias vi "nvim"
 set-alias vsplit "nvim -O"
 set-alias view "nvim -R"
-set-alias vs {nvim -u /.config/bergen/vimrc-simple}
+set-alias vs {nvim -u .config/bergen/vimrc-simple}
 
 #------------------------------------------------------------------------------#
 # Make
