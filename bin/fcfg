@@ -94,7 +94,7 @@ EOF
 #------------------------------------------------------------------------------#
 
 CMAKE_INSTALL_PREFIX="${CONFIG_INSTALL_PREFIX:-/usr/local}"
-SCRIPT_GENERATOR="${CONFIG_SCRIPT_GENERATOR:-Unix Makefiles}"
+SCRIPT_GENERATOR=" ${CONFIG_SCRIPT_GENERATOR:-Unix Makefiles}"
 CLANG_FORMAT=${CLANG_FORMAT_EXECUTABLE:+"-DENABLE_FORMAT=ON -DClangFormat_EXECUTABLE=${CLANG_FORMAT_EXECUTABLE}"}
 
 #------------------------------------------------------------------------------#
