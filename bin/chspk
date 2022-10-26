@@ -32,6 +32,7 @@ fi
   echo "$1 does not exist" && \
   exit 1
 
+spack clean -a
 [ -h $HOME/.spack ] && unlink $HOME/.spack
 ln -s $HOME/.spack.d/$1 $HOME/.spack
 . $HOME/.spack/share/spack/setup-env.sh
