@@ -179,7 +179,7 @@ do
         SCRIPT_C_FLAGS="$SCRIPT_CXX_FLAGS -Og -ggdb -gdwarf-5"
       fi
       ;;
-    intel)
+    oneapi)
       SCRIPT_C_COMPILER=icx
       SCRIPT_C_FLAGS="-diag-error-limit=5 $WARN"
       SCRIPT_CXX_COMPILER=icpx
@@ -190,7 +190,7 @@ do
         SCRIPT_C_FLAGS="$SCRIPT_CXX_FLAGS -g"
       fi
       ;;
-    oneapi)
+    dpcpp)
       SCRIPT_C_COMPILER=icx
       SCRIPT_C_FLAGS="$WARN"
       SCRIPT_CXX_COMPILER=dpcpp
