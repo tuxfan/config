@@ -52,8 +52,10 @@ host=`hostname`
 os=`uname -a | awk '{print $1}'`
 arch=`uname -a | awk '{print $15}'`
 
-if [ $host == *cn* ] ; then
+if [[ $host == *cn* ]] ; then
   host_simple=`echo $host | sed 's,\..*$,,g;s,[0-9],,g'`
+elif [[ $host == *darwin* ]] ; then
+  host_simple="darwin"
 else
   host_simple=`echo $host | sed 's,\..*$,,g'`
 fi
