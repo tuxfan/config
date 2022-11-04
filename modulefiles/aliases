@@ -23,9 +23,14 @@ set-alias mu "module unload"
 set-alias ma "module avail"
 set-alias ms "module show"
 
+#------------------------------------------------------------------------------#
+# Misc
+#------------------------------------------------------------------------------#
+
 set-alias top "htop"
 set-alias sc "systemctl"
 set-alias ssh "ssh -YA"
+set-alias dalloc "salloc -N1 -p skylake-platinum"
 
 #------------------------------------------------------------------------------#
 # Vim

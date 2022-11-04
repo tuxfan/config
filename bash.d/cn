@@ -15,7 +15,7 @@ export PATH=~/packages/neovim/bin:$PATH
 . $HOME/.config/bergen/bash.d/themes/lanl-black
 [ `whoami` == "root" ] && . $HOME/.config/bergen/bash.d/themes/red-orange
 
-extra_pinfo="Darwin: $SLURM_JOB_PARTITION"
+extra_pinfo="Darwin: $FG_39$SLURM_JOB_PARTITION$NEUTRAL"
 
 #------------------------------------------------------------------------------#
 # vim: syntax=sh
