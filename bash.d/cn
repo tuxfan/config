@@ -3,10 +3,11 @@
 ################################################################################
 
 #------------------------------------------------------------------------------#
-# Environment modules
+# Environmentmodules
 #------------------------------------------------------------------------------#
 
 module load gcc/11.2.0
+source /vast/home/bergen/.spack.d/default/var/spack/environments/clang13/loads
 
 export PATH=~/packages/neovim/bin:$PATH
 
