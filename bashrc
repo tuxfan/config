@@ -56,6 +56,8 @@ if [[ $host == *cn* ]] ; then
   host_simple=`echo $host | sed 's,\..*$,,g;s,[0-9],,g'`
 elif [[ $host == *darwin* ]] ; then
   host_simple="darwin"
+elif [[ $host == *rzvernal* ]] ; then
+  host_simple="rzvernal"
 else
   host_simple=`echo $host | sed 's,\..*$,,g'`
 fi
