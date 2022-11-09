@@ -53,7 +53,8 @@ aid in debugging code.
    $GREEN clang (default)$NEUTRAL
     hip
     gnu
-    intel
+    oneapi
+    dpcpp
 
  $WHITE Backend Options:$NEUTRAL
    $GREEN legion (default)$NEUTRAL

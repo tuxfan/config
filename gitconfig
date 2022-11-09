@@ -49,3 +49,5 @@
   wadd = worktree add --track -b
   wmv = worktree move
   ac = !git add -u && git commit
+  sh = "!f() { git log --skip=$1 -n1 --format=format:\"%H\"; }; f"
+  rb = "!f() { git sh $1 | xargs -0 git rebase -i; }; f"
