@@ -32,6 +32,11 @@ fi
   echo "$1 does not exist" && \
   exit 1
 
+env=`echo ${SPACK_ENV} | sed 's,^.*\/,,g'`
+[ -n "${env}"  ] && \
+  echo -e "$C3""In environment ${env}! Deactivate First!$P" && \
+  exit 1
+
 spack clean -a
 [ -h $HOME/.spack ] && unlink $HOME/.spack
 ln -s $HOME/.spack.d/$1 $HOME/.spack
