@@ -168,7 +168,7 @@ if [[ $me != "root" ]] ; then
   if [ $? -eq 0 ]; then
     echo -e "$FG_40""Checking configuration status...""$NEUTRAL"
     (cd $HOME/.config/bergen; git fetch 2>&1 > /dev/null)
-    change=`(cd $HOME/.config/bergen; git status --porcelain)`
+    change=`(cd $HOME/.config/bergen; git status -uno)`
     [[ -n $change ]] && echo -e "$FG_160""$change""$NEUTRAL"
   fi
 fi

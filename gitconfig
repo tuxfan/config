@@ -3,7 +3,8 @@
 	email = bergen@lanl.gov
 
 [color]
-    ui = auto
+  ui = auto
+  status = auto
 
 [column]
   ui = auto
