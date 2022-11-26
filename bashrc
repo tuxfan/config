@@ -26,7 +26,8 @@ os=`uname -s`
 arch=`uname -p` # non-portable, but this works on linux and macos
 
 if [ -f /etc/os-release ] ; then
-  dist=`cat /etc/os-release | tr '\n' '%' | awk -F '%' '{print $6}' | sed 's,ID=,,g'`
+  dist=`cat /etc/os-release | tr '\n' '%' | \
+    awk -F '%' '{print $6}' | sed 's,ID=,,g'`
 elif [[ $os == Darwin ]]; then
   dist=`Darwin`
 fi
