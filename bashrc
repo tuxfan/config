@@ -169,7 +169,8 @@ if [[ $me != "root" ]] ; then
     echo -e "$FG_40""Checking configuration status...""$NEUTRAL"
     (cd $HOME/.config/bergen; git fetch 2>&1 > /dev/null)
     change=`(cd $HOME/.config/bergen; git status -uno)`
-    [[ -n $change ]] && echo -e "$FG_160""$change""$NEUTRAL"
+    [[ -n $change ]] && [[ "$change" != *"Your branch is up to date"* ]] && \
+      echo -e "$FG_160""$change""$NEUTRAL"
   fi
 fi
 
