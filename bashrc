@@ -10,12 +10,46 @@
 [ -z "$PS1" ] && return
 
 #------------------------------------------------------------------------------#
+# Source custom configuration files.
+#------------------------------------------------------------------------------#
+
+[ -f $HOME/.bash.d/colors ] && . $HOME/.bash.d/colors
+[ -f $HOME/.bash.d/functions ] && . $HOME/.bash.d/functions
+
+#------------------------------------------------------------------------------#
+# System information.
+#------------------------------------------------------------------------------#
+
+me=`whoami`
+host=`hostname`
+os=`uname -s`
+arch=`uname -p` # non-portable, but this works on linux and macos
+
+if [ -f /etc/os-release ] ; then
+  dist=`cat /etc/os-release | tr '\n' '%' | awk -F '%' '{print $6}' | sed 's,ID=,,g'`
+elif [[ $os == Darwin ]]; then
+  dist=`Darwin`
+fi
+
+print_env_var "OS" $os
+print_env_var "ARCH" $arch
+print_env_var "DISTRO" $dist
+
+if [[ $host == *cn* ]] ; then
+  host_simple=`echo $host | sed 's,\..*$,,g;s,[0-9],,g'`
+elif [[ $host == *darwin* ]] ; then
+  host_simple="darwin"
+elif [[ $host == *rzvernal* ]] ; then
+  host_simple="rzvernal"
+else
+  host_simple=`echo $host | sed 's,\..*$,,g'`
+fi
+
+#------------------------------------------------------------------------------#
 # Pickup system configuration. (This gets lmod.)
 #------------------------------------------------------------------------------#
 
-if [ -f /etc/bashrc ] ; then
-  . /etc/bashrc
-fi
+[[ $dist != ubuntu ]] && [ -f /etc/profile ] && . /etc/profile
 
 #------------------------------------------------------------------------------#
 # History control.
@@ -44,37 +78,13 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 #------------------------------------------------------------------------------#
-# System information.
-#------------------------------------------------------------------------------#
-
-me=`whoami`
-host=`hostname`
-os=`uname -a | awk '{print $1}'`
-arch=`uname -a | awk '{print $15}'`
-
-if [[ $host == *cn* ]] ; then
-  host_simple=`echo $host | sed 's,\..*$,,g;s,[0-9],,g'`
-elif [[ $host == *darwin* ]] ; then
-  host_simple="darwin"
-elif [[ $host == *rzvernal* ]] ; then
-  host_simple="rzvernal"
-else
-  host_simple=`echo $host | sed 's,\..*$,,g'`
-fi
-
-#------------------------------------------------------------------------------#
-# Source custom configuration files.
-#------------------------------------------------------------------------------#
-
-[ -f $HOME/.bash.d/colors ] && . $HOME/.bash.d/colors
-[ -f $HOME/.bash.d/functions ] && . $HOME/.bash.d/functions
-
-#------------------------------------------------------------------------------#
 # Add local modulefile path and modules.
 #------------------------------------------------------------------------------#
 
-[ -f /usr/local/opt/lmod/init/profile ] && . /usr/local/opt/lmod/init/profile
-[ -f /opt/homebrew/opt/lmod/init/profile ] && . /opt/homebrew/opt/lmod/init/profile
+[ -f /usr/local/opt/lmod/init/profile ] && \
+  . /usr/local/opt/lmod/init/profile
+[ -f /opt/homebrew/opt/lmod/init/profile ] && \
+  . /opt/homebrew/opt/lmod/init/profile
 
 # Need to check to make sure that these aren't loaded by subsequent
 # shells or lmod complains
