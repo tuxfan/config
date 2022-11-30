@@ -14,14 +14,14 @@
 	excludesfile = /home/bergen/.gitignore
 
 [diff]
-  tool = vimdiff
+  tool = nvimdiff
 
 [push]
 	default = simple
 
 [merge]
   conflectStyle = diff3
-  tool = vimdiff
+  tool = nvimdiff
 
 [url "git@gitlab.lanl.gov"]
   insteadOf = gl
