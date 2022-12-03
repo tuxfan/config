@@ -17,7 +17,7 @@
   tool = nvimdiff
 
 [push]
-	default = simple
+	default = current
 
 [merge]
   conflectStyle = diff3
