@@ -23,13 +23,14 @@
 me=`whoami`
 host=`hostname`
 os=`uname -s`
-arch=`uname -p` # non-portable, but this works on linux and macos
+arch=`uname -m`
+dist=""
 
 if [ -f /etc/os-release ] ; then
   dist=`cat /etc/os-release | tr '\n' '%' | \
     awk -F '%' '{print $6}' | sed 's,ID=,,g'`
-elif [[ $os == Darwin ]]; then
-  dist=`Darwin`
+elif [ "$os" = "Darwin" ]; then
+  dist="Darwin"
 fi
 
 print_env_var "OS" $os
