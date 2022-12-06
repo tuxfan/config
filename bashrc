@@ -128,6 +128,7 @@ if [ $os == "Darwin" ] ; then
     prepend_path "/Applications/VMware Fusion.app/Contents/Library"
     prepend_path "/usr/local/bin"
     prepend_path "/usr/local/opt/coreutils/libexec/gnubin"
+    prepend_path "/usr/local/opt/make/libexec/gnubin"
     prepend_path "/opt/local/bin"
   elif [ $arch == "arm64" ] ; then
     prepend_path "/opt/homebrew/bin"
