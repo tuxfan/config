@@ -6,8 +6,15 @@
 # Environmentmodules
 #------------------------------------------------------------------------------#
 
-module load gcc/11.2.0
-source /vast/home/bergen/.spack.d/default/var/spack/environments/clang-13/loads
+case $SLURM_JOB_PARTITION in
+  elcap-*)
+    module load gcc/9.4.0 git
+  ;;
+  skylake-*)
+    module load gcc/11.2.0 git
+    source /vast/home/bergen/.spack.d/default/var/spack/environments/clang-13/loads
+  ;;
+esac
 
 export PATH=~/packages/neovim/bin:$PATH
 
