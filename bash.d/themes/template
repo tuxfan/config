@@ -3,28 +3,27 @@
 #------------------------------------------------------------------------------#
 
 # Date
-P_BG_DATE=$BG_BLACK
 P_FG_DATE=$FG_WHITE
+P_BG_DATE=$BG_BLACK
 
 # User & Host
-P_BG_HOST=$BG_DKGREY2
 P_FG_USER=$FG_WHITE
 P_FG_AT=$FG_DKCYAN
+
 P_FG_HOST=$FG_LTGREY
+P_BG_HOST=$BG_DKGREY2
 
 # Extra
-P_BG_EXTRA=$BG_DKGREY2
-P_FG_EXTRA=$FG_CYAN
 extra_pinfo=""
 P_FG_EXTRA=$FG_GREEN
-P_FG_SPACK=$FG_BLACK
+P_BG_EXTRA=$BG_DKGREY2
 
 # Spack
 P_FG_SPACK=$FG_WHITE
 
 # Current directory
-P_BG_PWD=$BG_DKGREY
 P_FG_PWD=$FG_YELLOW
+P_BG_PWD=$BG_DKGREY
 
 #------------------------------------------------------------------------------#
 # vim: syntax=sh

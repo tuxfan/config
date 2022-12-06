@@ -1,36 +1,36 @@
 #------------------------------------------------------------------------------#
-# Beach Theme
+# Disabled Theme.
 #------------------------------------------------------------------------------#
 
 # Date
-P_FG_DATE=$FG_45
-P_BG_DATE=$BG_24
+P_FG_DATE=$FG_LTGREY
+P_BG_DATE=$BG_DKGREY
 
 # User & Host
-P_FG_USER=$FG_251
-P_FG_AT=$FG_255
+P_FG_USER=$FG_LTGREY
+P_FG_AT=$FG_LTGREY
 
-P_FG_HOST=$FG_251
-P_BG_HOST=$BG_23
+P_FG_HOST=$FG_LTGREY
+P_BG_HOST=$BG_DKGREY
 
 # Extra
-P_FG_EXTRA=$FG_45
-P_BG_EXTRA=$BG_24
+P_FG_EXTRA=$FG_LTGREY
+P_BG_EXTRA=$BG_DKGREY
 
 # Spack
-P_FG_SPACK=$FG_WHITE
+P_FG_SPACK=$FG_LTGREY
 
 # Current directory
-P_FG_PWD=$FG_WHITE
-P_BG_PWD=$BG_30
+P_FG_PWD=$FG_LTGREY
+P_BG_PWD=$BG_DKGREY
 
 # Prompt
-P1="\[\e[38;5;34m\]"
-P2="\[\e[38;5;35m\]"
-P3="\[\e[38;5;36m\]"
-P4="\[\e[38;5;37m\]"
-P5="\[\e[38;5;38m\]"
-P6="\[\e[38;5;39m\]"
+P1="\[\e[38;5;240m\]"
+P2="\[\e[38;5;242m\]"
+P3="\[\e[38;5;244m\]"
+P4="\[\e[38;5;246m\]"
+P5="\[\e[38;5;248m\]"
+P6="\[\e[38;5;250m\]"
 
 #------------------------------------------------------------------------------#
 # vim: syntax=sh

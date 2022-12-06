@@ -113,7 +113,8 @@ export GIT_EDITOR="nvim -u $HOME/.config/bergen/vimrc-simple"
 # Spack setup.
 #------------------------------------------------------------------------------#
 
-[ $os != "Darwin" ] && [ -f $HOME/.spack/share/spack/setup-env.sh ] && \
+[ $os != "Darwin" ] && [[ $host != *darwin* ]] && \
+  [ -f $HOME/.spack/share/spack/setup-env.sh ] && \
   . $HOME/.spack/share/spack/setup-env.sh
 
 #------------------------------------------------------------------------------#

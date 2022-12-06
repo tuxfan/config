@@ -1,28 +1,28 @@
 #------------------------------------------------------------------------------#
-# Rainbow Theme
+# Gray Theme.
 #------------------------------------------------------------------------------#
 
 # Date
-P_BG_DATE=$BG_238
 P_FG_DATE=$FG_WHITE
+P_BG_DATE=$BG_238
 
 # User & Host
-P_BG_HOST=$BG_234
 P_FG_USER=$FG_246
 P_FG_AT=$FG_255
+
 P_FG_HOST=$FG_251
+P_BG_HOST=$BG_234
 
 # Extra
-P_BG_EXTRA=$BG_236
 P_FG_EXTRA=$FG_246
-P_FG_SPACK=$FG_251
+P_BG_EXTRA=$BG_236
 
 # Spack
 P_FG_SPACK=$FG_WHITE
 
 # Current directory
-P_BG_PWD=$BG_240
 P_FG_PWD=$FG_WHITE
+P_BG_PWD=$BG_240
 
 # Prompt
 P1="\[\e[38;5;240m\]"
