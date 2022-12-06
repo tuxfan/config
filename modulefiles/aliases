@@ -30,7 +30,6 @@ set-alias ms "module show"
 set-alias top "htop"
 set-alias sc "systemctl"
 set-alias ssh "ssh -YA"
-set-alias dalloc "salloc -N1 -p skylake-platinum"
 
 #------------------------------------------------------------------------------#
 # Vim

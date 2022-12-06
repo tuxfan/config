@@ -6,6 +6,8 @@
 # Environmentmodules
 #------------------------------------------------------------------------------#
 
+module load darwin-aliases
+
 case $SLURM_JOB_PARTITION in
   elcap-*)
     module load gcc/9.4.0 git
