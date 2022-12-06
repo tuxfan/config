@@ -1,5 +1,4 @@
 #! /usr/bin/env bash
-
 #------------------------------------------------------------------------------#
 # Check required environment variables
 #------------------------------------------------------------------------------#
@@ -41,13 +40,15 @@ cat << EOF
     $GOLD-c, --ccmake$NEUTRAL   Enable curses mode.
     $GOLD-u, --user$NEUTRAL     Enable user mode.
     $GOLD-d, --debug$NEUTRAL    Enable debug mode.
+    $GOLD-n, --no-opt$NEUTRAL   Force -O0 when in debug mode (implies -d)
 
     The$GREEN user$NEUTRAL mode configures FleCSI with defaults \
 that are appropriate
     for users of FleCSI, i.e., those who are not core developers.
 
     The$GREEN debug$NEUTRAL mode configures FleCSI with flags that \
-aid in debugging code.
+aid in debugging code. Note that the related $GREEN no-opt$NEUTRAL mode \
+may be a no-op for some compilers.
 
  $WHITE Compiler Options:$NEUTRAL
    $GREEN clang (default)$NEUTRAL
@@ -62,7 +63,7 @@ aid in debugging code.
     hpx
 
  $WHITE Generator Options:$NEUTRAL
-   $GREEN unix - Unix Makefiles (default)$NEUTRAL
+   $GREEN unix  - Unix Makefiles (default)$NEUTRAL
     ninja - Ninja
 
  $WHITE Miscellaneous Options:$NEUTRAL
@@ -91,12 +92,24 @@ EOF
 }
 
 #------------------------------------------------------------------------------#
+# Get the path to the project from which this script was called
+#------------------------------------------------------------------------------#
+
+if [ ! -f $1/CMakeLists.txt ] ; then
+  help
+  exit
+fi
+cwd=$1
+shift
+
+#------------------------------------------------------------------------------#
 # Environment
 #------------------------------------------------------------------------------#
 
 CMAKE_INSTALL_PREFIX="${CONFIG_INSTALL_PREFIX:-/usr/local}"
-SCRIPT_GENERATOR=" ${CONFIG_SCRIPT_GENERATOR:-Unix Makefiles}"
-CLANG_FORMAT=${CLANG_FORMAT_EXECUTABLE:+"-DENABLE_FORMAT=ON -DClangFormat_EXECUTABLE=${CLANG_FORMAT_EXECUTABLE}"}
+SCRIPT_GENERATOR="${CONFIG_SCRIPT_GENERATOR:-Unix Makefiles}"
+CLANG_FORMAT="-DENABLE_FORMAT=ON ${CLANG_FORMAT_EXECUTABLE:\
+  +"-DClangFormat_EXECUTABLE=${CLANG_FORMAT_EXECUTABLE}"}"
 
 #------------------------------------------------------------------------------#
 # Check command-line arguments
@@ -106,7 +119,7 @@ cmake_mode=cmake
 backend=legion
 cmake_args=""
 
-WARN="-Wall -Wundef -W -Werror"
+WARN="-Wall -Wundef -Wextra -Werror"
 SCRIPT_BUILD_TYPE=RelWithDebInfo
 
 # Default is clang
@@ -127,6 +140,7 @@ SCRIPT_ENABLE_HDF5="OFF"
 SCRIPT_ENABLE_OPENMP="OFF"
 
 debug=0
+noopt=0
 
 while [[ $# -gt 0 ]]
 do
@@ -158,6 +172,15 @@ do
       SCRIPT_CXX_FLAGS="$SCRIPT_CXX_FLAGS -O0"
       SCRIPT_BUILD_TYPE=Debug
       ;;
+    --no-opt|-n)
+      debug=1
+      noopt=1
+
+      # These are for clang (default)
+      SCRIPT_C_FLAGS="$SCRIPT_C_FLAGS -O0"
+      SCRIPT_CXX_FLAGS="$SCRIPT_CXX_FLAGS -O0"
+      SCRIPT_BUILD_TYPE=Debug
+      ;;
     ninja)
       SCRIPT_GENERATOR="Ninja"
       ;;
@@ -175,9 +198,14 @@ do
       SCRIPT_CXX_COMPILER=g++
       SCRIPT_CXX_FLAGS=$SCRIPT_C_FLAGS
 
+      bigO="-Og"
+      if [ $noopt -eq 1 ]; then
+        bigO="-O0"
+      fi
+
       if [ $debug -eq 1 ]; then
-        SCRIPT_C_FLAGS="$SCRIPT_C_FLAGS -Og -ggdb -gdwarf-5"
-        SCRIPT_C_FLAGS="$SCRIPT_CXX_FLAGS -Og -ggdb -gdwarf-5"
+        SCRIPT_C_FLAGS="$SCRIPT_C_FLAGS ${bigO} -ggdb -gdwarf-5"
+        SCRIPT_CXX_FLAGS="$SCRIPT_CXX_FLAGS ${bigO} -ggdb -gdwarf-5"
       fi
       ;;
     oneapi)
@@ -188,7 +216,7 @@ do
 
       if [ $debug -eq 1 ]; then
         SCRIPT_C_FLAGS="$SCRIPT_C_FLAGS -g"
-        SCRIPT_C_FLAGS="$SCRIPT_CXX_FLAGS -g"
+        SCRIPT_CXX_FLAGS="$SCRIPT_CXX_FLAGS -g"
       fi
       ;;
     dpcpp)
@@ -199,7 +227,7 @@ do
 
       if [ $debug -eq 1 ]; then
         SCRIPT_C_FLAGS="$SCRIPT_C_FLAGS -g"
-        SCRIPT_C_FLAGS="$SCRIPT_CXX_FLAGS -g"
+        SCRIPT_CXX_FLAGS="$SCRIPT_CXX_FLAGS -g"
       fi
       ;;
     kokkos)
@@ -248,7 +276,7 @@ done
   -DCMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH} \
   ${CLANG_FORMAT} \
   $cmake_args \
-  ..
+  $cwd
 )
 
 #------------------------------------------------------------------------------#

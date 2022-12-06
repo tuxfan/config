@@ -1,4 +1,17 @@
 #! /usr/bin/env bash
 
-echo -e "Executing\n \033[0;32m mpirun -np $1 xterm -e cgdb $2\033[0m"
-mpirun -np $1 xterm -e cgdb $2
+case $# in
+  2)
+    (set -x; mpirun -np $1 xterm -e cgdb $2)
+  ;;
+  3)
+    if [ -f $3 ] ; then
+      # This is a breakpoint file
+      (set -x; mpirun -np $1 xterm -e cgdb $2 -x $3 -ex 'r')
+    else
+      # This is a command
+      (set -x; mpirun -np $1 xterm -e cgdb $2 -ex "$3" -ex 'r')
+    fi
+  ;;
+esac
+

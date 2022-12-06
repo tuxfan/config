@@ -11,7 +11,7 @@
 
 [core]
 	editor = vim
-	excludesfile = /home/bergen/.gitignore
+	excludesFile = ~/.gitignore
 
 [diff]
   tool = nvimdiff
