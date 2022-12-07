@@ -1,17 +1,8 @@
 #! /usr/bin/env bash
 
-case $# in
-  2)
-    (set -x; mpirun -np $1 xterm -e cgdb $2)
-  ;;
-  3)
-    if [ -f $3 ] ; then
-      # This is a breakpoint file
-      (set -x; mpirun -np $1 xterm -e cgdb $2 -x $3 -ex 'r')
-    else
-      # This is a command
-      (set -x; mpirun -np $1 xterm -e cgdb $2 -ex "$3" -ex 'r')
-    fi
-  ;;
-esac
+if [ $# -lt 2 ] ; then
+  echo "Usage: $0 <processes> <program> [args...]"
+  exit 1
+fi
 
+(set -x; mpirun -np $1 xterm -e cgdb $2 "${@:2}")

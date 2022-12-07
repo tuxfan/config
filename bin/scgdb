@@ -1,0 +1,20 @@
+#! /usr/bin/env bash
+
+if [ $# -lt 2 ] ; then
+  echo "Usage: $0 <processes> <program> [args...]"
+  exit 1
+fi
+
+stamp=`date +%s`
+
+mpirun -np $1 screen -AdmS ${stamp}.mpi \
+  cgdb -quiet $2 "${@:2}"
+
+a="screen -S ${stamp}.debug"
+b=' -X screen -t tab$0 screen -r $1'
+
+screen -AdmS ${stamp}.debug
+screen -ls | grep -E "[0-9]+.${stamp}.mpi" | awk '{print NR-1,$1}' |
+  xargs -n 2 sh -c "$a$b"
+
+screen -r ${stamp}.debug
