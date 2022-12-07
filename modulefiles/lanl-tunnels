@@ -4,6 +4,10 @@
 # LANL SSH Tunnels
 #------------------------------------------------------------------------------#
 
+set-alias kb-up "ssh -fNTML 11022:kerberos.lanl.gov:22 kb-tunnel"
+set-alias kb-st "ssh -TO check kb-tunnel"
+set-alias kb-dn "ssh -TO exit kb-tunnel"
+
 set-alias dw-up "ssh -fNTML 5022:darwin-fe.lanl.gov:22 darwin-tunnel"
 set-alias dw-st "ssh -TO check darwin-tunnel"
 set-alias dw-dn "ssh -TO exit darwin-tunnel"
