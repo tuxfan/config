@@ -51,3 +51,9 @@ set-alias amke "make"
 set-alias amek "make"
 set-alias kmae "make"
 set-alias mk "make -j 4"
+
+#------------------------------------------------------------------------------#
+# CGDB
+#------------------------------------------------------------------------------#
+
+set-alias cgdb "cgdb -quiet"

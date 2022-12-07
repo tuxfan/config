@@ -54,3 +54,4 @@ link_dotfile "modulefiles"
 link_dotfile "Xdefaults"
 link_vimrc $1
 link_dotfile "vim_colors"
+link_dotfile "screenrc"
