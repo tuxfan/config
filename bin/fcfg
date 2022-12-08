@@ -47,7 +47,8 @@ that are appropriate
     for users of FleCSI, i.e., those who are not core developers.
 
     The$GREEN debug$NEUTRAL mode configures FleCSI with flags that \
-aid in debugging code. Note that the related $GREEN no-opt$NEUTRAL mode \
+aid in debugging code.
+    Note that the related$GREEN no-opt$NEUTRAL mode \
 may be a no-op for some compilers.
 
  $WHITE Compiler Options:$NEUTRAL
