@@ -4,30 +4,42 @@
 # LANL SSH Tunnels
 #------------------------------------------------------------------------------#
 
-set-alias kb-up "ssh -fNTML 11022:kerberos.lanl.gov:22 kb-tunnel"
-set-alias kb-st "ssh -TO check kb-tunnel"
-set-alias kb-dn "ssh -TO exit kb-tunnel"
 
-set-alias dw-up "ssh -fNTML 5022:darwin-fe.lanl.gov:22 darwin-tunnel"
-set-alias dw-st "ssh -TO check darwin-tunnel"
-set-alias dw-dn "ssh -TO exit darwin-tunnel"
+#------------------------------------------------------------------------------#
+# Git Servers
+#------------------------------------------------------------------------------#
 
-set-alias gt-up "ssh -fNTML 7022:ihpc-gate.lanl.gov:22 gate-tunnel"
-set-alias gt-st "ssh -TO check gate-tunnel"
-set-alias gt-dn "ssh -TO exit gate-tunnel"
-
-set-alias gl-up "ssh -fNTML 2022:gitlab.lanl.gov:22 gl-tunnel"
+set-alias gl-up "ssh -fNTM -L 2022:gitlab.lanl.gov:22 gl-tunnel"
 set-alias gl-st "ssh -TO check gl-tunnel"
 set-alias gl-dn "ssh -TO exit gl-tunnel"
 
-set-alias rg-up "ssh -fNTML 6022:re-git.lanl.gov:10022 rg-tunnel"
+# server port is 10022
+set-alias rg-up "ssh -fNTM -L 2122:re-git.lanl.gov:10022 rg-tunnel"
 set-alias rg-st "ssh -TO check rg-tunnel"
 set-alias rg-dn "ssh -TO exit rg-tunnel"
 
-set-alias ci-up "ssh -fNTML 3022:flecsi-ci.lanl.gov:22 ci-tunnel"
+#------------------------------------------------------------------------------#
+# LANL Servers
+#------------------------------------------------------------------------------#
+
+set-alias dw-up "ssh -fNTM -L 3022:darwin-fe.lanl.gov:22 darwin-tunnel"
+set-alias dw-st "ssh -TO check darwin-tunnel"
+set-alias dw-dn "ssh -TO exit darwin-tunnel"
+
+set-alias ihpc-up "ssh -fNTM -L 3122:ihpc-gate.lanl.gov:22 ihpc-tunnel"
+set-alias ihpc-st "ssh -TO check gate-tunnel"
+set-alias ihpc-dn "ssh -TO exit gate-tunnel"
+
+set-alias kb-up "ssh -fNTM -L 3222:kerberos.lanl.gov:22 kb-tunnel"
+set-alias kb-st "ssh -TO check kb-tunnel"
+set-alias kb-dn "ssh -TO exit kb-tunnel"
+
+#------------------------------------------------------------------------------#
+# Personal Servers
+#------------------------------------------------------------------------------#
+
+set-alias ci-up "ssh -fNTM -L 4022:flecsi-ci.lanl.gov:22 ci-tunnel"
 set-alias ci-st "ssh -TO check ci-tunnel"
 set-alias ci-dn "ssh -TO exit ci-tunnel"
 
-set-alias aux-up "ssh -fNTML 4022:flecsi-auxiliary.lanl.gov:22 aux-tunnel"
-set-alias aux-st "ssh -TO check aux-tunnel"
-set-alias aux-dn "ssh -TO exit aux-tunnel"
+# Note: Our local-tunnels aliases start at 10022
