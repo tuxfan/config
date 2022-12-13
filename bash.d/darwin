@@ -6,7 +6,7 @@
 # Environment modules
 #------------------------------------------------------------------------------#
 
-export PATH=~/packages/neovim/bin:$PATH
+export PATH=~/packages/neovim/x86_64/bin:$PATH
 module load darwin-aliases
 module load git
 

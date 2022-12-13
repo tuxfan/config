@@ -98,8 +98,6 @@ if [[ "$MODULEPATH" != *"$HOME/.modulefiles"* ]]; then
   export MODULEPATH=$MODULEPATH:$HOME/.modulefiles
 fi
 
-print_env_var "MODULEPATH" $MODULEPATH
-
 export LMOD_PAGER="less -+e -+E"
 
 module load aliases
@@ -139,8 +137,6 @@ if [ $os == "Darwin" ] ; then
 fi
 
 prepend_path "$HOME/bin"
-
-print_env_var "PATH" $PATH
 
 #------------------------------------------------------------------------------#
 # Directory colors.
@@ -188,5 +184,12 @@ extra_pinfo=""
 
 export PROMPT_COMMAND='echo -ne "\033];"${PWD##*/}"\007"; echo -e "$P_BG_DATE$P_FG_DATE" `date +%H:%M:%S` "$P_BG_HOST$P_FG_USER $USER$P_FG_AT@$P_FG_HOST$host $P_BG_EXTRA$P_FG_EXTRA $extra_pinfo $P_FG_SPACK `spack-env` $P_BG_EXTRA$P_FG_PWD$TOEND\n$P_BG_PWD$P_FG_PWD$TOEND" `pwd` "$NEUTRAL"'
 PS1="$P1>$P2>$P3>$P4>$P5>$P6>$P "
+
+#------------------------------------------------------------------------------#
+# Print info.
+#------------------------------------------------------------------------------#
+
+print_env_var "PATH" $PATH
+print_env_var "MODULEPATH" $MODULEPATH
 
 # vim: set nornu:

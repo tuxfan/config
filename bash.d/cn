@@ -12,13 +12,17 @@ case $SLURM_JOB_PARTITION in
   elcap-*)
     module load gcc/9.4.0 git
   ;;
+  nv-devkit)
+    module load gcc/12.1.0 git
+  ;;
   skylake-*)
     module load gcc/11.2.0 git
     source /vast/home/bergen/.spack.d/default/var/spack/environments/clang-13/loads
   ;;
 esac
 
-export PATH=~/packages/neovim/bin:$PATH
+arch=`uname -m`
+export PATH=~/packages/neovim/${arch}/bin:$PATH
 
 #------------------------------------------------------------------------------#
 # Prompt colors.

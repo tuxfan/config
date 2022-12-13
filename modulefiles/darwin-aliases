@@ -4,5 +4,6 @@
 # Basic Settings
 #------------------------------------------------------------------------------#
 
-set-alias dalloc "salloc -N1 -p skylake-platinum"
-set-alias ealloc "salloc -N1 -p elcap-dev"
+set-alias skylake "salloc -N1 -p skylake-platinum"
+set-alias elcap "salloc -N1 -p elcap-dev"
+set-alias nv "salloc -N1 -p nv-devkit"
