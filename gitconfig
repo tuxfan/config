@@ -34,6 +34,7 @@
   co = checkout
   df = diff
   dc = diff --cached
+  ed = commit --amend
   lg = log -p
   rls = remote -v
   who = shortlog -s --
@@ -47,8 +48,11 @@
   mbc = !sh -c 'find . -name "*.orig" -delete'
   wls = worktree list
   wrm = worktree remove
-  wadd = worktree add --track -b
+  wadd = "!f() { git worktree add --track -b $1 ../$1 $2; }; f"
+  wnk = "!f() { git worktree remove $1 && git branch -D $1; }; f"
   wmv = worktree move
   ac = !git add -u && git commit
   sh = "!f() { git log --skip=$1 -n1 --format=format:\"%H\"; }; f"
+  sq = "!f() { git rev-parse HEAD~$1; }; f"
   rb = "!f() { git sh $1 | xargs -0 git rebase -i; }; f"
+  rbs = "!f() { git sq $1 | xargs git rebase -i; }; f"

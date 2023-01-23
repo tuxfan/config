@@ -14,7 +14,7 @@ set-alias gl-st "ssh -TO check gl-tunnel"
 set-alias gl-dn "ssh -TO exit gl-tunnel"
 
 # server port is 10022
-set-alias rg-up "ssh -fNTM -L 2122:re-git.lanl.gov:10022 rg-tunnel"
+set-alias rg-up "ssh -fNTM -L 2122:re-git.lanl.gov:10022 -L 10022:re-git.lanl.gov:10022 rg-tunnel"
 set-alias rg-st "ssh -TO check rg-tunnel"
 set-alias rg-dn "ssh -TO exit rg-tunnel"
 

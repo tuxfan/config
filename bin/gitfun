@@ -1,0 +1,40 @@
+#! /usr/bin/env perl
+
+use strict;
+use warnings;
+use subs qw/ postorder /;
+use File::Temp qw/ mkdtemp /;
+
+my %sha1;
+my %parents = (
+  A => [ qw/ B C /               ],
+  B => [ qw/     D E F /         ],
+  C => [ qw/         F /         ],
+  D => [ qw/           G H /     ],
+  F => [ qw/               I J / ],
+);
+
+sub postorder {
+  my($root,$hash) = @_;
+  my @parents = @{ $parents{$root} || [] };
+  postorder($_, $hash) for @parents;
+  return if $sha1{$root};
+  @parents = map "-p $sha1{$_}", @parents;
+  chomp($sha1{$root} = `git commit-tree @parents -m "$root" $hash`);
+  die "$0: git commit-tree failed" if $?;
+  system("git tag -a -m '$sha1{$root}' '$root' '$sha1{$root}'") == 0 or die "$0: git tag failed";
+}
+
+$0 =~ s!^.*/!!;  # / fix Stack Overflow highlighting
+my $repo = mkdtemp "repoXXXXXXXX";
+chdir $repo or die "$0: chdir: $!";
+system("git init") == 0               or die "$0: git init failed";
+chomp(my $tree = `git write-tree`);      die "$0: git write-tree failed" if $?;
+
+postorder 'A', $tree;
+system "git update-ref HEAD   $sha1{A}"; die "$0: git update-ref failed" if $?;
+system "git update-ref master $sha1{A}"; die "$0: git update-ref failed" if $?;
+
+# for browsing history - http://blog.kfish.org/2010/04/git-lola.html
+system "git config alias.lol  'log --graph --decorate --pretty=oneline --abbrev-commit'";
+system "git config alias.lola 'log --graph --decorate --pretty=oneline --abbrev-commit --all'";
