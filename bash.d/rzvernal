@@ -12,7 +12,7 @@ export PATH=~/packages/neovim/bin:$PATH
 # Prompt colors.
 #------------------------------------------------------------------------------#
 
-. $HOME/.config/bergen/bash.d/themes/lanl-black
+. $HOME/.config/bergen/bash.d/themes/black-and-blue
 [ `whoami` == "root" ] && . $HOME/.config/bergen/bash.d/themes/red-orange
 
 extra_pinfo="RZVernal"
