@@ -27,8 +27,8 @@ set-alias dw-st "ssh -TO check darwin-tunnel"
 set-alias dw-dn "ssh -TO exit darwin-tunnel"
 
 set-alias ihpc-up "ssh -fNTM -L 3122:ihpc-gate.lanl.gov:22 ihpc-tunnel"
-set-alias ihpc-st "ssh -TO check gate-tunnel"
-set-alias ihpc-dn "ssh -TO exit gate-tunnel"
+set-alias ihpc-st "ssh -TO check ihpc-tunnel"
+set-alias ihpc-dn "ssh -TO exit ihpc-tunnel"
 
 set-alias kb-up "ssh -fNTM -L 3222:kerberos.lanl.gov:22 kb-tunnel"
 set-alias kb-st "ssh -TO check kb-tunnel"
