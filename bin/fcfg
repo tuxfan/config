@@ -36,11 +36,12 @@ cat << EOF
 [<backend>] [<generator>] [<misc>]
 
  $WHITE Flags:$NEUTRAL
-    $GOLD-h, --help$NEUTRAL     Show this message and exit.
-    $GOLD-c, --ccmake$NEUTRAL   Enable curses mode.
-    $GOLD-u, --user$NEUTRAL     Enable user mode.
-    $GOLD-d, --debug$NEUTRAL    Enable debug mode.
-    $GOLD-n, --no-opt$NEUTRAL   Force -O0 when in debug mode (implies -d)
+    $GOLD-h, --help$NEUTRAL   Show this message and exit.
+    $GOLD-c, --ccmake$NEUTRAL Enable curses mode.
+    $GO-d, --dryrun$NE        Print the cmake configure line and exit.
+    $GOLD-u, --user$NEUTRAL   Enable user mode.
+    $GOLD-d, --debug$NEUTRAL  Enable debug mode.
+    $GOLD-n, --no-opt$NEUTRAL Force -O0 when in debug mode (implies -d)
 
     The$GREEN user$NEUTRAL mode configures FleCSI with defaults \
 that are appropriate
@@ -119,6 +120,7 @@ CLANG_FORMAT="-DENABLE_FORMAT=ON ${CLANG_FORMAT_EXECUTABLE:\
 cmake_mode=cmake
 backend=legion
 cmake_args=""
+dryrun=0
 
 WARN="-Wall -Wundef -Wextra -Werror"
 SCRIPT_BUILD_TYPE=RelWithDebInfo
@@ -153,6 +155,10 @@ do
 		  ;;
 		--ccmake|-c)
 			cmake_mode=ccmake
+		  ;;
+		--dryrun|-d)
+			dryrun=1
+			cmake_mode=echo
 		  ;;
     --user|-u)
       SCRIPT_BUILD_TYPE=Release
@@ -257,7 +263,7 @@ done
 # Call CMake command
 #------------------------------------------------------------------------------#
 
-(set -x; $cmake_mode \
+([[ $dryrun -ne 1 ]] && set -x; $cmake_mode \
   -G"$SCRIPT_GENERATOR" \
   -DCMAKE_BUILD_TYPE=$SCRIPT_BUILD_TYPE \
   -DCMAKE_C_COMPILER=$SCRIPT_C_COMPILER \
