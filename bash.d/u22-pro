@@ -14,7 +14,6 @@ export CMAKE_EXPORT_COMPILE_COMMANDS=1
 # Environment modules
 #------------------------------------------------------------------------------#
 
-module load lanl-tunnels
 module load compiler/latest
 
 #------------------------------------------------------------------------------#
