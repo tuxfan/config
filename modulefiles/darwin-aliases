@@ -6,4 +6,5 @@
 
 set-alias skylake "salloc -N1 -p skylake-platinum"
 set-alias elcap "salloc -N1 -p elcap-dev"
+set-alias elcap2 "salloc -N1 -p elcap-dev2"
 set-alias nv "salloc -N1 -p nv-devkit"
