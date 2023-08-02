@@ -56,5 +56,6 @@
   sq = "!f() { git rev-parse HEAD~$1; }; f"
   rb = "!f() { git sh $1 | xargs -0 git rebase -i; }; f"
   rbs = "!f() { git sq $1 | xargs git rebase -i; }; f"
+
 [safe]
 	directory = /projects/ngc/shared/darwin_spack_upstream/develop-1ef313b6
