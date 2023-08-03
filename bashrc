@@ -107,6 +107,7 @@ module load aliases
 #------------------------------------------------------------------------------#
 
 export GIT_EDITOR="nvim -u $HOME/.config/bergen/vimrc-simple"
+export SPACK_EDITOR="nvim -u $HOME/.config/bergen/vimrc-simple"
 
 #------------------------------------------------------------------------------#
 # Spack setup.

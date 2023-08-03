@@ -23,9 +23,6 @@
   conflectStyle = diff3
   tool = nvimdiff
 
-[url "git@gitlab.lanl.gov"]
-  insteadOf = gl
-
 [alias]
   st = status
   sst = submodule status
