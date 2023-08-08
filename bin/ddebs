@@ -10,7 +10,8 @@ deb ${U} ${C}-updates main restricted universe multiverse
 deb ${U} ${C}-proposed main restricted universe multiverse
 EOF
 
-wget -O - http://ddebs.ubuntu.com/dbgsym-release-key.asc | \
-    sudo apt-key add -
+wget -qO- http://ddebs.ubuntu.com/dbgsym-release-key.asc | \
+  sudo tee /etc/apt/trusted.gpg.d/ddebs.asc
 
 sudo apt update -y
+sudo apt install libstdc++6-dbgsym
