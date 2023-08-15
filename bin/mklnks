@@ -50,6 +50,7 @@ link_dotfile "dircolors"
 link_dotfile "gdb"
 link_dotfile "gdbinit"
 link_dotfile "gitconfig"
+link_dotfile "gitignore"
 link_dotfile "modulefiles"
 link_dotfile "Xdefaults"
 link_vimrc $1
