@@ -43,9 +43,15 @@ function link_vimrc() {
   ln -s $HOME/.config/bergen/vimrc-$1 $HOME/.vimrc
 }
 
+function link_nvim() {
+  echo -e "$C5""relinking vimrc -> vimrc-${1}""$P"
+  [ -h $HOME/.config/nvim ] && rm -rf $HOME/.config/nvim
+  ln -s $HOME/.config/bergen/nvim $HOME/.config/nvim
+}
+
+link_file "bin"
 link_dotfile "bash.d"
 link_dotfile "bashrc"
-link_file "bin"
 link_dotfile "dircolors"
 link_dotfile "gdb"
 link_dotfile "gdbinit"
