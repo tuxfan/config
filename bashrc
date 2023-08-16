@@ -137,6 +137,7 @@ if [ $os == "Darwin" ] ; then
   fi
 fi
 
+prepend_path "/opt/nvim/bin"
 prepend_path "$HOME/bin"
 
 #------------------------------------------------------------------------------#

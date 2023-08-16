@@ -18,10 +18,10 @@ C15="\033[0;37m" # Light Gray
 C16="\033[1;37m" # White
 P="\033[0m" # Neutral
 
-if [ "$#" -ne 1 ]; then
-  echo "Usage:" `echo $0 | sed 's,^.*/,,g'` "<vim style>[simple,medium,coc]"
-  exit 0
-fi
+#if [ "$#" -ne 1 ]; then
+#  echo "Usage:" `echo $0 | sed 's,^.*/,,g'` "<vim style>[simple,medium,coc]"
+#  exit 0
+#fi
 
 function link_dotfile() {
   echo -e "$C5""relinking ${1}""$P"
@@ -53,6 +53,4 @@ link_dotfile "gitconfig"
 link_dotfile "gitignore"
 link_dotfile "modulefiles"
 link_dotfile "Xdefaults"
-link_vimrc $1
-link_dotfile "vim_colors"
 link_dotfile "screenrc"
