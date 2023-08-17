@@ -39,7 +39,7 @@ function link_vimrc() {
 }
 
 function link_nvim() {
-  echo -e "$C5""relinking nvim}""$P"
+  echo -e "$C5""relinking nvim""$P"
   [ -h $HOME/.config/nvim ] || [ -d $HOME/.config/nvim ] && \
     rm -rf $HOME/.config/nvim
   ln -s $HOME/.config/bergen/nvim $HOME/.config/nvim
