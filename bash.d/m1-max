@@ -6,8 +6,8 @@
 # Environment modules
 #------------------------------------------------------------------------------#
 
-module load lanl-tunnels
-module load local-tunnels
+#module load lanl-tunnels
+#module load local-tunnels
 
 #------------------------------------------------------------------------------#
 # Prompt colors.
