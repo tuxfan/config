@@ -18,11 +18,6 @@ C15="\033[0;37m" # Light Gray
 C16="\033[1;37m" # White
 P="\033[0m" # Neutral
 
-#if [ "$#" -ne 1 ]; then
-#  echo "Usage:" `echo $0 | sed 's,^.*/,,g'` "<vim style>[simple,medium,coc]"
-#  exit 0
-#fi
-
 function link_dotfile() {
   echo -e "$C5""relinking ${1}""$P"
   [ -f $HOME/.${1} ] || [ -h $HOME/.${1} ] || [ -d $HOME/.${1} ] && \
@@ -44,8 +39,9 @@ function link_vimrc() {
 }
 
 function link_nvim() {
-  echo -e "$C5""relinking vimrc -> vimrc-${1}""$P"
-  [ -h $HOME/.config/nvim ] && rm -rf $HOME/.config/nvim
+  echo -e "$C5""relinking nvim}""$P"
+  [ -h $HOME/.config/nvim ] || [ -d $HOME/.config/nvim ] && \
+    rm -rf $HOME/.config/nvim
   ln -s $HOME/.config/bergen/nvim $HOME/.config/nvim
 }
 
@@ -60,3 +56,4 @@ link_dotfile "gitignore"
 link_dotfile "modulefiles"
 link_dotfile "Xdefaults"
 link_dotfile "screenrc"
+link_nvim
