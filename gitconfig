@@ -26,6 +26,7 @@
 [alias]
   st = status
   sst = submodule status
+  sinit = submodule update --init --recursive
   ci = commit
   br = branch
   co = checkout
