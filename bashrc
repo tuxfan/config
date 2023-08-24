@@ -166,13 +166,9 @@ export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
 #------------------------------------------------------------------------------#
 
 if [[ $me != "root" ]] ; then
-  if timeout 0.2 bash -c ": > /dev/tcp/proxyout/8080" &>/dev/null; then
-    nc -xproxyout.lanl.gov:8080 -Xconnect -z github.com 80
-  else
-    nc -z github.com 80 > /dev/null 2>&1
-  fi
+  ssh -xT git@github.com > /dev/null 2>&1
 
-  if [ $? -eq 0 ]; then
+  if [ $? -eq 1 ]; then
     echo -e "$FG_40""Checking configuration status...""$NEUTRAL"
     (cd $HOME/.config/bergen; git fetch 2>&1 > /dev/null)
     change=`(cd $HOME/.config/bergen; git status -uno)`
