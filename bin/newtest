@@ -34,7 +34,7 @@ mkdir($directory);
 # create main.cc
 &create_main;
 
-`cd $directory; mkdir build; cd build; cmake ..; make`;
+`cd $directory; mkdir build; cd build; cmake .. -G="Ninja"; ninja`;
 
 ################################################################################
 # subroutines

@@ -16,11 +16,11 @@ fi
 # Colors
 #------------------------------------------------------------------------------#
 
-WHITE=$'\e[38;5;15m'
-GREEN=$'\e[38;5;46m'
+WH=$'\e[38;5;15m'
+GR=$'\e[38;5;46m'
 RED=$'\e[38;5;160m'
-GOLD=$'\e[38;5;228m'
-NEUTRAL=$'\e[0m'
+GO=$'\e[38;5;228m'
+NE=$'\e[0m'
 
 #------------------------------------------------------------------------------#
 # Help message
@@ -30,61 +30,66 @@ help(){
   command=`echo $0 | sed 's,.*\/,,g'`
 cat << EOF
 
- $WHITE FleCSI Configuration Tool$NEUTRAL
+ $WH FleCSI Configuration Tool$NE
 
- $WHITE Usage: $GOLD$command$NEUTRAL [flags] [<compiler>] \
+ $WH Usage: $GO$command$NE [flags] [<compiler>] \
 [<backend>] [<generator>] [<misc>]
 
- $WHITE Flags:$NEUTRAL
-    $GOLD-h, --help$NEUTRAL   Show this message and exit.
-    $GOLD-c, --ccmake$NEUTRAL Enable curses mode.
-    $GO-d, --dryrun$NE        Print the cmake configure line and exit.
-    $GOLD-u, --user$NEUTRAL   Enable user mode.
-    $GOLD-d, --debug$NEUTRAL  Enable debug mode.
-    $GOLD-n, --no-opt$NEUTRAL Force -O0 when in debug mode (implies -d)
+ $WH Flags:$NE
+    $GO-h, --help$NE     Show this message and exit.
+    $GO-c, --ccmake$NE   Enable curses mode.
+    $GO-d, --dryrun$NE   Print the cmake configure line and exit.
+    $GO-g, --debug$NE    Enable debug mode.
+    $GO-n, --no-opt$NE   Force -O0 in debug mode (implies -d)
+    $GO-p, --pedantic$NE Enable -Werror.
 
-    The$GREEN user$NEUTRAL mode configures FleCSI with defaults \
-that are appropriate
-    for users of FleCSI, i.e., those who are not core developers.
-
-    The$GREEN debug$NEUTRAL mode configures FleCSI with flags that \
+    The$GR debug$NE mode configures FleCSI with flags that \
 aid in debugging code.
-    Note that the related$GREEN no-opt$NEUTRAL mode \
+    Note that the related$GR no-opt$NE mode \
 may be a no-op for some compilers.
 
- $WHITE Compiler Options:$NEUTRAL
-   $GREEN clang (default)$NEUTRAL
+ $WH Compiler Options:$NE
+   $GR clang (default)$NE
     hip
     gnu
     oneapi
     dpcpp
 
- $WHITE Backend Options:$NEUTRAL
-   $GREEN legion (default)$NEUTRAL
+ $WH Backend Options:$NE
+   $GR legion (default)$NE
     mpi
     hpx
 
- $WHITE Generator Options:$NEUTRAL
-   $GREEN unix  - Unix Makefiles (default)$NEUTRAL
+ $WH Generator Options:$NE
+   $GR unix  - Unix Makefiles (default)$NE
     ninja - Ninja
 
- $WHITE Miscellaneous Options:$NEUTRAL
-    kokkos (enables kokkos, default$WHITE OFF$NEUTRAL)
-    hdf5 (enables hdf5, default$WHITE OFF$NEUTRAL)
-    openmp (enables openmp$GOLD tasks$NEUTRAL, \
-default$WHITE OFF$NEUTRAL)
+ $WH Miscellaneous Options:$NE
+    kokkos (enables kokkos, default$WH OFF$NE)
+    hdf5 (enables hdf5, default$WH OFF$NE)
+    openmp (enables openmp$GO tasks$NE, default$WH OFF$NE)
 
- $WHITE NOTES:$NEUTRAL
+    Any additional arguments, e.g.:
+    $GR$ ./configure -g gnu -DENABLE_OPTION=OFF$NE
+    will be appended to the end of the cmake command. This example will
+    disable$GR OPTION$NE and override the associated setting (if any) from the
+    configure script.
+
+ $WH NOTES:$NE
     1) The openmp option is orthogonal to kokkos and allows the use of
        direct openmp pragmas inside of a FleCSI task.
 
     2) You can automatically set the path to the clang-format executable by
-       setting$GOLD CLANG_FORMAT_EXECUTABLE$NEUTRAL in your environment, e.g.:
-       $GREEN$ export CLANG_FORMAT_EXECUTABLE=/path/to/clang-format$NEUTRAL
+       setting$GO CLANG_FORMAT_EXECUTABLE$NE in your environment, e.g.:
+       $GR$ export CLANG_FORMAT_EXECUTABLE=/path/to/clang-format$NE
 
     3) You can automatically set the install path by setting
-      $GOLD CONFIG_INSTALL_PREFIX$NEUTRAL in your environment, e.g.:
-       $GREEN$ export CONFIG_INSTALL_PREFIX=/path/to/install$NEUTRAL
+      $GO CONFIG_INSTALL_PREFIX$NE in your environment, e.g.:
+       $GR$ export CONFIG_INSTALL_PREFIX=/path/to/install$NE
+
+    3) You can automatically set the generator by setting
+      $GO CONFIG_SCRIPT_GENERATOR$NE in your environment, e.g.:
+       $GR$ export CONFIG_SCRIPT_GENERATOR=Ninja$NE
 
     4) It may be necessary to completely remove previous build configurations
        for cmake to work. In particular, if you change the compiler, you will
@@ -110,8 +115,7 @@ shift
 
 CMAKE_INSTALL_PREFIX="${CONFIG_INSTALL_PREFIX:-/usr/local}"
 SCRIPT_GENERATOR="${CONFIG_SCRIPT_GENERATOR:-Unix Makefiles}"
-CLANG_FORMAT="-DENABLE_FORMAT=ON ${CLANG_FORMAT_EXECUTABLE:\
-  +"-DClangFormat_EXECUTABLE=${CLANG_FORMAT_EXECUTABLE}"}"
+CLANG_FORMAT="-DENABLE_FORMAT=ON ${CLANG_FORMAT_EXECUTABLE:+"-DClangFormat_EXECUTABLE=${CLANG_FORMAT_EXECUTABLE}"}"
 
 #------------------------------------------------------------------------------#
 # Check command-line arguments
@@ -121,15 +125,21 @@ cmake_mode=cmake
 backend=legion
 cmake_args=""
 dryrun=0
+debug=0
+noopt=0
 
-WARN="-Wall -Wundef -Wextra -Werror"
-SCRIPT_BUILD_TYPE=RelWithDebInfo
+# Default compiler settings
+WARN="-Wall -Wundef -W -Wno-parentheses"
+PEDANTIC=""
+OPTIMIZATION="-O2"
 
 # Default is clang
 SCRIPT_C_COMPILER=clang
-SCRIPT_C_FLAGS="-fcolor-diagnostics -ferror-limit=4 $WARN"
 SCRIPT_CXX_COMPILER=clang++
-SCRIPT_CXX_FLAGS=$SCRIPT_C_FLAGS
+C_FLAGS="-fcolor-diagnostics -ferror-limit=4"
+CXX_FLAGS=$C_FLAGS
+
+SCRIPT_BUILD_TYPE=RelWithDebInfo
 
 SCRIPT_ENABLE_FLOG="ON"
 SCRIPT_FLOG_ENABLE_DEVELOPER_MODE="OFF"
@@ -142,8 +152,9 @@ SCRIPT_ENABLE_KOKKOS="OFF"
 SCRIPT_ENABLE_HDF5="OFF"
 SCRIPT_ENABLE_OPENMP="OFF"
 
-debug=0
-noopt=0
+#------------------------------------------------------------------------------#
+# Check command-line arguments
+#------------------------------------------------------------------------------#
 
 while [[ $# -gt 0 ]]
 do
@@ -160,33 +171,19 @@ do
 			dryrun=1
 			cmake_mode=echo
 		  ;;
-    --user|-u)
-      SCRIPT_BUILD_TYPE=Release
-      SCRIPT_C_FLAGS="$SCRIPT_C_FLAGS -O2"
-      SCRIPT_CXX_FLAGS="$SCRIPT_CXX_FLAGS -O2"
-      SCRIPT_ENABLE_FLOG="ON"
-      SCRIPT_FLOG_ENABLE_DEVELOPER_MODE="OFF"
-      SCRIPT_ENABLE_UNIT_TESTS="OFF"
-      SCRIPT_ENABLE_DOXYGEN="OFF"
-      SCRIPT_ENABLE_SPHINX="OFF"
-      SCRIPT_ENABLE_DOCUMENTATION="OFF"
-		  ;;
     --debug|-d)
       debug=1
-
-      # These are for clang (default)
-      SCRIPT_C_FLAGS="$SCRIPT_C_FLAGS -O0"
-      SCRIPT_CXX_FLAGS="$SCRIPT_CXX_FLAGS -O0"
       SCRIPT_BUILD_TYPE=Debug
+      OPTIMIZATION="-O0" # clang default
       ;;
     --no-opt|-n)
       debug=1
       noopt=1
-
-      # These are for clang (default)
-      SCRIPT_C_FLAGS="$SCRIPT_C_FLAGS -O0"
-      SCRIPT_CXX_FLAGS="$SCRIPT_CXX_FLAGS -O0"
       SCRIPT_BUILD_TYPE=Debug
+      OPTIMIZATION="-O0" # clang default
+      ;;
+    --pedantic|-p)
+      PEDANTIC="-Werror"
       ;;
     ninja)
       SCRIPT_GENERATOR="Ninja"
@@ -198,43 +195,42 @@ do
       ;;
     hip)
       SCRIPT_CXX_COMPILER=hipcc
+      SCRIPT_C_COMPILER=hipcc
+      # Uses clang compiler flags
       ;;
     gnu)
       SCRIPT_C_COMPILER=gcc
-      SCRIPT_C_FLAGS="-fmax-errors=5 -fdiagnostics-color=always $WARN"
       SCRIPT_CXX_COMPILER=g++
-      SCRIPT_CXX_FLAGS=$SCRIPT_C_FLAGS
+      C_FLAGS="-fmax-errors=5 -fdiagnostics-color=always"
+      CXX_FLAGS=$C_FLAGS
 
-      bigO="-Og"
+      OPTIMIZATION="-Og"
       if [ $noopt -eq 1 ]; then
-        bigO="-O0"
+        OPTIMIZATION="-O0"
       fi
 
       if [ $debug -eq 1 ]; then
-        SCRIPT_C_FLAGS="$SCRIPT_C_FLAGS ${bigO} -ggdb -gdwarf-5"
-        SCRIPT_CXX_FLAGS="$SCRIPT_CXX_FLAGS ${bigO} -ggdb -gdwarf-5"
+        OPTIMIZATION="$OPTIMIZATION -ggdb -gdwarf-5"
       fi
       ;;
     oneapi)
       SCRIPT_C_COMPILER=icx
-      SCRIPT_C_FLAGS="-diag-error-limit=5 $WARN"
       SCRIPT_CXX_COMPILER=icpx
-      SCRIPT_CXX_FLAGS=$SCRIPT_C_FLAGS
+      C_FLAGS="-diag-error-limit=5"
+      CXX_FLAGS=$C_FLAGS
 
       if [ $debug -eq 1 ]; then
-        SCRIPT_C_FLAGS="$SCRIPT_C_FLAGS -g"
-        SCRIPT_CXX_FLAGS="$SCRIPT_CXX_FLAGS -g"
+        OPTIMIZATION="$OPTIMIZATION -g"
       fi
       ;;
     dpcpp)
       SCRIPT_C_COMPILER=icx
-      SCRIPT_C_FLAGS="$WARN"
       SCRIPT_CXX_COMPILER=dpcpp
-      SCRIPT_CXX_FLAGS=$SCRIPT_C_FLAGS
+      C_FLAGS=""
+      CXX_FLAGS=$C_FLAGS
 
       if [ $debug -eq 1 ]; then
-        SCRIPT_C_FLAGS="$SCRIPT_C_FLAGS -g"
-        SCRIPT_CXX_FLAGS="$SCRIPT_CXX_FLAGS -g"
+        OPTIMIZATION="$OPTIMIZATION -g"
       fi
       ;;
     kokkos)
@@ -250,7 +246,7 @@ do
       cmake_args="$cmake_args $1"
       ;;
     *)
-      echo "$RED  Unrecognized option: $1$NEUTRAL"
+      echo "$RED  Unrecognized option: $1$NE"
       help
       exit
       ;;
@@ -258,6 +254,9 @@ do
 
 	shift # next argument
 done
+
+SCRIPT_C_FLAGS="$C_FLAGS $WARN $PEDANTIC $OPTIMIZATION"
+SCRIPT_CXX_FLAGS="$CXX_FLAGS $WARN $PEDANTIC $OPTIMIZATION"
 
 #------------------------------------------------------------------------------#
 # Call CMake command

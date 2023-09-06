@@ -1,5 +1,7 @@
 #%Module1.0#####################################################################
 
+set home $::env(HOME)
+
 #------------------------------------------------------------------------------#
 # Basic Settings
 #------------------------------------------------------------------------------#
@@ -30,6 +32,7 @@ set-alias ms "module show"
 set-alias top "htop"
 set-alias sc "systemctl"
 set-alias ssh "ssh -YA"
+set-alias proxy "source ${home}/.bash.d/lanl-proxy"
 
 #------------------------------------------------------------------------------#
 # Vim
@@ -39,7 +42,6 @@ set-alias vim "nvim"
 set-alias vi "nvim"
 set-alias vsplit "nvim -O"
 set-alias view "nvim -R"
-set-alias vs {nvim -u .config/bergen/vimrc-simple}
 
 #------------------------------------------------------------------------------#
 # Make
