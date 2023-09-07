@@ -17,7 +17,8 @@ case $SLURM_JOB_PARTITION in
   ;;
   skylake-*)
     module load gcc/11.2.0 git
-    source /vast/home/bergen/.spack.d/default/var/spack/environments/clang-13/loads
+    module load cmake/3.26.3
+    #source /vast/home/bergen/.spack.d/default/var/spack/environments/clang-13/loads
   ;;
 esac
 
