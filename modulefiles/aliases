@@ -32,7 +32,7 @@ set-alias ms "module show"
 set-alias top "htop"
 set-alias sc "systemctl"
 set-alias ssh "ssh -YA"
-set-alias proxy "source ${home}/.bash.d/lanl-proxy"
+set-alias proxy "source ${home}/.bash.d/lanl-proxy && env | grep proxy"
 
 #------------------------------------------------------------------------------#
 # Vim
