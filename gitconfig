@@ -57,3 +57,8 @@
 
 [safe]
 	directory = /projects/ngc/shared/darwin_spack_upstream/develop-1ef313b6
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
