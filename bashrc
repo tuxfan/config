@@ -144,8 +144,8 @@ if [ $os == "Darwin" ] ; then
 fi
 
 [ -d /opt/nvim ] && prepend_path "/opt/nvim/bin"
-[ -d $HOME/.config/nvim/lua-language-server ] &&
-  prepend_path "$HOME/.config/nvim/lua-language-server/bin"
+[ -d $HOME/.config/nvim/local/lua-language-server ] &&
+  prepend_path "$HOME/.config/nvim/local/lua-language-server/bin"
 prepend_path "$HOME/bin"
 
 #------------------------------------------------------------------------------#
