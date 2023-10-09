@@ -5,4 +5,4 @@ if [ $# -lt 2 ] ; then
   exit 1
 fi
 
-(set -x; mpirun -np $1 xterm -e cgdb $2 "${@:3}" -ex 'r')
+mpirun -np $1 -e cgdb $2 

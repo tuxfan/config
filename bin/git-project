@@ -1,0 +1,75 @@
+#!/bin/bash -e
+
+# Rewrite the current branch to apply a projection first and in each commit.
+
+set -o pipefail
+
+fail1() {
+  local e=$?
+  ((e>1)) && exit $e
+}
+single() { ! [ ${2+x} ]; }
+match() { git diff-index --quiet --ignore-submodules "$1" || fail1; }
+# To avoid dealing with symbolic refs, we never actually move HEAD.
+project() {
+  git rm --cached -qr .
+  git checkout "$1" -- .
+  git since '' ${files:+"$files"} | xargs -r0 $cmd
+}
+
+(($#==4)) || {
+  echo "usage: $0 command filespec upstream message" >&2
+  exit 2
+}
+cmd=$1                          # is run in temporary checkout
+files=$2                        # use empty string for all
+up=$(git rev-parse --verify "$3") # rebase if upstream updated
+msg=$4                          # for any projection commit
+
+hint="$(git for-each-ref --shell --format="git update-ref -d %(refname)"\
+        refs/original/)"
+[ "$hint" ] && {
+  echo $'filter-branch backup exists; consider\n'"$hint" >&2
+  exit 1
+}
+
+base=$(git merge-base -a $up HEAD)
+single $base || { echo "Multiple merge bases: $base" >&2; exit 1; }
+
+git update-index --refresh && match HEAD ||
+  { echo "Uncommitted changes" >&2; exit 1; }
+
+# Identify a source clean commit, if any:
+from=$base
+project $base
+if match $base; then src=$base
+else
+  # Look for an existing projection commit:
+  src=$(git rev-list $up.. | tail -n1)
+  git add -u
+  if match $src; then from=$src; else unset src; fi
+fi
+# Identify a destination clean commit, if any:
+if [ $base = $up ]; then dest=$src # ...which might be unset
+else
+  echo "$0: run again after rebase finishes to filter" >&2
+  project $up
+  match $up && dest=$up
+fi
+# Make a new projection commit if necessary:
+[ $dest ] || {
+  git add -u
+  dest=$(git commit-tree $(git write-tree) -p $up <<<$msg)
+}
+git reset --hard
+
+if [ $base = $up ]; then
+  # Rewrite the branch on top of any (new) projection commit.
+  # Use git-since to avoid re-projecting files known to be good.
+  git filter-branch --parent-filter "sed s/$from/$dest/" \
+    --tree-filter "set -o pipefail && git since $dest \
+${files:+$(printf %q "$files")} | xargs -r0 $cmd" \
+    -d "/tmp/git-project-$USER" $from..
+else
+  git rebase --onto $dest $from
+fi
