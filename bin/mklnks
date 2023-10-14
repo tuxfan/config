@@ -48,6 +48,7 @@ function link_nvim() {
 link_file "bin"
 link_dotfile "bash.d"
 link_dotfile "bashrc"
+link_dotfile "clangd"
 link_dotfile "dircolors"
 link_dotfile "gdb"
 link_dotfile "gdbinit"
