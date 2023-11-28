@@ -20,7 +20,7 @@ export CMAKE_EXPORT_COMPILE_COMMANDS=1
 # Environment modules
 #------------------------------------------------------------------------------#
 
-module load compiler/latest
+module load compiler
 
 #------------------------------------------------------------------------------#
 # Prompt colors
