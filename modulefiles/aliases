@@ -29,7 +29,7 @@ set-alias ms "module show"
 # Misc
 #------------------------------------------------------------------------------#
 
-set-alias top "htop"
+set-alias top "htop -t"
 set-alias sc "systemctl"
 set-alias ssh "ssh -YA"
 set-alias proxy "source ${home}/.bash.d/lanl-proxy && env | grep proxy"

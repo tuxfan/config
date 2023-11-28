@@ -19,7 +19,8 @@ require'nvim-treesitter.configs'.setup {
     "python",
     "vim",
     "vimdoc",
-    "query"
+    "query",
+    "yaml"
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
