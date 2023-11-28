@@ -24,6 +24,6 @@ if args.pas:
     ex.append("-ex 'r " + args.pas + "'")
     exstr += "-ex 'r " + args.pas + "'"
 
-debug="mpirun -quiet -np " + args.processes + " xterm -e cgdb " + \
+debug="mpirun -np " + args.processes + " xterm -e cgdb " + \
     args.program + " " + exstr
 os.system(debug)
