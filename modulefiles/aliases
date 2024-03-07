@@ -16,7 +16,7 @@ set-alias mv "mv -i"
 set-alias rfg "ssh mb finger"
 
 #------------------------------------------------------------------------------#
-# Environemtn Modules
+# Environment Modules
 #------------------------------------------------------------------------------#
 
 set-alias mls "module list"
@@ -29,6 +29,7 @@ set-alias ms "module show"
 # Misc
 #------------------------------------------------------------------------------#
 
+set-alias bc "bc -l"
 set-alias top "htop -t"
 set-alias sc "systemctl"
 set-alias ssh "ssh -YA"
