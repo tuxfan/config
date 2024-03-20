@@ -24,3 +24,5 @@ else
   unset ECVS_PROXY
   unset ECVS_PROXY_PORT
 fi
+
+# vim: syntax=bash
