@@ -3,11 +3,9 @@
 ################################################################################
 
 #------------------------------------------------------------------------------#
-# Set clang-format for configure utility
+# Environment
 #------------------------------------------------------------------------------#
 
-export CONFIG_INSTALL_PREFIX=/home/bergen/packages/flecsi/core/leg-mpi
-export CONFIG_SCRIPT_GENERATOR=Ninja
 export CMAKE_EXPORT_COMPILE_COMMANDS=1
 
 #------------------------------------------------------------------------------#
