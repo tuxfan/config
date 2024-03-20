@@ -11,16 +11,10 @@ export CONFIG_SCRIPT_GENERATOR=Ninja
 export CMAKE_EXPORT_COMPILE_COMMANDS=1
 
 #------------------------------------------------------------------------------#
-# Proxy settings
-#------------------------------------------------------------------------------#
-
-[ -f $HOME/.bash.d/lanl-proxy ] && . $HOME/.bash.d/lanl-proxy
-
-#------------------------------------------------------------------------------#
 # Environment modules
 #------------------------------------------------------------------------------#
 
-module load compiler
+module load tbb oclfpga compiler-rt compiler
 
 #------------------------------------------------------------------------------#
 # Prompt colors
