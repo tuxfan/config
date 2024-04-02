@@ -18,7 +18,7 @@ export CMAKE_EXPORT_COMPILE_COMMANDS=1
 
 . $HOME/.config/bergen/bash.d/themes/bluegreen
 
-extra_pinfo="VM M1-Max"
+extra_pinfo="VM M1-Max (PERSONAL)"
 
 #------------------------------------------------------------------------------#
 # vim: syntax=sh
