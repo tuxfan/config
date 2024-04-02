@@ -48,7 +48,7 @@
   wls = worktree list
   wrm = worktree remove
   wadd = "!f() { git worktree add --track -b $1 ../$1 $2; }; f"
-  wnk = "!f() { git worktree remove $1 && git branch -D $1; }; f"
+  wnk = "!f() { git worktree remove --force $1 && git branch -D $1; }; f"
   wmv = worktree move
   ac = !git add -u && git commit
   sh = "!f() { git log --skip=$1 -n1 --format=format:\"%H\"; }; f"
