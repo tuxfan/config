@@ -19,7 +19,7 @@ export CONFIG_SCRIPT_GENERATOR=Ninja
 
 . $HOME/.config/bergen/bash.d/themes/blueish
 
-extra_pinfo="VM"
+extra_pinfo="VM (LANL)"
 
 #------------------------------------------------------------------------------#
 # vim: syntax=sh
