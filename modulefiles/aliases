@@ -34,6 +34,7 @@ set-alias top "htop -t"
 set-alias sc "systemctl"
 set-alias ssh "ssh -YA"
 set-alias nj "ninja"
+set-alias gu "(cd .config/bergen && git pull)"
 
 #------------------------------------------------------------------------------#
 # Vim
