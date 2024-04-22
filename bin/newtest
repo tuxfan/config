@@ -22,7 +22,7 @@ if(!$compiler) {
 }
 
 if(!$cxxflags) {
-	$cxxflags = "-g -O2 -std=c++17 -I.";
+	$cxxflags = "-g -O2 -std=c++20 -I.";
 }
 
 # create new directory for project
@@ -54,7 +54,7 @@ cmake_minimum_required(VERSION 3.12)
 project(Test LANGUAGES CXX C)
 
 set(CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_executable(test main.cc)
