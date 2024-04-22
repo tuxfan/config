@@ -129,6 +129,10 @@
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_A91ED9F6-A1F9-4545-B1C7-D4E404FF4AD0_selection</key>
 	<integer>0</integer>
+	<key>NeverWarnAboutShortLivedSessions_ADBAFBF6-6973-45D1-944C-B7AE1DEF0CD6</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_ADBAFBF6-6973-45D1-944C-B7AE1DEF0CD6_selection</key>
+	<integer>0</integer>
 	<key>NeverWarnAboutShortLivedSessions_D1BE358D-6650-458A-85F4-6A41576E63C7</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_D1BE358D-6650-458A-85F4-6A41576E63C7_selection</key>
@@ -4614,6 +4618,8 @@
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
 	<true/>
+	<key>ShowFullScreenTabBar</key>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
