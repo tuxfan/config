@@ -1,5 +1,5 @@
 ---------------------------------------------------------------------------------
--- lazy.nvim setup
+-- Lazy plugin manager inintialization
 ---------------------------------------------------------------------------------
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -26,7 +26,11 @@ vim.g.maplocalleader = '\\'
 require('lazy').setup('config.lazy', opts)
 
 ---------------------------------------------------------------------------------
--- Additional
+-- Keymaps
+---------------------------------------------------------------------------------
+require('config.keymaps')
+
+---------------------------------------------------------------------------------
+-- Color schemes
 ---------------------------------------------------------------------------------
 require('config.colorscheme')
-require('config.keymaps')
