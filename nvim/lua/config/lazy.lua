@@ -29,9 +29,13 @@ return {
   {
     'rose-pine/neovim',
     as = 'rose-pine',
+    lazy = false,
     config = function()
         vim.cmd('colorscheme rose-pine')
     end
   },
-  { 'theprimeagen/harpoon' }
+  {
+    'theprimeagen/harpoon',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+  }
 }

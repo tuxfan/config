@@ -1,4 +1,6 @@
-require('config.keymaps')
+---------------------------------------------------------------------------------
+-- lazy.nvim setup
+---------------------------------------------------------------------------------
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({
@@ -12,5 +14,19 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+---------------------------------------------------------------------------------
+-- Set mapleader before lazy setup.
+---------------------------------------------------------------------------------
+vim.g.mapleader = ' '
+vim.g.maplocalleader = '\\'
+
+---------------------------------------------------------------------------------
+-- lazy.nvim configuration
+---------------------------------------------------------------------------------
 require('lazy').setup('config.lazy', opts)
+
+---------------------------------------------------------------------------------
+-- Additional
+---------------------------------------------------------------------------------
 require('config.colorscheme')
+require('config.keymaps')
