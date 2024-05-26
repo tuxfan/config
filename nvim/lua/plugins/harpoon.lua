@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------
--- Include config directory
+-- Harpoon
 ---------------------------------------------------------------------------------
-require("config")
+return {
+  {
+    'theprimeagen/harpoon',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+  }
+}

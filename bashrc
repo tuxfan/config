@@ -148,6 +148,8 @@ fi
   prepend_path "$HOME/.config/nvim/local/lua-language-server/bin"
 [ -d $HOME/.config/nvim/local/tex-language-server ] &&
   prepend_path "$HOME/.config/nvim/local/tex-language-server/bin"
+[ -d $HOME/.config/nvim/local/node_modules/tree-sitter-cli ] &&
+  prepend_path "$HOME/.config/nvim/local/node_modules/tree-sitter-cli"
 
 prepend_path "$HOME/bin"
 

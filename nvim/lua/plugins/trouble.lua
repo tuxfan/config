@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------
--- Include config directory
+-- Trouble
 ---------------------------------------------------------------------------------
-require("config")
+return {
+  {
+    'folke/trouble.nvim',
+    dependencies = {
+      'nvim-tree/nvim-web-devicons'
+    }
+  }
+}
