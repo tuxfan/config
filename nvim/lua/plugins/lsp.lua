@@ -22,7 +22,7 @@ return {
     -- Dependencies
     -----------------------------------------------------------------------------
     dependencies = {
-      'williambomain/mason.nvim',
+      'williamboman/mason.nvim',
       {
         'williamboman/mason-lspconfig.nvim',
         opts = {

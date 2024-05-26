@@ -7,7 +7,7 @@ set home $::env(HOME)
 #------------------------------------------------------------------------------#
 
 #set-alias ls "ls --color"
-set-alias ls "exa"
+set-alias ls "eza"
 set-alias ll "ls -la"
 
 set-alias rm "rm -i"
