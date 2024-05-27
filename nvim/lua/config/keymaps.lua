@@ -40,6 +40,13 @@ vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 
 ---------------------------------------------------------------------------------
+-- Leap
+---------------------------------------------------------------------------------
+--vim.keymap.set({'n', 'x', 'o'}, 's',  '<Plug>(leap-forward)')
+--vim.keymap.set({'n', 'x', 'o'}, 'S',  '<Plug>(leap-backward)')
+--vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)')
+
+---------------------------------------------------------------------------------
 -- Telekasten
 ---------------------------------------------------------------------------------
 vim.keymap.set('n', '<leader>z', '<cmd>Telekasten panel<CR>')
