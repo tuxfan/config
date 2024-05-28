@@ -1,7 +1,9 @@
-# Test
+# ToDo Work
 
-Things that I like:
+* Review Brendan's MR
 
-* Cori
-* Motorcycles
-* Dogs
+# ToDo Personal
+
+* Clean smoker
+* Finish closet
+* Clean garage and reorganize
