@@ -5,6 +5,14 @@ vim.keymap.set('n', '<leader>dl', vim.cmd.Ex)
 vim.keymap.set('n', '<leader>h', function() vim.cmd('noh') end)
 
 ---------------------------------------------------------------------------------
+-- Neorg
+---------------------------------------------------------------------------------
+vim.keymap.set('n', '<leader>no', ':Neorg<CR>')
+vim.keymap.set('n', '<leader>ni', ':Neorg index<CR>')
+vim.keymap.set('n', '<leader>nr', ':Neorg return<CR>')
+vim.keymap.set('n', '<localleader>nc', ':Neorg toggle-concealer<CR>')
+
+---------------------------------------------------------------------------------
 -- Harpoon
 ---------------------------------------------------------------------------------
 local mark = require('harpoon.mark')
@@ -45,25 +53,6 @@ vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 --vim.keymap.set({'n', 'x', 'o'}, 's',  '<Plug>(leap-forward)')
 --vim.keymap.set({'n', 'x', 'o'}, 'S',  '<Plug>(leap-backward)')
 --vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)')
-
----------------------------------------------------------------------------------
--- Telekasten
----------------------------------------------------------------------------------
-vim.keymap.set('n', '<leader>z', '<cmd>Telekasten panel<CR>')
-vim.keymap.set('n', '<leader>c', '<cmd>Calendar<CR>')
-
--- Most used functions
-vim.keymap.set("n", "<leader>zf", "<cmd>Telekasten find_notes<CR>")
-vim.keymap.set("n", "<leader>zg", "<cmd>Telekasten search_notes<CR>")
-vim.keymap.set("n", "<leader>zd", "<cmd>Telekasten goto_today<CR>")
-vim.keymap.set("n", "<leader>zz", "<cmd>Telekasten follow_link<CR>")
-vim.keymap.set("n", "<leader>zn", "<cmd>Telekasten new_note<CR>")
-vim.keymap.set("n", "<leader>zc", "<cmd>Telekasten show_calendar<CR>")
-vim.keymap.set("n", "<leader>zb", "<cmd>Telekasten show_backlinks<CR>")
-vim.keymap.set("n", "<leader>zI", "<cmd>Telekasten insert_img_link<CR>")
-
--- Call insert link automatically when we start typing a link
-vim.keymap.set("i", "[[", "<cmd>Telekasten insert_link<CR>")
 
 ---------------------------------------------------------------------------------
 -- Trouble

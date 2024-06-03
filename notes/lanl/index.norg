@@ -1,0 +1,12 @@
+* *LANL* Notes
+** [FleCSI-SP]{:projects/flecsi-sp:}
+** [CEA/DOE]{:projects/cea.norg:}
+** [DOE/MEXT]{:projects/mext.norg:}
+
+* *TODO*
+  - ( ) Setup DOE/MEXT Seminar
+
+@code cpp
+for(auto f: m.cells()) {
+} // 
+@end
