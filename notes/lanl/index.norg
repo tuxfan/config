@@ -1,12 +1,12 @@
-* *LANL* Notes
+*LANL Notes*
+
+* *TODO*
+  - (x) Setup DOE/MEXT Seminar
+
+* *Projects*
 ** [FleCSI-SP]{:projects/flecsi-sp:}
 ** [CEA/DOE]{:projects/cea.norg:}
 ** [DOE/MEXT]{:projects/mext.norg:}
 
-* *TODO*
-  - ( ) Setup DOE/MEXT Seminar
-
-@code cpp
-for(auto f: m.cells()) {
-} // 
-@end
+* *System Setup*
+** [Ubuntu 24.04]{:setup/ubuntu-24.04:}
