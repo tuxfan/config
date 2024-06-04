@@ -1,0 +1,17 @@
+#! /usr/bin/env bash
+
+if [ "$#" -ne 1 ] ; then
+  echo "Usage:" `echo $0 | sed 's,^.*/,,g'` "<command (status|pull|push)>"
+fi
+
+case $1 in
+  status)
+    (cd ~/.config/bergen && git status)
+  ;;
+  pull)
+    (cd ~/.config/bergen && git pull)
+  ;;
+  push)
+    (cd ~/.config/bergen && git add -u && git commit -m "Updates")
+  ;;
+esac

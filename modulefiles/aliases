@@ -36,6 +36,8 @@ set-alias sc "systemctl"
 set-alias ssh "ssh -YA"
 set-alias nj "ninja"
 set-alias gu "(cd .config/bergen && git pull)"
+set-alias gs "(cd .config/bergen && git st)"
+set-alias gp "(cd .config/bergen && git add -u && git commit -m 'Updates')"
 
 #------------------------------------------------------------------------------#
 # Vim
