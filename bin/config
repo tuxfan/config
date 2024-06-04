@@ -5,13 +5,13 @@ if [ "$#" -ne 1 ] ; then
 fi
 
 case $1 in
-  status)
+  status|st)
     (cd ~/.config/bergen && git status)
   ;;
-  pull)
+  pull|pl)
     (cd ~/.config/bergen && git pull)
   ;;
-  push)
-    (cd ~/.config/bergen && git add -u && git commit -m "Updates")
+  push|pu)
+    (cd ~/.config/bergen && git add -u && git commit -m "Updates" && git push)
   ;;
 esac
