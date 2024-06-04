@@ -31,6 +31,7 @@ return {
             'dockerls',
             'jsonls',
             'lua_ls',
+	    'marksman',
             'pyright',
             'texlab',
             'yamlls'
