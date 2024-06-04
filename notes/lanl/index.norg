@@ -4,10 +4,10 @@
   - (x) Setup DOE/MEXT Seminar
 
 * *Projects*
-** [FleCSI-SP]{:projects/flecsi-sp:}
-** [CEA/DOE]{:projects/cea.norg:}
-** [DOE/MEXT]{:projects/mext.norg:}
-** [CDSS]{:projects/cdss.norg:}
+** [FleCSI-SP]{:projects/sp/index:}
+** [CEA/DOE]{:projects/cea/index:}
+** [DOE/MEXT]{:projects/mext/index:}
+** [CDSS]{:projects/cdss/index:}
 
 * *System Setup*
 ** [Ubuntu 24.04]{:setup/ubuntu-24.04:}
