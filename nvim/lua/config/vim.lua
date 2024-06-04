@@ -14,6 +14,7 @@ vim.o.cursorline   = true
 vim.o.cursorcolumn = true
 vim.o.hlsearch     = true
 vim.o.incsearch    = true
+vim.o.foldlevel    = 99
 
 ---------------------------------------------------------------------------------
 -- Remember last cursor position

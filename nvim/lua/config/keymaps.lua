@@ -10,6 +10,7 @@ vim.keymap.set('n', '<leader>h', function() vim.cmd('noh') end)
 vim.keymap.set('n', '<leader>no', ':Neorg<CR>')
 vim.keymap.set('n', '<leader>ni', ':Neorg index<CR>')
 vim.keymap.set('n', '<leader>nr', ':Neorg return<CR>')
+vim.keymap.set('n', '<leader>nw', ':Neorg workspace')
 vim.keymap.set('n', '<localleader>nc', ':Neorg toggle-concealer<CR>')
 
 ---------------------------------------------------------------------------------
