@@ -1,0 +1,52 @@
+#! /usr/bin/env bash
+
+C1="\033[0;30m" # Black
+C2="\033[1;30m" # Dark Gray
+C3="\033[0;31m" # Red
+C4="\033[1;31m" # Light Red
+C5="\033[0;32m" # Green
+C6="\033[1;32m" # Light Green
+C7="\033[0;33m" # Brown
+C8="\033[1;33m" # Yellow
+C9="\033[0;34m" # Blue
+C10="\033[1;34m" # Light Blue
+C11="\033[0;35m" # Purple
+C12="\033[1;35m" # Light Purple
+C13="\033[0;36m" # Cyan
+C14="\033[1;36m" # Light Cyan
+C15="\033[0;37m" # Light Gray
+C16="\033[1;37m" # White
+P="\033[0m" # Neutral
+
+if [ "$#" -ne 1 ] ; then
+  echo "Usage:" `echo $0 | sed 's,^.*/,,g'` "<command (st|pl|ad|an|pu|cm)>"
+  echo
+  echo -e "$C5""Commands:""$P"
+  echo -e "$C13""  st git status"
+  echo -e "$C13""  pl git pull"
+  echo -e "$C13""  ad git add -u"
+  echo -e "$C13""  aa git add -A"
+  echo -e "$C13""  pu git push"
+  echo -e "$C13""  cm git commit -m 'Updates'"
+fi
+
+case $1 in
+  st)
+    (cd ~/.config/bergen && git status)
+  ;;
+  pl)
+    (cd ~/.config/bergen && git pull)
+  ;;
+  ad)
+    (cd ~/.config/bergen && git add -u)
+  ;;
+  aa)
+    (cd ~/.config/bergen && git add -A)
+  ;;
+  pu)
+    (cd ~/.config/bergen && git push)
+  ;;
+  cm)
+    (cd ~/.config/bergen && git commit -m "Updates")
+  ;;
+esac
