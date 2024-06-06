@@ -7,6 +7,6 @@ apt install -y net-tools build-essential gfortran clang unzip gnupg2 \
 python3-dev lmod ninja-build doxygen subversion python3-pip htop \
 cmake-curses-gui pkg-config graphviz bear python3-sphinx \
 python3-sphinx-rtd-theme neovim ca-certificates nodejs npm gettext xsel \
-ripgrep fd-find eza pdftoppm texlive texlive-latex-extra
+ripgrep fd-find eza pdftoppm texlive texlive-latex-extra mupdf
 
 systemctl enable apport.service
