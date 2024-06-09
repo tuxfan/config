@@ -2,11 +2,15 @@
 
 * *TODO*
   - (x) Setup DOE/MEXT Seminar
-  - ( ) Make slides for CEA meeting
-  -- Andrew will send beamer example
+  - (x) Make slides for CEA meeting
+  -- (x) Andrew will send beamer example
   - (x) Follow up on car rental
   - (x) Finish updates to /flastro/
-  - ( ) Write-up notes with Jimmy
+  - (_) Write-up notes with Jimmy
+  - ( ) Update CEA Slides
+  - ( ) Cleanup home directories
+  - ( ) Finish setup of LSP
+  - ( ) Pickup LoFT stuff
 
 * *Projects*
 ** [FleCSI-SP]{:projects/sp/index:}
@@ -16,3 +20,10 @@
 
 * *System Setup*
 ** [Ubuntu 24.04]{:setup/ubuntu-24.04:}
+
+* *Hydro*
+  - Svetlana Tokareva (T-5) tokareva@lanl.gov, 7-9100
+  -- SGH methods, MOF2 (Momemtum of Fluids)
+  -- SGH (similar to LLNL) matrix-free FEM.
+  -- Bernstein polynomials
+  -- One of her codes has different EOS per cell
