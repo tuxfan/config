@@ -19,7 +19,7 @@ C16="\033[1;37m" # White
 P="\033[0m" # Neutral
 
 if [ "$#" -ne 1 ] ; then
-  echo "Usage:" `echo $0 | sed 's,^.*/,,g'` "<command (st|pl|ad|an|pu|cm)>"
+  echo "Usage:" `echo $0 | sed 's,^.*/,,g'` "<command (st|ft|pl|ad|an|pu|cm)>"
   echo
   echo -e "$C5""Commands:""$P"
   echo -e "$C13""  st git status"
@@ -34,6 +34,9 @@ fi
 case $1 in
   st)
     (cd ~/.config/bergen && git status)
+  ;;
+  ft)
+    (cd ~/.config/bergen && git fetch)
   ;;
   pl)
     (cd ~/.config/bergen && git pull)
