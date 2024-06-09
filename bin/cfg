@@ -23,6 +23,7 @@ if [ "$#" -ne 1 ] ; then
   echo
   echo -e "$C5""Commands:""$P"
   echo -e "$C13""  st git status"
+  echo -e "$C13""  ft git fetch"
   echo -e "$C13""  pl git pull"
   echo -e "$C13""  ad git add -u"
   echo -e "$C13""  aa git add -A"
