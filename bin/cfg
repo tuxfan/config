@@ -30,6 +30,9 @@ if [ "$#" -ne 1 ] ; then
   echo -e "$C13""  pu git push"
   echo -e "$C13""  cm git commit -m 'Updates'"
   echo -e "$C13""  al aa && cm && pu"
+  echo
+  (cd ~/.config/bergen && git status)
+  exit
 fi
 
 case $1 in

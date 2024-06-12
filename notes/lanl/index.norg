@@ -11,13 +11,14 @@
   - (x) Email Miwako about recording
   - ( ) Cleanup home directories
   - ( ) Finish setup of LSP
+  - ( ) Cleanup domains in fvm, fdm
   - (!) Pickup LoFT stuff
   - (!) Get shipping stuff for LoFT
-  - ( ) Cleanup domains in fvm, fdm
-  - ( ) Email Nathaniel to talk about hydro requirements
+  - (!) Get presentations off of pro
 
 * *Projects*
 ** [FleCSI-SP]{:projects/sp/index:}
+** [FleCSI]{:projects/flecsi/index:}
 ** [CEA/DOE]{:projects/cea/index:}
 ** [DOE/MEXT]{:projects/mext/index:}
 ** [CDSS]{:projects/cdss/index:}

@@ -1,0 +1,12 @@
+_*FleCSI Notes*_
+
+* Wish List
+  - Task variant support/interface type
+  - Concurrent I/O
+  - Analysis Interface (could be unnecessary with task attribute updates)
+  - Multi-material data structures
+  - Performance improvements
+  - Checkpoint/Restart
+  - GPU mutator support for sparse and ragged
+  - Runtime configuration/discovery as needed for mapper development
+  - What topology developments are planned? E.g., set?
