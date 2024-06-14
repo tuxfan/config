@@ -15,6 +15,12 @@
   - (!) Pickup LoFT stuff
   - (!) Get shipping stuff for LoFT
   - (!) Get presentations off of pro
+  - ( ) Update fdm with new flecsi
+  -- ( ) Remove std::unique_ptr
+  -- ( ) Potentially update to runtime dimension selection
+  - (!) Respond to Svetlana
+  - (!) Email Si about Julien's funding
+  - (!) Send CJ's slides and schedule planning meeting for MEXT
 
 * *Projects*
 ** [FleCSI-SP]{:projects/sp/index:}

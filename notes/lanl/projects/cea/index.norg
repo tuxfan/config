@@ -13,6 +13,23 @@ _*CEA/DOE Notes*_
   - Deadline: August (proposal), September (Abstracts)
   - March 3-7
   - Dallas, TX
-  - Navamita will write an abstract.
+  - (x) Navamita will write an abstract.
   - Possible presentation of CDSS results.
-  - Discuss at annual meeting.
+  - ( ) Discuss at annual meeting.
+
+* Seminars (To Date)
+  - High Performance Multiphysics Applications in the Post-Exascale Era
+  -- Rob Rieben (LLNL)
+  -- Friday, March 29th
+  - Mixed-Use of MPI & OpenMP with Dependent Tasks
+  -- Romain Pereira (Inrea)
+  -- Friday, April 5th
+  - Advanced Systems Overview - Crossroads
+  -- Galen M. Shipman (LANL)
+  -- Friday, April 12th
+  - NVIDIA's BlueField DPU: A communication Library Accelerator
+  -- Richard Graham (Nvidia)
+  -- Friday, April 26th
+  - Turning GPUs into Data Access Monsters
+  -- CJ Newburn (Nvidia) & Vikram Sharma Mailthody (Nvidia)
+  -- Friday, June 7th
