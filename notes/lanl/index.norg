@@ -12,9 +12,9 @@
   - ( ) Cleanup home directories
   - ( ) Finish setup of LSP
   - ( ) Cleanup domains in fvm, fdm
-  - (!) Pickup LoFT stuff
-  - (!) Get shipping stuff for LoFT
-  - (!) Get presentations off of pro
+  - (x) Pickup LoFT stuff
+  - (_) Get shipping stuff for LoFT
+  - (x) Get presentations off of pro
   - ( ) Update fdm with new flecsi
   -- ( ) Remove std::unique_ptr
   -- ( ) Potentially update to runtime dimension selection
