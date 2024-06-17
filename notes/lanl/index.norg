@@ -1,29 +1,14 @@
 *LANL Notes*
 
 * *TODO*
-  - (x) Setup DOE/MEXT Seminar
-  - (x) Make slides for CEA meeting
-  -- (x) Andrew will send beamer example
-  - (x) Follow up on car rental
-  - (x) Finish updates to /flastro/
-  - (x) Write-up notes with Jimmy
-  - (x) Update CEA Slides
-  - (x) Email Miwako about recording
-  - ( ) Cleanup home directories
+  - (x) Cleanup home directories
   - ( ) Finish setup of LSP
   - ( ) Cleanup domains in fvm, fdm
-  - (x) Pickup LoFT stuff
-  - (_) Get shipping stuff for LoFT
-  - (x) Get presentations off of pro
   - ( ) Update fdm with new flecsi
   -- ( ) Remove std::unique_ptr
   -- ( ) Potentially update to runtime dimension selection
   - (!) Respond to Svetlana
   - (!) Email Si about Julien's funding
-  - ( ) CJ's Talk
-  -- (!) Send CJ's slides
-  -- ( ) Schedule planning meeting for MEXT
-  -- ( ) Ask CJ about open-sourcing his interoperability tools
 
 * *Projects*
 ** [FleCSI-SP]{:projects/sp/index:}

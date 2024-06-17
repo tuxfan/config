@@ -1,38 +1,11 @@
 _*DOE/MEXT Notes*_
 
-* To Interoperability And Beyond: Interoperable Types Through the Promises of C and C++ and ABI Abuse 
-  -- CJ Solomon
-  -- June 13
+* TODO
+  - (-) CJ's Talk
+  -- (x) Send CJ's slides
+  -- ( ) Schedule planning meeting for MEXT
+  -- (x) Ask CJ about open-sourcing his interoperability tools
+  - (x) Add rouson@lbl.gov Damien Rouson
 
-  iso_c_binding?
-  mdspan is a possible tool for future use
-  preserve constness/intentness
-  compilers can only do so much to help with ABI compatibility
-  value keyword: pass by value
-  ISO_Fortran_binding.h
-  dope vector: a data structure to hold metadata about an object
-  EAP creates their own dope vector, drops type information
-  - Does that give you some portability across compilers?
-  - Sort of gives some runtime introspection
-
-  Do both sides of the interop use the same type from python?
-  -- No: it seems like the fortran type is the actual definition
-     Lack of introspection makes the C++ side challenging...
-     200 lines of code for the template metaprogramming (not too bad)
-
-  What do you actually end up having to maintain?
-
-  The transform_fn type is similar to our serialization logic
-  -- Were you able to implement everything with the two function templates in transform_fn?
-
-  Keita did a presentation on C++
-  lenara forge, totalview or gdb
-
-  Debugging and tools could be a future topic.
-  Flickl (SNL)
-
-  Had started with flickl, but language standard developments helped
-
-  Python converter available? Could we open source
-
-  Add rouson@lbl.gov Damien Rouson
+* Seminars
+  [June 13]{:seminars/2024-06-13:}
