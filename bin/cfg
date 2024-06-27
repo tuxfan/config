@@ -23,6 +23,7 @@ if [ "$#" -ne 1 ] ; then
   echo
   echo -e "$C5""Commands:""$P"
   echo -e "$C13""  st git status""$P"
+  echo -e "$C13""  df git diff""$P"
   echo -e "$C13""  ft git fetch""$P"
   echo -e "$C13""  pl git pull""$P"
   echo -e "$C13""  ad git add -u""$P"
@@ -38,6 +39,9 @@ fi
 case $1 in
   st)
     (cd ~/.config/bergen && git status)
+  ;;
+  df)
+    (cd ~/.config/bergen && git diff)
   ;;
   ft)
     (cd ~/.config/bergen && git fetch)
