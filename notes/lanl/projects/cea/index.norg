@@ -8,7 +8,13 @@ _*CEA/DOE Notes*_
   -- (x) CDSS slide
   -- (x) Problem/methods slide
   - (x) Update CDWG slides
-  - (!) Setup call after annual meeting for planning.
+  - (!) Setup meeting for CEA leads after July 15th
+  -- (!) Should push for publications in planning
+  - (!) Talk with Brendan about presenting FleCSI ragged/sparse strategies
+  -- Francois Letierce (CEA)
+  -- Look for performance for std::variant
+  -- Look at variant example to be able to articulate data/interface design
+  -- Consider joint paper on data structures for multi-material/multi-model.
 
 * Travel Expenses
   - *Hotel* 821 (EUR) -> $880.36
