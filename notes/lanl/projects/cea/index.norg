@@ -8,8 +8,8 @@ _*CEA/DOE Notes*_
   -- (x) CDSS slide
   -- (x) Problem/methods slide
   - (x) Update CDWG slides
-  - (!) Setup meeting for CEA leads after July 15th
-  -- (!) Should push for publications in planning
+  - (x) Setup meeting for CEA leads after July 15th
+  -- (x) Should push for publications in planning
   - (!) Talk with Brendan about presenting FleCSI ragged/sparse strategies
   -- Francois Letierce (CEA)
   -- Look for performance for std::variant
@@ -19,6 +19,14 @@ _*CEA/DOE Notes*_
 * Travel Expenses
   - *Hotel* 821 (EUR) -> $880.36
   -- Rate: 1.07230207064555420219
+  - *Reimbursement* $2833.14
+  -- Hotel Rate: $175.58
+  -- Rental Car: $935.48
+  --- $103.94 (9 days total)
+  --- $415.77 (5 days personal)
+  -- Total for personal: $591.35
+  -- Chase Infinite: $1815.84
+  -- *Remain* $425.95
 
 * SIAM CSE25
   - Deadline: August (proposal), September (Abstracts)
