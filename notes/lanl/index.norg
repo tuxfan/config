@@ -8,11 +8,20 @@
   -- ( ) Remove std::unique_ptr
   -- ( ) Potentially update to runtime dimension selection
   - (!) Respond to Svetlana
-  - (!) Email Si about Julien's funding
-  - (!) Ask Kevin Pedretti (LLNL) about his workflow for CaaS
-  - (!) Ask Edgar about quovadis
+  - (x) Email Si about Julien's funding
+  - (x) Ask Kevin Pedretti (LLNL) about his workflow for CaaS
+  - (x) Ask Edgar about quovadis
+  - ( ) Think about tasks for Patrick
+  -- FleCSI support for multiple execution spaces
+  --- Include Davis and Philipp in meeting
+  -- ( ) Tasks for FY24
+  -- ( ) Funding for FY25?
+  -- ( ) Setup meeting for next week
+  - ( ) Think about proposal for LDRD call (inter-lab) with Jan and Patrick
+  -- Is there a multi-physics angle?
 
 * *Projects*
+** [CSSE]{:projects/csse/index:}
 ** [FleCSI-SP]{:projects/sp/index:}
 ** [FleCSI]{:projects/flecsi/index:}
 ** [CEA/DOE]{:projects/cea/index:}
