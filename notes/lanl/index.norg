@@ -8,9 +8,6 @@
   -- ( ) Remove std::unique_ptr
   -- ( ) Potentially update to runtime dimension selection
   - (!) Respond to Svetlana
-  - (x) Email Si about Julien's funding
-  - (x) Ask Kevin Pedretti (LLNL) about his workflow for CaaS
-  - (x) Ask Edgar about quovadis
   - ( ) Think about tasks for Patrick
   -- ( ) FleCSI support for multiple execution spaces
   --- ( ) Include Davis and Philipp in meeting
