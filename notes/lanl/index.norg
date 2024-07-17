@@ -4,8 +4,9 @@
   - (x) Cleanup home directories
   - ( ) Finish setup of LSP
   - ( ) Cleanup domains in fvm, fdm
-  - ( ) Update fdm with new flecsi
-  -- ( ) Remove std::unique_ptr
+  -- I don't remember what this means...
+  - (-) Update fdm with new flecsi
+  -- (x) Remove std::unique_ptr
   -- ( ) Potentially update to runtime dimension selection
   - (!) Respond to Svetlana
   - ( ) Think about tasks for Patrick
@@ -14,10 +15,11 @@
   -- ( ) Tasks for FY24
   -- ( ) Funding for FY25?
   -- ( ) Setup meeting for next week
-  - (x) Think about proposal for LDRD call (inter-lab) with Jan and Patrick
+  - (-) Think about proposal for LDRD call (inter-lab) with Jan and Patrick
   -- Is there a multi-physics angle?
   -- Ben, Philipp, Patrick, Hyun, and Jan (SNL)
   -- (x) Setup meeting for next week
+  -- ( ) Talk with Dave Rich about AI/ML resources
 
 * *Projects*
 ** [CSSE]{:projects/csse/index:}
