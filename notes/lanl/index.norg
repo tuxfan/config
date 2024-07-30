@@ -8,18 +8,23 @@
   - (-) Update fdm with new flecsi
   -- (x) Remove std::unique_ptr
   -- ( ) Potentially update to runtime dimension selection
-  - (!) Respond to Svetlana
-  - ( ) Think about tasks for Patrick
-  -- ( ) FleCSI support for multiple execution spaces
-  --- ( ) Include Davis and Philipp in meeting
-  -- ( ) Tasks for FY24
-  -- ( ) Funding for FY25?
-  -- ( ) Setup meeting for next week
-  - (-) Think about proposal for LDRD call (inter-lab) with Jan and Patrick
+  - (x) Respond to Svetlana
+  - (x) Think about tasks for Patrick
+  -- (x) FleCSI support for multiple execution spaces
+  --- (x) Include Davis and Philipp in meeting
+  -- (x) Tasks for FY24
+  -- (x) Funding for FY25?
+  -- (x) Setup meeting for next week
+  - (x) Think about proposal for LDRD call (inter-lab) with Jan and Patrick
   -- Is there a multi-physics angle?
   -- Ben, Philipp, Patrick, Hyun, and Jan (SNL)
   -- (x) Setup meeting for next week
-  -- ( ) Talk with Dave Rich about AI/ML resources
+  -- (x) Talk with Dave Rich about AI/ML resources
+  - (x) Issue 45 in flecsi (look at interface for predicates)
+  - (!) Schedule follow-up meeting with John Patchett to discuss strategies to maintain relevace for ASC.
+  - ( ) Submit talk proposal for MEXT meeting
+  - (x) Cancel rental
+  - (_) Schedule sp meeting for tomorrow
 
 * *Projects*
 ** [CSSE]{:projects/csse/index:}
