@@ -1,30 +1,15 @@
 *LANL Notes*
 
 * *TODO*
-  - (x) Cleanup home directories
-  - ( ) Finish setup of LSP
   - ( ) Cleanup domains in fvm, fdm
   -- I don't remember what this means...
-  - (-) Update fdm with new flecsi
+  - (=) Update fdm with new flecsi
   -- (x) Remove std::unique_ptr
-  -- ( ) Potentially update to runtime dimension selection
-  - (x) Respond to Svetlana
-  - (x) Think about tasks for Patrick
-  -- (x) FleCSI support for multiple execution spaces
-  --- (x) Include Davis and Philipp in meeting
-  -- (x) Tasks for FY24
-  -- (x) Funding for FY25?
-  -- (x) Setup meeting for next week
-  - (x) Think about proposal for LDRD call (inter-lab) with Jan and Patrick
-  -- Is there a multi-physics angle?
-  -- Ben, Philipp, Patrick, Hyun, and Jan (SNL)
-  -- (x) Setup meeting for next week
-  -- (x) Talk with Dave Rich about AI/ML resources
-  - (x) Issue 45 in flecsi (look at interface for predicates)
+  -- (=) Potentially update to runtime dimension selection
   - (!) Schedule follow-up meeting with John Patchett to discuss strategies to maintain relevace for ASC.
   - ( ) Submit talk proposal for MEXT meeting
-  - (x) Cancel rental
-  - (_) Schedule sp meeting for tomorrow
+  - ( ) Work on project highlights
+  - ( ) Get invitation for Svetlana for CDSS code walkthrough
 
 * *Projects*
 ** [CSSE]{:projects/csse/index:}
