@@ -14,7 +14,7 @@ set-alias rm "rm -i"
 set-alias cp "cp -i"
 set-alias mv "mv -i"
 
-set-alias rfg "ssh mb finger"
+set-alias rfg "ssh m2 finger"
 
 #------------------------------------------------------------------------------#
 # Environment Modules
