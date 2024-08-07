@@ -10,6 +10,9 @@
   - ( ) Submit talk proposal for MEXT meeting
   - ( ) Work on project highlights
   - ( ) Get invitation for Svetlana for CDSS code walkthrough
+  - ( ) Check mechanism to store rkN data
+  - ( ) Look at how to do dynamic selection of halo depth
+  - ( ) Ask John about funding for Postdoc
 
 * *Projects*
 ** [CSSE]{:projects/csse/index:}
@@ -28,3 +31,7 @@
   -- SGH (similar to LLNL) matrix-free FEM.
   -- Bernstein polynomials
   -- One of her codes has different EOS per cell
+
+* Brendan Tasking
+  - FY25
+  -- ( ) Set topology development
