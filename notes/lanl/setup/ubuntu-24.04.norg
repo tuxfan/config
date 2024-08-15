@@ -3,10 +3,9 @@
 apt update
 apt upgrade -y
 
-apt install -y net-tools build-essential gfortran clang unzip gnupg2 \
-python3-dev lmod ninja-build doxygen subversion python3-pip htop \
-cmake-curses-gui pkg-config graphviz bear python3-sphinx \
-python3-sphinx-rtd-theme neovim ca-certificates nodejs npm gettext xsel \
-ripgrep fd-find eza pdftoppm texlive texlive-latex-extra mupdf
+apt install -y net-tools build-essential gfortran clang unzip gnupg2 python3-dev lmod ninja-build doxygen subversion python3-pip htop cmake-curses-gui pkg-config graphviz bear python3-sphinx python3-sphinx-rtd-theme neovim ca-certificates nodejs npm gettext xsel ripgrep fd-find eza poppler-utils texlive texlive-latex-extra mupdf lua5.1 luarocks
 
 systemctl enable apport.service
+
+# In .config/nvim/local
+npm install tree-sitter-cli
