@@ -3,12 +3,8 @@
 * *TODO*
   - ( ) Cleanup domains in fvm, fdm
   -- I don't remember what this means...
-  - (=) Update fdm with new flecsi
-  -- (x) Remove std::unique_ptr
-  -- (=) Potentially update to runtime dimension selection
   - (!) Schedule follow-up meeting with John Patchett to discuss strategies to maintain relevace for ASC.
   - ( ) Submit talk proposal for MEXT meeting
-  - (x) Work on project highlights
   - ( ) Check mechanism to store rkN data
   - ( ) Look at how to do dynamic selection of halo depth
   - ( ) Ask John about funding for Postdoc
