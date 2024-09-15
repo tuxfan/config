@@ -17,18 +17,6 @@ _*CEA/DOE Notes*_
   -- ( ) Look at variant example to be able to articulate data/interface design
   -- ( ) Consider joint paper on data structures for multi-material/multi-model.
 
-* Travel Expenses
-  - *Hotel* 821 (EUR) -> $880.36
-  -- Rate: 1.07230207064555420219
-  - *Reimbursement* $2833.14
-  -- Hotel Rate: $175.58
-  -- Rental Car: $935.48
-  --- $103.94 (9 days total)
-  --- $415.77 (5 days personal)
-  -- Total for personal: $591.35
-  -- Chase Infinite: $1815.84
-  -- *Remain* $425.95
-
 * SIAM CSE25
   - Deadline: August (proposal), September (Abstracts)
   - March 3-7
