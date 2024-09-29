@@ -3,6 +3,10 @@ _*FleCSI-SP Notes*_
 * Developement
   [SGH]{:code/sgh:}
 
-* *Minutes*
-  [May 28]{:minutes/2024-05-28:}
-  [June 11]{:minutes/2024-06-11:}
+* Hyun Discussion
+  - Need to look at xRage input deck to understand details
+  -- Implosion dynamics, Richtmyer-Meshkov instatbilities
+  -- xRage is ~40 hours for multigroup
+  --- Unsplit hydro isn't as good
+  -- Gordon Olson - Papers on multigroup diffusion
+  - Doesn't care about structured vs. unstructured
