@@ -4,12 +4,13 @@
   - ( ) Cleanup domains in fvm, fdm
   -- I don't remember what this means...
   - (!) Schedule follow-up meeting with John Patchett to discuss strategies to maintain relevace for ASC.
-  - ( ) Andrew
-  -- ( ) Check mechanism to store rkN data
-  -- ( ) Look at how to do dynamic selection of halo depth
+  - ( ) Check mechanism to store rkN data
+  - ( ) Look at how to do dynamic selection of halo depth
   - ( ) Ask about MultiMat 2025 session on computation
-  - ( ) Venado seminar possible in December: Ask Philipp
+  - (x) Venado seminar possible in December: Ask Philipp
+  - ( ) Multi-Material with Francois Letierce
   - (x) Update Hedlund allocation on CRES
+  - (x) Ask Christoph about Bobby's funding
 
 * *Projects*
 ** [CSSE]{:projects/csse/index:}
@@ -21,17 +22,3 @@
 
 * *System Setup*
 ** [Ubuntu 24.04]{:setup/ubuntu-24.04:}
-
-* *Hydro*
-  - Svetlana Tokareva (T-5) tokareva@lanl.gov, 7-9100
-  -- SGH methods, MOF2 (Momemtum of Fluids)
-  -- SGH (similar to LLNL) matrix-free FEM.
-  -- Bernstein polynomials
-  -- One of her codes has different EOS per cell
-
-* Brendan Tasking
-  - FY25
-  -- ( ) Set topology development
-
-* CEA Contact
-  - ( ) Multi-Material with Francois Letierce
