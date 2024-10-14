@@ -26,4 +26,9 @@ if args.pas:
 
 debug="mpirun -np " + args.processes + " xterm -e cgdb " + \
     args.program + " " + exstr
+
+wd = os.getenv('PDB_WORKING_DIRECTORY')
+if wd is not None:
+    os.chdir(wd)
+
 os.system(debug)
