@@ -8,6 +8,7 @@
 
 export CMAKE_EXPORT_COMPILE_COMMANDS=1
 export CMAKE_GENERATOR=Ninja
+export CONFIG_SCRIPT_GENERATOR=Ninja
 
 #------------------------------------------------------------------------------#
 # Environment modules
