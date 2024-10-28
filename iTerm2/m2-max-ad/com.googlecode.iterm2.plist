@@ -135,9 +135,9 @@
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_ADBAFBF6-6973-45D1-944C-B7AE1DEF0CD6_selection</key>
 	<integer>0</integer>
-	<key>NeverWarnAboutShortLivedSessions_D1BE358D-6650-458A-85F4-6A41576E63C7</key>
+	<key>NeverWarnAboutShortLivedSessions_E342BBE2-2901-4DB4-964A-8E4A41946476</key>
 	<true/>
-	<key>NeverWarnAboutShortLivedSessions_D1BE358D-6650-458A-85F4-6A41576E63C7_selection</key>
+	<key>NeverWarnAboutShortLivedSessions_E342BBE2-2901-4DB4-964A-8E4A41946476_selection</key>
 	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
@@ -856,7 +856,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.31025780211103721</real>
+			<real>0.34223736702127666</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -1074,7 +1074,7 @@
 			<key>Columns</key>
 			<integer>100</integer>
 			<key>Command</key>
-			<string>/usr/local/bin/bash</string>
+			<string>/opt/homebrew/bin/bash</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1587,7 +1587,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.17552562295756449</real>
+			<real>0.35558550234170677</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -1809,7 +1809,7 @@
 			<key>Columns</key>
 			<integer>100</integer>
 			<key>Command</key>
-			<string>/usr/local/bin/bash</string>
+			<string>/opt/homebrew/bin/bash</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -2328,7 +2328,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.4990042530559467</real>
+			<real>0.23590584880062754</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -2550,7 +2550,7 @@
 			<key>Columns</key>
 			<integer>266</integer>
 			<key>Command</key>
-			<string>/usr/local/bin/bash</string>
+			<string>/opt/homebrew/bin/bash</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -3292,7 +3292,7 @@
 			<key>Columns</key>
 			<integer>86</integer>
 			<key>Command</key>
-			<string>/usr/local/bin/bash</string>
+			<string>/opt/homebrew/bin/bash</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -4053,7 +4053,7 @@
 			<key>Columns</key>
 			<integer>162</integer>
 			<key>Command</key>
-			<string>/usr/local/bin/bash</string>
+			<string>/opt/homebrew/bin/bash</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
