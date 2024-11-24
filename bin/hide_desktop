@@ -1,0 +1,8 @@
+hidden=`cat ~/Desktop/.state`
+if [ "$hidden" -eq 1 ] ; then
+  `chflags nohidden ~/Desktop/*`
+  `echo 0 > ~/Desktop/.state`
+else
+  `chflags hidden ~/Desktop/*`
+  `echo 1 > ~/Desktop/.state`
+fi
