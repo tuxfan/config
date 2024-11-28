@@ -31,6 +31,7 @@ return {
         "json",
         "make",
         "markdown",
+        "norg",
         "latex",
         "lua",
         "python",
