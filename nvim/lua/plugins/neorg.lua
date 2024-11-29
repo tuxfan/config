@@ -16,7 +16,7 @@ return {
           ['core.dirman'] = {
             config = {
               workspaces = {
-                notes = '~/.notes/personal',
+                notes = '~/.notes/notes',
                 lanl = '~/.notes/lanl'
               },
               default_workspace = 'lanl'
