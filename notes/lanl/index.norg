@@ -1,4 +1,4 @@
-*LANL Notes*
+_*LANL Notes*_
 
 * *TODO*
   - ( ) Cleanup domains in fvm, fdm
@@ -9,13 +9,10 @@
   - ( ) Ask about MultiMat 2025 session on computation
   - ( ) Multi-Material with Francois Letierce
 
-* *Projects*
-** [CSSE]{:projects/csse/index:}
-** [FleCSI-SP]{:projects/sp/index:}
-** [FleCSI]{:projects/flecsi/index:}
-** [CEA/NNSA]{:projects/cea/index:}
-** [DOE/MEXT]{:projects/mext/index:}
-** [CDSS]{:projects/cdss/index:}
+* [Projects]{:1-projects/index:}
+* [Areas]{:2-areas/index:}
+* [Resources]{:3-resources/index:}
+* [Archives]{:4-archives/index:}
 
 * *System Setup*
 ** [Ubuntu 24.04]{:setup/ubuntu-24.04:}
