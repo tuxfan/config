@@ -34,4 +34,3 @@ if wd is not None:
 print("command:", debug)
 print("set working directory:", wd)
 os.system(debug)
-os.system(debug)

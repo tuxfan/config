@@ -25,13 +25,13 @@ vim.keymap.set('n', '<C-e>', ui.toggle_quick_menu)
 ---------------------------------------------------------------------------------
 -- Telescope
 ---------------------------------------------------------------------------------
---local builtin = require('telescope.builtin')
+local builtin = require('telescope.builtin')
 
---vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
---vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
---vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
---vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
---vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
+vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
 
 ---------------------------------------------------------------------------------
 -- NVim Tree
@@ -60,17 +60,5 @@ end, { desc = "toggle diagnostic" })
 vim.keymap.set('n', '<leader>te', vim.cmd.DiagnosticToggle)
 
 ---------------------------------------------------------------------------------
--- Trouble
+-- Trouble keymaps are in plugin.
 ---------------------------------------------------------------------------------
---vim.keymap.set('n', '<leader>xx',
---  function() require('trouble').toggle() end)
---vim.keymap.set('n', '<leader>xw',
---  function() require('trouble').toggle('workspace_diagnostics') end)
---vim.keymap.set('n', '<leader>xd',
---  function() require('trouble').toggle('document_diagnostics') end)
---vim.keymap.set('n', '<leader>xq',
---  function() require('trouble').toggle('quickfix') end)
---vim.keymap.set('n', '<leader>xl',
---  function() require('trouble').toggle('loclist') end)
---vim.keymap.set('n', 'gR',
---  function() require('trouble').toggle('lsp_references') end)
