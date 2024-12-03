@@ -182,6 +182,18 @@ export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
 
 #------------------------------------------------------------------------------#
+# Run fixdate on VMs.
+#------------------------------------------------------------------------------#
+
+if [[ "$(sudo dmidecode | grep Vendor)" == *"Parallels"* ]]; then
+  fd=$(nc -vz google.com 443 2>&1)
+  if [[ "${fd}" == *"succeeded"* ]]; then
+    echo "Fixing Date"
+    $HOME/bin/fixdate
+  fi
+fi
+
+#------------------------------------------------------------------------------#
 # Config state.
 #------------------------------------------------------------------------------#
 
