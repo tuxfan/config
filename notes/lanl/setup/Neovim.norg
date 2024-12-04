@@ -1,0 +1,10 @@
+# Tree-Sitter CLI
+In ~/.config/nvim/local
+@code bash
+  npm install tree-sitter-cli
+@end
+
+# Neorg
+@code bash
+  apt install luarocks
+@end

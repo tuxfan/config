@@ -7,7 +7,7 @@ _*LANL Notes*_
   - ( ) Check mechanism to store rkN data
   - ( ) Look at how to do dynamic selection of halo depth
   - ( ) Ask about MultiMat 2025 session on computation
-  - ( ) Multi-Material with Francois Letierce
+  - ( ) Multi-Material with Francois Letierce [DON'T REMOVE]
 
 * [Projects]{:1-projects/index:}
 * [Areas]{:2-areas/index:}
@@ -16,3 +16,4 @@ _*LANL Notes*_
 
 * *System Setup*
 ** [Ubuntu 24.04]{:setup/ubuntu-24.04:}
+** [Neovim]{:setup/Neovim:}
