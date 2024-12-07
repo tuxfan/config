@@ -187,9 +187,12 @@ export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
 
 if [[ "$os" == "Linux" && "$(sudo dmidecode | grep Vendor)" == *"Parallels"* ]]; then
   fd=$(nc -vz google.com 443 2>&1)
-  if [[ "${fd}" == *"succeeded"* ]]; then
-    echo "Fixing Date"
-    $HOME/bin/fixdate
+  if [[ "$fd" == *"succeeded"* ]]; then
+    echo -e "$FG_CYAN""Checking Date""$NEUTRAL"
+    date=`$HOME/bin/fixdate 2>&1`
+    if [[ "$date" != *"no-leap"* ]]; then
+      echo -e "$FG_RED""$date""$NEUTRAL"
+    fi
   fi
 fi
 
