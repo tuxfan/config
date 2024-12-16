@@ -190,9 +190,7 @@ if [[ "$os" == "Linux" && "$(sudo dmidecode | grep Vendor)" == *"Parallels"* ]];
   if [[ "$fd" == *"succeeded"* ]]; then
     echo -e "$FG_CYAN""Checking Date""$NEUTRAL"
     date=`$HOME/bin/fixdate 2>&1`
-    if [[ "$date" != *"no-leap"* ]]; then
-      echo -e "$FG_RED""$date""$NEUTRAL"
-    fi
+    echo -e "$FG_CYAN""$date""$NEUTRAL"
   fi
 fi
 
