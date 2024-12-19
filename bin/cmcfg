@@ -49,8 +49,8 @@ aid in debugging code.
 may be a no-op for some compilers.
 
  $WH Compiler Options:$NE
-   $GR clang (default)$NE
-    gnu
+   $GR gnu (default)$NE
+    clang
     oneapi
 
  $WH Generator Options:$NE
@@ -116,12 +116,6 @@ noopt=0
 WARN="-Wall -Wundef -W -Wno-parentheses"
 PEDANTIC=""
 OPTIMIZATION="-O2"
-
-# clang
-#SCRIPT_C_COMPILER=clang
-#SCRIPT_CXX_COMPILER=clang++
-#C_FLAGS="-fcolor-diagnostics -ferror-limit=4"
-#CXX_FLAGS=$C_FLAGS
 
 # gnu
 SCRIPT_C_COMPILER=gcc
