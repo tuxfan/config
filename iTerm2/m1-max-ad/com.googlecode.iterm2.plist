@@ -4,8 +4,12 @@
 <dict>
 	<key>AutoCommandHistory</key>
 	<true/>
+	<key>CopySelection</key>
+	<true/>
 	<key>Default Bookmark Guid</key>
 	<string>ADBAFBF6-6973-45D1-944C-B7AE1DEF0CD6</string>
+	<key>EnterCopyModeAutomatically</key>
+	<true/>
 	<key>FocusFollowsMouse</key>
 	<true/>
 	<key>GlobalKeyMap</key>
