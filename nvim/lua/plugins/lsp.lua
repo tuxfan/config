@@ -28,6 +28,7 @@ return {
         opts = {
           ensure_installed = {
             'bashls',
+            'cmake',
             'dockerls',
             'jsonls',
             'lua_ls',

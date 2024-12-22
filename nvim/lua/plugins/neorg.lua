@@ -20,11 +20,11 @@ return {
                 lanl = '~/.notes/lanl'
               },
               default_workspace = 'lanl'
-            },
-            ['core.keybinds'] = {
-              config = {
-                default_keybinds = true
-              }
+            }
+          },
+          ['core.keybinds'] = {
+            config = {
+              default_keybinds = true
             }
           }
         },
