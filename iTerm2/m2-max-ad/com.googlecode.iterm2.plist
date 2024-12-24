@@ -127,10 +127,6 @@
 	<true/>
 	<key>MaxVertically</key>
 	<true/>
-	<key>NeverWarnAboutShortLivedSessions_A91ED9F6-A1F9-4545-B1C7-D4E404FF4AD0</key>
-	<true/>
-	<key>NeverWarnAboutShortLivedSessions_A91ED9F6-A1F9-4545-B1C7-D4E404FF4AD0_selection</key>
-	<integer>0</integer>
 	<key>NeverWarnAboutShortLivedSessions_ADBAFBF6-6973-45D1-944C-B7AE1DEF0CD6</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_ADBAFBF6-6973-45D1-944C-B7AE1DEF0CD6_selection</key>
@@ -856,7 +852,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.34223736702127666</real>
+			<real>0.31223736702127664</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -876,7 +872,7 @@
 			<key>Visual Bell</key>
 			<false/>
 			<key>Window Type</key>
-			<integer>0</integer>
+			<integer>15</integer>
 			<key>Working Directory</key>
 			<string>/Users/bergen</string>
 		</dict>
