@@ -11,10 +11,6 @@ _*LANL Notes*_
 
 * Windows Key: RF64G-N83FB-MBBPQ-FH7MF-F6YP2
 
-* Time Worked on PTO
-  - 12/25/24: 4 hours
-  - 12/29/24: 2 hours
-
 * [Projects]{:1-projects/index:}
 * [Areas]{:2-areas/index:}
 * [Resources]{:3-resources/index:}
@@ -22,4 +18,5 @@ _*LANL Notes*_
 
 * *System Setup*
 ** [Ubuntu 24.04]{:setup/ubuntu-24.04:}
+** [Windows 11]{:setup/Windows-11:}
 ** [Neovim]{:setup/Neovim:}
