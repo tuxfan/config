@@ -11,6 +11,11 @@ _*LANL Notes*_
 
 * Windows Key: RF64G-N83FB-MBBPQ-FH7MF-F6YP2
 
+* Notes MEXT Meeting 1/9/2025
+  - nvidia compiler work on clang/flang.
+  - ( ) Look at interoperabiltiy layer factorization.
+  - ( ) Ask Galen is he can attend.
+
 * [Projects]{:1-projects/index:}
 * [Areas]{:2-areas/index:}
 * [Resources]{:3-resources/index:}
