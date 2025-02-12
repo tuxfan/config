@@ -32,7 +32,6 @@ return {
         "make",
         "markdown",
         "norg",
-        "latex",
         "lua",
         "python",
         "vim",
