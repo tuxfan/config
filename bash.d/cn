@@ -31,7 +31,7 @@ case $SLURM_JOB_PARTITION in
     module load gcc/12.1.0 git
   ;;
   skylake-*)
-    module load gcc/11.2.0 git
+    module load gcc/12.2.0 git
     module load cmake/3.26.3
     #source /vast/home/bergen/.spack.d/default/var/spack/environments/clang-13/loads
   ;;
