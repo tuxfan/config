@@ -27,15 +27,9 @@ return {
         'williamboman/mason-lspconfig.nvim',
         opts = {
           ensure_installed = {
-            'bashls',
             'cmake',
-            'dockerls',
-            'jsonls',
             'lua_ls',
-	          'marksman',
-            'pyright',
             'texlab',
-            'yamlls'
           }
         }
       }
