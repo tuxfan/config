@@ -185,7 +185,7 @@ export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
 # Run fixdate on VMs.
 #------------------------------------------------------------------------------#
 
-if [[ "$os" == "Linux" && "$(sudo dmidecode | grep Vendor)" == *"Parallels"* ]]; then
+if [[ $host != *darwin* && "$os" == "Linux" && "$(sudo dmidecode | grep Vendor)" == *"Parallels"* ]]; then
   fd=$(nc -vz google.com 443 2>&1)
   if [[ "$fd" == *"succeeded"* ]]; then
     echo -e "$FG_CYAN""Checking Date""$NEUTRAL"
