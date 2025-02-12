@@ -35,6 +35,7 @@ set-alias top "htop -t"
 set-alias sc "systemctl"
 set-alias ssh "ssh -YA"
 set-alias nj "ninja"
+set-alias cb "rm -rf * .*"
 
 #------------------------------------------------------------------------------#
 # Vim
