@@ -29,7 +29,6 @@ return {
           ensure_installed = {
             'cmake',
             'lua_ls',
-            'texlab',
           }
         }
       }
