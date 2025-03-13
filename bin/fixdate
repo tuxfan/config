@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-$(ntpdate -q ntp.lanl.gov >/dev/null)
+$(ntpdate -q ntp.lanl.gov >/dev/null 2>&1)
 if [[ $? == 0 ]] ; then
   sudo ntpdate ntp.lanl.gov
 else
