@@ -4,8 +4,14 @@
 <dict>
 	<key>AutoCommandHistory</key>
 	<true/>
+	<key>CommandSelection</key>
+	<false/>
+	<key>CopySelection</key>
+	<true/>
 	<key>Default Bookmark Guid</key>
 	<string>ADBAFBF6-6973-45D1-944C-B7AE1DEF0CD6</string>
+	<key>EnterCopyModeAutomatically</key>
+	<true/>
 	<key>FocusFollowsMouse</key>
 	<true/>
 	<key>GlobalKeyMap</key>
@@ -127,13 +133,17 @@
 	<true/>
 	<key>MaxVertically</key>
 	<true/>
+	<key>NeverWarnAboutShortLivedSessions_A91ED9F6-A1F9-4545-B1C7-D4E404FF4AD0</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_A91ED9F6-A1F9-4545-B1C7-D4E404FF4AD0_selection</key>
+	<integer>0</integer>
 	<key>NeverWarnAboutShortLivedSessions_ADBAFBF6-6973-45D1-944C-B7AE1DEF0CD6</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_ADBAFBF6-6973-45D1-944C-B7AE1DEF0CD6_selection</key>
 	<integer>0</integer>
-	<key>NeverWarnAboutShortLivedSessions_E342BBE2-2901-4DB4-964A-8E4A41946476</key>
+	<key>NeverWarnAboutShortLivedSessions_D1BE358D-6650-458A-85F4-6A41576E63C7</key>
 	<true/>
-	<key>NeverWarnAboutShortLivedSessions_E342BBE2-2901-4DB4-964A-8E4A41946476_selection</key>
+	<key>NeverWarnAboutShortLivedSessions_D1BE358D-6650-458A-85F4-6A41576E63C7_selection</key>
 	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
@@ -852,7 +862,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.31223736702127664</real>
+			<real>0.31025780211103721</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -1070,7 +1080,7 @@
 			<key>Columns</key>
 			<integer>100</integer>
 			<key>Command</key>
-			<string>/opt/homebrew/bin/bash</string>
+			<string>/usr/local/bin/bash</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1583,7 +1593,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.35558550234170677</real>
+			<real>0.17552562295756449</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -1805,7 +1815,7 @@
 			<key>Columns</key>
 			<integer>100</integer>
 			<key>Command</key>
-			<string>/opt/homebrew/bin/bash</string>
+			<string>/usr/local/bin/bash</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -2324,7 +2334,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.23590584880062754</real>
+			<real>0.4990042530559467</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -2546,7 +2556,7 @@
 			<key>Columns</key>
 			<integer>266</integer>
 			<key>Command</key>
-			<string>/opt/homebrew/bin/bash</string>
+			<string>/usr/local/bin/bash</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -3288,7 +3298,7 @@
 			<key>Columns</key>
 			<integer>86</integer>
 			<key>Command</key>
-			<string>/opt/homebrew/bin/bash</string>
+			<string>/usr/local/bin/bash</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -4049,7 +4059,7 @@
 			<key>Columns</key>
 			<integer>162</integer>
 			<key>Command</key>
-			<string>/opt/homebrew/bin/bash</string>
+			<string>/usr/local/bin/bash</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -4587,6 +4597,8 @@
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
+	<key>OptionClickMovesCursor</key>
+	<false/>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PointerActions</key>
@@ -4628,6 +4640,8 @@
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
 	<true/>
+	<key>ReportHorizontalScrollEvents</key>
+	<false/>
 	<key>ShowFullScreenTabBar</key>
 	<false/>
 	<key>SoundForEsc</key>
