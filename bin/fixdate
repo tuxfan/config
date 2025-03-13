@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
-LANL_AVAILABLE=`ntpdate -q ntp.lanl.gov 2>/dev/null`
-if [[ $LANL_AVAILABLE == 0 ]] ; then
+$(ntpdate -q ntp.lanl.gov >/dev/null)
+if [[ $? == 0 ]] ; then
   sudo ntpdate ntp.lanl.gov
 else
   sudo ntpdate ntp.ubuntu.com
