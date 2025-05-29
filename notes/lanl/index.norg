@@ -16,6 +16,11 @@ _*LANL Notes*_
   - ( ) Look at interoperabiltiy layer factorization.
   - ( ) Ask Galen is he can attend.
 
+* Development Notes
+  - Remove current reference_element implementation (spec/types.hh)
+  - May want to remove reference coordinates from flsp (models.hh)
+
+
 * [Projects]{:1-projects/index:}
 * [Areas]{:2-areas/index:}
 * [Resources]{:3-resources/index:}
