@@ -1,6 +1,13 @@
 ---------------------------------------------------------------------------------
--- Fugitive: Plugin for Git
+-- Rose Pine Theme
 ---------------------------------------------------------------------------------
 return {
-  'tpope/vim-fugitive'
+  {
+    'rose-pine/neovim',
+    as = 'rose-pine',
+    lazy = false,
+    config = function()
+        vim.cmd('colorscheme rose-pine')
+    end
+  }
 }

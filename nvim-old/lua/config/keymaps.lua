@@ -1,18 +1,18 @@
 ---------------------------------------------------------------------------------
 -- Basic Operations
 ---------------------------------------------------------------------------------
---vim.keymap.set('n', '<leader>dl', vim.cmd.Ex)
+vim.keymap.set('n', '<leader>dl', vim.cmd.Ex)
 vim.keymap.set('n', '<leader>h', function() vim.cmd('noh') end)
 
 ---------------------------------------------------------------------------------
 -- Neorg
 ---------------------------------------------------------------------------------
---vim.keymap.set('n', '<leader>no', ':Neorg<CR>')
---vim.keymap.set('n', '<leader>ni', ':Neorg index<CR>')
---vim.keymap.set('n', '<leader>nr', ':Neorg return<CR>')
---vim.keymap.set('n', '<leader>nw', ':Neorg workspace')
---vim.keymap.set('n', '<localleader>nw', ':Neorg workspace')
---vim.keymap.set('n', '<localleader>nc', ':Neorg toggle-concealer<CR>')
+vim.keymap.set('n', '<leader>no', ':Neorg<CR>')
+vim.keymap.set('n', '<leader>ni', ':Neorg index<CR>')
+vim.keymap.set('n', '<leader>nr', ':Neorg return<CR>')
+vim.keymap.set('n', '<leader>nw', ':Neorg workspace')
+vim.keymap.set('n', '<localleader>nw', ':Neorg workspace')
+vim.keymap.set('n', '<localleader>nc', ':Neorg toggle-concealer<CR>')
 
 ---------------------------------------------------------------------------------
 -- Harpoon
@@ -29,9 +29,8 @@ local builtin = require('telescope.builtin')
 
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fr', builtin.oldfiles, {})
-vim.keymap.set('n', '<leader>fs', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fc', builtin.grep_string, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
 
 ---------------------------------------------------------------------------------
@@ -42,13 +41,9 @@ vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
 ---------------------------------------------------------------------------------
 -- Undo
 ---------------------------------------------------------------------------------
---vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 
----------------------------------------------------------------------------------
--- Toggle Diagnostics
----------------------------------------------------------------------------------
-
-vim.api.nvim_create_user_command('DiagnosticToggle', function()
+vim.api.nvim_create_user_command("DiagnosticToggle", function()
 	local config = vim.diagnostic.config
 	local vt = config().virtual_text
 	config {
@@ -56,21 +51,8 @@ vim.api.nvim_create_user_command('DiagnosticToggle', function()
 		underline = not vt,
 		signs = not vt,
 	}
-end, { desc = 'toggle diagnostic' })
+end, { desc = "toggle diagnostic" })
 vim.keymap.set('n', '<leader>te', vim.cmd.DiagnosticToggle)
-
----------------------------------------------------------------------------------
--- Nvim-Tree
----------------------------------------------------------------------------------
-
-vim.keymap.set('n', '<leader>ee', '<cmd>NvimTreeToggle<CR>',
-  { desc = 'Toggle file explorer' }) -- toggle file explorer
-vim.keymap.set('n', '<leader>dl', '<cmd>NvimTreeFindFileToggle<CR>',
-  { desc = 'Toggle file explorer on current file' }) -- toggle file explorer on current file
-vim.keymap.set('n', '<leader>ec', '<cmd>NvimTreeCollapse<CR>',
-  { desc = 'Collapse file explorer' }) -- collapse file explorer
-vim.keymap.set('n', '<leader>er', '<cmd>NvimTreeRefresh<CR>',
-  { desc = 'Refresh file explorer' }) -- refresh file explorer
 
 ---------------------------------------------------------------------------------
 -- Trouble keymaps are in plugin.

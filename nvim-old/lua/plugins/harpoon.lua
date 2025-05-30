@@ -1,6 +1,9 @@
 ---------------------------------------------------------------------------------
--- Fugitive: Plugin for Git
+-- Harpoon
 ---------------------------------------------------------------------------------
 return {
-  'tpope/vim-fugitive'
+  {
+    'theprimeagen/harpoon',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  }
 }
