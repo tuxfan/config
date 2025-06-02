@@ -9,3 +9,5 @@ systemctl enable apport.service
 
 # In .config/nvim/local
 npm install tree-sitter-cli
+
+pipx install cmake-language-server

@@ -16,6 +16,18 @@ return {
     -- import cmp-nvim-lsp plugin
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
+--    require("lspconfig").lua_ls.setup {
+--      capabilities = capabilities,
+--      on_attach = on_attach,
+--      settings = {
+--        Lua = {
+--          diagnostics = {
+--            globals = {'vim'}
+--          }
+--        },
+--      },
+--    }
+
     local keymap = vim.keymap -- for conciseness
 
     vim.api.nvim_create_autocmd("LspAttach", {

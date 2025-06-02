@@ -5,14 +5,22 @@
 vim.keymap.set('n', '<leader>h', function() vim.cmd('noh') end)
 
 ---------------------------------------------------------------------------------
+-- Window Management
+---------------------------------------------------------------------------------
+vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
+vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
+vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
+vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
+
+---------------------------------------------------------------------------------
 -- Neorg
 ---------------------------------------------------------------------------------
---vim.keymap.set('n', '<leader>no', ':Neorg<CR>')
---vim.keymap.set('n', '<leader>ni', ':Neorg index<CR>')
---vim.keymap.set('n', '<leader>nr', ':Neorg return<CR>')
---vim.keymap.set('n', '<leader>nw', ':Neorg workspace')
---vim.keymap.set('n', '<localleader>nw', ':Neorg workspace')
---vim.keymap.set('n', '<localleader>nc', ':Neorg toggle-concealer<CR>')
+vim.keymap.set('n', '<leader>no', ':Neorg<CR>')
+vim.keymap.set('n', '<leader>ni', ':Neorg index<CR>')
+vim.keymap.set('n', '<leader>nr', ':Neorg return<CR>')
+vim.keymap.set('n', '<leader>nw', ':Neorg workspace')
+vim.keymap.set('n', '<localleader>nw', ':Neorg workspace')
+vim.keymap.set('n', '<localleader>nc', ':Neorg toggle-concealer<CR>')
 
 ---------------------------------------------------------------------------------
 -- Harpoon
