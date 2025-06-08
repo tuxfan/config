@@ -68,17 +68,26 @@ end, { desc = 'toggle diagnostic' })
 vim.keymap.set('n', '<leader>te', vim.cmd.DiagnosticToggle)
 
 ---------------------------------------------------------------------------------
+-- Toggle Diagnostics
+---------------------------------------------------------------------------------
+
+vim.keymap.set("n", "<leader>wr", "<cmd>SessionRestore<CR>",
+  { desc = "Restore session for cwd" })
+vim.keymap.set("n", "<leader>ws", "<cmd>SessionSave<CR>",
+  { desc = "Save session for auto session root dir" })
+
+---------------------------------------------------------------------------------
 -- Nvim-Tree
 ---------------------------------------------------------------------------------
 
 vim.keymap.set('n', '<leader>ee', '<cmd>NvimTreeToggle<CR>',
-  { desc = 'Toggle file explorer' }) -- toggle file explorer
+  { desc = 'Toggle file explorer' })
 vim.keymap.set('n', '<leader>dl', '<cmd>NvimTreeFindFileToggle<CR>',
-  { desc = 'Toggle file explorer on current file' }) -- toggle file explorer on current file
+  { desc = 'Toggle file explorer on current file' })
 vim.keymap.set('n', '<leader>ec', '<cmd>NvimTreeCollapse<CR>',
-  { desc = 'Collapse file explorer' }) -- collapse file explorer
+  { desc = 'Collapse file explorer' })
 vim.keymap.set('n', '<leader>er', '<cmd>NvimTreeRefresh<CR>',
-  { desc = 'Refresh file explorer' }) -- refresh file explorer
+  { desc = 'Refresh file explorer' })
 
 ---------------------------------------------------------------------------------
 -- Trouble keymaps are in plugin.
