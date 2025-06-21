@@ -55,6 +55,8 @@
   sq = "!f() { git rev-parse HEAD~$1; }; f"
   rb = "!f() { git sh $1 | xargs -o0 git rebase -i; }; f"
   rbs = "!f() { git sq $1 | xargs -o git rebase -i; }; f"
+  ss = submodule status --recursive
+  sco = submodule foreach 'git co $1'
 
 [safe]
 	directory = /projects/ngc/shared/darwin_spack_upstream/develop-1ef313b6
