@@ -230,7 +230,7 @@ extra_pinfo=""
 prompt() {
   echo -ne "\033];"${PWD##*/}"\007"
   echo -ne "$P_BG_DATE$P_FG_DATE" `date +%H:%M:%S`
-  echo -ne "$P_BG_HOST$P_FG_USER $USER$P_FG_AT@$P_FG_HOST$host "
+  echo -ne " $P_BG_HOST$P_FG_USER $USER$P_FG_AT@$P_FG_HOST$host "
   echo -ne "$P_BG_EXTRA$P_FG_EXTRA $extra_pinfo "
   if [[ -n "${SPACK_ENV}" ]] ; then
     echo -ne "$P_FG_SPACK "
