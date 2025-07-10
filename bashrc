@@ -193,7 +193,7 @@ fi
 # Run fixdate on vms.
 #------------------------------------------------------------------------------#
 
-if [[ $host != *darwin* && $host != *cn* && $host != *grac* && $host != *X1* && "$os" == "Linux" && "$(sudo dmidecode | grep Vendor)" == *"Parallels"* ]]; then
+if [[ $host != *darwin* && $host != *cn* && $host != *grac* && $host != *X1* && $host != *u24-m4* && "$os" == "Linux" && "$(sudo dmidecode | grep Vendor)" == *"Parallels"* ]]; then
   fd=$(nc -vz google.com 443 2>&1)
   if [[ "$fd" == *"succeeded"* ]]; then
     echo -e "$FG_CYAN""Checking Date""$NEUTRAL"
