@@ -12,8 +12,9 @@ return {
           return require("codecompanion.adapters").extend("ollama", {
             name = "ollama_remote",
             env = {
-              url = "https://192.168.1.104:10200",
+              url = "http://192.168.1.104:10200",
               api_key = "OLLAMA_API_KEY",
+              models_endpoint = ""
             },
             headers = {
               ["Content-Type"] = "application/json",
@@ -24,7 +25,7 @@ return {
             },
             schema = {
               model = {
-                default = "gemma3n",
+                default = "gemma3n:latest",
               },
               num_ctx = {
                 default = 16384,
