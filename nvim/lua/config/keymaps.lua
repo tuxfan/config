@@ -23,6 +23,11 @@ vim.keymap.set('n', '<localleader>nw', ':Neorg workspace')
 vim.keymap.set('n', '<localleader>nc', ':Neorg toggle-concealer<CR>')
 
 ---------------------------------------------------------------------------------
+-- CodeCompanion
+---------------------------------------------------------------------------------
+vim.keymap.set('n', '<leader>ch', ':CodeCompanionChat<CR>')
+
+---------------------------------------------------------------------------------
 -- Harpoon
 ---------------------------------------------------------------------------------
 local mark = require('harpoon.mark')
