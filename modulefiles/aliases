@@ -36,6 +36,7 @@ set-alias sc "systemctl"
 set-alias ssh "ssh -YA"
 set-alias nj "ninja"
 set-alias cb "rm -rf * .*"
+set-alias lc "launchctl"
 
 #------------------------------------------------------------------------------#
 # Vim
