@@ -1,5 +1,7 @@
 _*LANL Notes*_
 
+* [Neorg Cheat Sheet]{:3-resources/cheatsheet:}
+
 * *TODO*
   - ( ) Cleanup domains in fvm, fdm
   -- I don't remember what this means...
@@ -16,15 +18,11 @@ _*LANL Notes*_
   - ( ) Look at interoperabiltiy layer factorization.
   - ( ) Ask Galen is he can attend.
 
-* Development Notes
-  - Remove current reference_element implementation (spec/types.hh)
-  - May want to remove reference coordinates from flsp (models.hh)
-
-
 * [Projects]{:1-projects/index:}
 * [Areas]{:2-areas/index:}
 * [Resources]{:3-resources/index:}
 * [Archives]{:4-archives/index:}
+
 
 * *System Setup*
 ** [Ubuntu 24.04]{:setup/ubuntu-24.04:}
