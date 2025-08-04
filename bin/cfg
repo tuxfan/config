@@ -31,6 +31,7 @@ if [ "$#" -ne 1 ] ; then
   echo -e "$C7""  pu""$C13 git push""$P"
   echo -e "$C7""  cm""$C13 git commit -m 'Updates'""$P"
   echo -e "$C7""  al""$C13 aa && cm && pu""$P"
+  echo -e "$C7""  rb""$C13 git rebase origin/master""$P"
   echo
   (cd ~/.config/bergen && git status)
   exit
@@ -63,5 +64,8 @@ case $1 in
   ;;
   al)
     (cd ~/.config/bergen && git add -A && git commit -m "Updates" && git push)
+  ;;
+  rb)
+    (cd ~/.config/bergen && git rebase origin/master)
   ;;
 esac
