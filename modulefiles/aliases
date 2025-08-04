@@ -37,6 +37,7 @@ set-alias ssh "ssh -YA"
 set-alias nj "ninja"
 set-alias cb "rm -rf * .*"
 set-alias lc "launchctl"
+set-alias ol "ollama"
 
 #------------------------------------------------------------------------------#
 # Vim
