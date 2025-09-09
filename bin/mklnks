@@ -58,4 +58,5 @@ link_dotfile "gitignore"
 link_dotfile "modulefiles"
 link_dotfile "Xdefaults"
 link_dotfile "screenrc"
+link_dotfile "password-store"
 link_nvim

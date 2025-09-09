@@ -139,6 +139,9 @@ export XAUTHORITY=$HOME/.Xauthority
 prepend_path "$HOME/.local/bin"
 
 if [ $os == "Darwin" ] ; then
+  [ -f $HOME/.ssh/id_ed25519 ] && \
+    ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+
   if [ $arch == "x86_64" ] ; then
     prepend_path "/Applications/VMware Fusion.app/Contents/Library"
     prepend_path "/usr/local/bin"
