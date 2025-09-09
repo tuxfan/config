@@ -36,16 +36,44 @@ return {
             },
           })
         end,
+        openai_remote = function()
+          return require("codecompanion.adapters").extend("openai_compatible", {
+            name = "openai_remote",
+            env = {
+              url = "https://darwin-litellm.lanl.gov",
+              api_key = "sk-RsLGBmH7MJC7WPLyClacUA",
+              models_endpoint = ""
+            },
+            headers = {
+              ["Content-Type"] = "application/json",
+              ["Authorization"] = "Bearer ${api_key}",
+            },
+            parameters = {
+              sync = true,
+            },
+            schema = {
+              model = {
+                default = "sambanova/Meta-Llama-3.3-70B-Instruct",
+              },
+              num_ctx = {
+                default = 16384,
+              },
+              num_predict = {
+                default = -1,
+              },
+            },
+          })
+        end,
       },
       strategies = {
         chat = {
-          adapter = "ollama_remote",
+          adapter = "openai_remote",
         },
         inline = {
-          adapter = "ollama_remote",
+          adapter = "openai_remote",
         },
         agent = {
-          adapter = "ollama_remote",
+          adapter = "openai_remote",
         },
       },
     })
