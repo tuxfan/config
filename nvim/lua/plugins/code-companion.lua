@@ -42,6 +42,7 @@ return {
             name = "litellm_remote",
             env = {
               url = "https://darwin-litellm.lanl.gov",
+              --url = "https://aiportal-api.aws.lanl.gov",
               api_key = "sk-letL1Mu-14m9a0NeH7C8Fg",
               --api_key = "sk-47HzRPl4LQsqSDcXz0XkDA",
               models_endpoint = "/models"
@@ -67,16 +68,44 @@ return {
             },
           })
         end,
+        claude_remote = function()
+          return require("codecompanion.adapters").extend("openai_compatible", {
+            name = "claude_remote",
+            env = {
+              url = "https://aiportal-api.aws.lanl.gov",
+              api_key = "sk-47HzRPl4LQsqSDcXz0XkDA",
+              models_endpoint = "/models"
+            },
+            headers = {
+              ["Content-Type"] = "application/json",
+              ["Authorization"] = "Bearer ${api_key}",
+            },
+            parameters = {
+              sync = true,
+            },
+            schema = {
+              model = {
+                default = "anthropic.claude-3-7-sonnet-20250219-v1:0",
+              },
+              num_ctx = {
+                default = 16384,
+              },
+              num_predict = {
+                default = -1,
+              },
+            },
+          })
+        end,
       },
       strategies = {
         chat = {
-          adapter = "litellm_remote",
+          adapter = "claude_remote",
         },
         inline = {
-          adapter = "litellm_remote",
+          adapter = "claude_remote",
         },
         agent = {
-          adapter = "litellm_remote",
+          adapter = "claude_remote",
         },
       },
     })
