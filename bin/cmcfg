@@ -158,7 +158,7 @@ do
       OPTIMIZATION="-O0" # clang default
       ;;
     --pedantic|-p)
-      PEDANTIC="-Werror"
+      PEDANTIC="-Werror -Wpedantic"
       ;;
     ninja)
       SCRIPT_GENERATOR="Ninja"
