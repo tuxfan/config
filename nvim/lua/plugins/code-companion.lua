@@ -1,5 +1,6 @@
 return {
   'olimorris/codecompanion.nvim',
+  version = "v16.1.0",
   opts = {},
   dependencies = {
     'nvim-lua/plenary.nvim',
@@ -41,8 +42,8 @@ return {
             name = "openai_remote",
             env = {
               url = "https://darwin-litellm.lanl.gov",
-              api_key = "sk-RsLGBmH7MJC7WPLyClacUA",
-              models_endpoint = ""
+              api_key = "sk-letL1Mu-14m9a0NeH7C8Fg",
+              models_endpoint = "/models"
             },
             headers = {
               ["Content-Type"] = "application/json",
