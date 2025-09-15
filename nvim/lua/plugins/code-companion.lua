@@ -37,12 +37,13 @@ return {
             },
           })
         end,
-        openai_remote = function()
+        litellm_remote = function()
           return require("codecompanion.adapters").extend("openai_compatible", {
-            name = "openai_remote",
+            name = "litellm_remote",
             env = {
               url = "https://darwin-litellm.lanl.gov",
               api_key = "sk-letL1Mu-14m9a0NeH7C8Fg",
+              --api_key = "sk-47HzRPl4LQsqSDcXz0XkDA",
               models_endpoint = "/models"
             },
             headers = {
@@ -55,6 +56,7 @@ return {
             schema = {
               model = {
                 default = "sambanova/Meta-Llama-3.3-70B-Instruct",
+                --default = "anthropic.claude-3-7-sonnet-20250219-v1:0",
               },
               num_ctx = {
                 default = 16384,
@@ -68,13 +70,13 @@ return {
       },
       strategies = {
         chat = {
-          adapter = "openai_remote",
+          adapter = "litellm_remote",
         },
         inline = {
-          adapter = "openai_remote",
+          adapter = "litellm_remote",
         },
         agent = {
-          adapter = "openai_remote",
+          adapter = "litellm_remote",
         },
       },
     })
