@@ -37,14 +37,12 @@ return {
             },
           })
         end,
-        litellm_remote = function()
+        sn_remote = function()
           return require("codecompanion.adapters").extend("openai_compatible", {
-            name = "litellm_remote",
+            name = "sn_remote",
             env = {
               url = "https://darwin-litellm.lanl.gov",
-              --url = "https://aiportal-api.aws.lanl.gov",
               api_key = "sk-letL1Mu-14m9a0NeH7C8Fg",
-              --api_key = "sk-47HzRPl4LQsqSDcXz0XkDA",
               models_endpoint = "/models"
             },
             headers = {
@@ -99,13 +97,13 @@ return {
       },
       strategies = {
         chat = {
-          adapter = "claude_remote",
+          adapter = "sn_remote",
         },
         inline = {
-          adapter = "claude_remote",
+          adapter = "sn_remote",
         },
         agent = {
-          adapter = "claude_remote",
+          adapter = "sn_remote",
         },
       },
     })
