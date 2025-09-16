@@ -55,7 +55,6 @@ return {
             schema = {
               model = {
                 default = "sambanova/Meta-Llama-3.3-70B-Instruct",
-                --default = "anthropic.claude-3-7-sonnet-20250219-v1:0",
               },
               num_ctx = {
                 default = 16384,
