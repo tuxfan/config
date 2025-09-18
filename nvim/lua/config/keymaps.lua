@@ -26,6 +26,7 @@ vim.keymap.set('n', '<localleader>nc', ':Neorg toggle-concealer<CR>')
 -- CodeCompanion
 ---------------------------------------------------------------------------------
 vim.keymap.set('n', '<leader>ch', ':CodeCompanionChat<CR>')
+vim.keymap.set('n', '<leader>ca', ':CodeCompanionActions<CR>')
 
 ---------------------------------------------------------------------------------
 -- Harpoon

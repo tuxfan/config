@@ -41,8 +41,8 @@ return {
           return require("codecompanion.adapters").extend("openai_compatible", {
             name = "sn_remote",
             env = {
-              url = "https://darwin-litellm.lanl.gov",
-              api_key = "sk-letL1Mu-14m9a0NeH7C8Fg",
+              url = "https://aiportal-api.aws.lanl.gov",
+              api_key = "sk-2bO3sHuGTcAl7VsosDY4ew",
               models_endpoint = "/models"
             },
             headers = {
@@ -54,7 +54,7 @@ return {
             },
             schema = {
               model = {
-                default = "sambanova/Meta-Llama-3.3-70B-Instruct",
+                default = "sambanova.Meta-Llama-3.3-70B-Instruct",
               },
               num_ctx = {
                 default = 16384,
