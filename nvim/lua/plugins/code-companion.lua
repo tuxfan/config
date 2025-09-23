@@ -54,7 +54,7 @@ return {
             },
             schema = {
               model = {
-                default = "sambanova.Meta-Llama-3.3-70B-Instruct",
+                default = "sambanova.Llama-4-Maverick-17B-128E-Instruct",
               },
               num_ctx = {
                 default = 16384,
