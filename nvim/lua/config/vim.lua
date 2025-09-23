@@ -15,6 +15,8 @@ vim.o.cursorcolumn = true
 vim.o.hlsearch     = true
 vim.o.incsearch    = true
 vim.o.foldlevel    = 99
+vim.o.spelllang    = 'en_us'
+vim.o.spell        = true
 
 ---------------------------------------------------------------------------------
 -- Remember last cursor position
