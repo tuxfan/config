@@ -93,6 +93,34 @@ return {
             },
           })
         end,
+        darwin_remote = function()
+          return require("codecompanion.adapters").extend("openai_compatible", {
+            name = "darwin_remote",
+            env = {
+              url = "https://aiportal-api.aws.lanl.gov",
+              api_key = "sk-n_aAhaA6n3r5jd-KiVOYzg",
+              models_endpoint = "/models"
+            },
+            headers = {
+              ["Content-Type"] = "application/json",
+              ["Authorization"] = "Bearer ${api_key}",
+            },
+            parameters = {
+              sync = true,
+            },
+            schema = {
+              model = {
+                default = "darwin.gpt-oss-120b",
+              },
+              num_ctx = {
+                default = 16384,
+              },
+              num_predict = {
+                default = -1,
+              },
+            },
+          })
+        end,
       },
       strategies = {
         chat = {
