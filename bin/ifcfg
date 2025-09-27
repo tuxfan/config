@@ -1,3 +1,3 @@
 #! /usr/bin/env bash
 
-/sbin/ifconfig | /opt/homebrew/bin/pcre2grep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'
+ipconfig getifaddr en0

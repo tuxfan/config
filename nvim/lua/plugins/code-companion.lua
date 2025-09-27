@@ -26,7 +26,7 @@ return {
             },
             schema = {
               model = {
-                default = "gemma3n:latest",
+                default = "qwen3-coder:latest",
               },
               num_ctx = {
                 default = 16384,
@@ -96,13 +96,13 @@ return {
       },
       strategies = {
         chat = {
-          adapter = "sn_remote",
+          adapter = "ollama_remote",
         },
         inline = {
-          adapter = "sn_remote",
+          adapter = "ollama_remote",
         },
         agent = {
-          adapter = "sn_remote",
+          adapter = "ollama_remote",
         },
       },
     })
