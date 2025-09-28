@@ -3,7 +3,7 @@ return {
   event = { 'BufReadPre', 'BufNewFile' },
   build = ':TSUpdate',
   dependencies = {
-    'OXY2DEV/markview.nvim',
+    --'OXY2DEV/markview.nvim',
     'windwp/nvim-ts-autotag'
   },
   config = function()
