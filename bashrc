@@ -138,8 +138,8 @@ export XAUTHORITY=$HOME/.Xauthority
 
 prepend_path "$HOME/.local/bin"
 
-if [ $os == "Darwin" ] && [ -z "SSH_TTY" ] ; then
-  [ -f $HOME/.ssh/id_ed25519 ] && \
+if [ $os == "Darwin" ] ; then
+  [ -f $HOME/.ssh/id_ed25519 ] && [ -z "SSH_TTY" ] &&  \
     ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 
   if [ $arch == "x86_64" ] ; then
