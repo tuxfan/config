@@ -124,13 +124,13 @@ return {
       },
       strategies = {
         chat = {
-          adapter = "ollama_remote",
+          adapter = "darwin_remote",
         },
         inline = {
-          adapter = "ollama_remote",
+          adapter = "darwin_remote",
         },
         agent = {
-          adapter = "ollama_remote",
+          adapter = "darwin_remote",
         },
       },
     })
