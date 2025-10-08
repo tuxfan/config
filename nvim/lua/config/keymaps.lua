@@ -31,8 +31,15 @@ vim.keymap.set('n', '<leader>ca', ':CodeCompanionActions<CR>')
 ---------------------------------------------------------------------------------
 -- Markview
 ---------------------------------------------------------------------------------
-
 vim.keymap.set('n', '<leader>mv', ':Markview toggle<CR>')
+
+---------------------------------------------------------------------------------
+-- Markview
+---------------------------------------------------------------------------------
+vim.keymap.set('n', '[u', function()
+  require('treesitter-context').go_to_context(vim.v.count1)
+end, { silent = true, desc = 'Jump to top of context' })
+vim.keymap.set('n', '<leader>ct', ':TSContext toggle<CR>')
 
 ---------------------------------------------------------------------------------
 -- Harpoon
