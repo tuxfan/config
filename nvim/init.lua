@@ -99,3 +99,28 @@ require('lazy').setup({
 
 --- Load keymaps-post
 require 'keymaps-post'
+
+-- Try to load these colorschemes in order
+local load_colorschemes = { 'rose-pine-main', 'nightfox', 'tokyonight' }
+
+-- Set colorscheme
+local found = nil
+local colorschemes = vim.fn.getcompletion('', 'color')
+for i, load_col in ipairs(load_colorschemes) do
+  for _, col in ipairs(colorschemes) do
+    if load_col == col then
+      found = i
+      break
+    end
+  end
+
+  if found then
+    break
+  end
+end
+
+if found then
+  vim.cmd.colorscheme(load_colorschemes[found])
+else
+  vim.cmd.colorscheme 'default'
+end
