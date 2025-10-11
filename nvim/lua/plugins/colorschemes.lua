@@ -2,7 +2,6 @@ return {
   'rose-pine/neovim',
   'projekt0n/github-nvim-theme',
   'ellisonleao/gruvbox.nvim',
-  'ribru17/bamboo.nvim',
   'savq/melange-nvim',
   'neanias/everforest-nvim',
 
