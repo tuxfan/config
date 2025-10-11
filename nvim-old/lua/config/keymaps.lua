@@ -34,7 +34,7 @@ vim.keymap.set('n', '<leader>ca', ':CodeCompanionActions<CR>')
 vim.keymap.set('n', '<leader>mv', ':Markview toggle<CR>')
 
 ---------------------------------------------------------------------------------
--- Markview
+-- Treesitter Context
 ---------------------------------------------------------------------------------
 vim.keymap.set('n', '[u', function()
   require('treesitter-context').go_to_context(vim.v.count1)
