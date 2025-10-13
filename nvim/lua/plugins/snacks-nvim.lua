@@ -5,7 +5,7 @@ return {
   ---@type snacks.Config
   opts = {
     bigfile = { enabled = true }, -- Deactivates things for files too large
-    dashboard = { enabled = true }, -- Initial neovim dashboard
+    dashboard = { enabled = false }, -- Initial neovim dashboard
     indent = { enabled = true }, -- Indent lines
     rename = { enabled = true }, -- Rename files
     scroll = { enabled = true }, -- Smooth scrolling
