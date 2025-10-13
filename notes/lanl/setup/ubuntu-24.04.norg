@@ -10,6 +10,7 @@ apt install -y net-tools build-essential gfortran clang unzip gnupg2 python3-dev
 systemctl enable apport.service
 
 # In .config/nvim/local
+# Now use .local/bin
 npm install tree-sitter-cli
 
 pipx install cmake-language-server
