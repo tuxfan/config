@@ -35,3 +35,9 @@ vim.keymap.set('n', '<localleader>nc', ':Neorg toggle-concealer<CR>')
 --- Markview toggle
 ---------------------------------------------------------------------------------
 vim.keymap.set('n', '<leader>mv', ':Markview toggle<CR>')
+
+---------------------------------------------------------------------------------
+--- Code Companion
+---------------------------------------------------------------------------------
+vim.keymap.set('n', '<leader>ch', ':CodeCompanionChat<CR>')
+vim.keymap.set('n', '<leader>ca', ':CodeCompanionActions<CR>')

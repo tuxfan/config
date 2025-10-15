@@ -68,6 +68,16 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 
 #------------------------------------------------------------------------------#
+# Anthropic
+#------------------------------------------------------------------------------#
+
+export ANTHROPIC_BASE_URL=https://aiportal-api.aws.lanl.gov
+export ANTHROPIC_AUTH_TOKEN=sk-47HzRPl4LQsqSDcXz0XkDA
+export ANTHROPIC_MODEL=anthropic.claude-3-7-sonnet-20250219-v1:0
+export ANTHROPIC_SMALL_FAST_MODEL=anthropic.claude-3-haiku-20240307-v1:0
+export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
+
+#------------------------------------------------------------------------------#
 # Check window size after each command.
 #------------------------------------------------------------------------------#
 
