@@ -4,6 +4,8 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 
+vim.keymap.set('n', '<leader>kk', ':qa<CR>')
+
 ---------------------------------------------------------------------------
 --- Oil
 ---------------------------------------------------------------------------------
@@ -30,6 +32,6 @@ vim.keymap.set('n', '<localleader>nw', ':Neorg workspace')
 vim.keymap.set('n', '<localleader>nc', ':Neorg toggle-concealer<CR>')
 
 ---------------------------------------------------------------------------------
---- Markview
+--- Markview toggle
 ---------------------------------------------------------------------------------
 vim.keymap.set('n', '<leader>mv', ':Markview toggle<CR>')
