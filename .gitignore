@@ -4,3 +4,4 @@ gdb/python/libstdcxx/v6/__pycache__
 nvim/plugin
 nvim/local
 nvim/lazy-lock.json
+build

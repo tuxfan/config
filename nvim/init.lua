@@ -1,8 +1,8 @@
 --- Load all the options
 require 'options'
 
---- Make the vim shell "fish"
-vim.opt.shell = 'fish'
+--- Make the vim shell "bash"
+vim.opt.shell = 'bash'
 vim.opt.foldlevelstart = 99
 
 --- Install `lazy.nvim` plugin manager

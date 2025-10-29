@@ -25,7 +25,7 @@
 
 [alias]
   st = status
-  sst = submodule status
+  sst = submodule foreach git status
   sinit = submodule update --init --recursive
   ci = commit
   br = branch
