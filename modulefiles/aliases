@@ -47,6 +47,7 @@ set-alias ol "ollama"
 
 set-alias vim "nvim"
 set-alias vi "nvim"
+set-alias vc "/usr/bin/vi"
 set-alias vsplit "nvim -O"
 set-alias view "nvim -R"
 

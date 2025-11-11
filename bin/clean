@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+
+cwd=`pwd | sed 's,.*/,,g'`
+
+if [[ $cwd = *build* ]] ; then
+  rm -rf * .*
+fi
