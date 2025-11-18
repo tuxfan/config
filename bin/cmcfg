@@ -113,7 +113,7 @@ debug=0
 noopt=0
 
 # Default compiler settings
-WARN="-Wall -Wundef -W -Wno-parentheses"
+WARN="-Wall -Wundef -W"
 PEDANTIC=""
 OPTIMIZATION="-O2"
 
