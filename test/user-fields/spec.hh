@@ -22,7 +22,7 @@ struct mesh {
   struct accessor : flecsi::data::params_tag {
     template<typename T>
     using field_accessor = typename field<T>::template accessor<PP...>;
-    using mesh_topology_accessor = typename mesh<D, PO>::template accessor<PP...>;
+    using mesh_topology_accessor = typename mesh_topology<D, PO>::template accessor<PP...>;
 
     accessor(mesh_topology_accessor m,
       field_accessor<int> intf,
@@ -31,6 +31,9 @@ struct mesh {
 
     auto flecsi_params() {
       return std::tie(m, intf, doublef);
+    }
+
+    void do_some_mesh_stuff() {
     }
 
   private:
