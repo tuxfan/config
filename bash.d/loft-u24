@@ -24,9 +24,9 @@ alias ls=eza
 # Prompt colors
 #------------------------------------------------------------------------------#
 
-. $HOME/.config/bergen/bash.d/themes/bluegreen
+. $HOME/.config/bergen/bash.d/themes/gray
 
-extra_pinfo="VM (PERSONAL)"
+extra_pinfo="VM (LOFT)"
 
 #------------------------------------------------------------------------------#
 # vim: syntax=sh
