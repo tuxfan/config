@@ -37,7 +37,7 @@ alias ls=eza
 . $HOME/.config/bergen/bash.d/themes/lanl-black
 [ `whoami` == "root" ] && . $HOME/.config/bergen/bash.d/themes/red-orange
 
-extra_pinfo="M4-MAX"
+extra_pinfo="LOFT"
 
 #------------------------------------------------------------------------------#
 # vim: syntax=sh
