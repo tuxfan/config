@@ -42,6 +42,14 @@ _*LANL Notes*_
 * [Resources]{:3-resources/index:}
 * [Archives]{:4-archives/index:}
 
+* *Canon Video Settings*
+** Autofocus: Expand AF Area
+** Recording size: 4K-U, 23.98P, IPB
+** Audio: Manual 4th tic from left (recommended with DJI Mic 3)
+** White Balance: Manual (or maybe Tungsten)
+ * Canon CLOG3
+** Zebra 1 (faces) adjust exposure until face is striped
+** Shutter speed: for 23.98 fps, use 1/50th and adjust ISO or use ND filter
 
 * *System Setup*
 ** [Ubuntu 24.04]{:setup/ubuntu-24.04:}
