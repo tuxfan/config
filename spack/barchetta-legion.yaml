@@ -1,0 +1,26 @@
+spack:
+  specs:
+  - gdb
+  - cgdb
+  - llvm
+  - barchetta
+  packages:
+    barchetta:
+      require: '+documentation'
+    cgdb:
+      require: '@master'
+    gdb:
+      require: '@15.0.50'
+    flecsi:
+      require: '+flog +graphviz +hdf5 backend=legion build_type=Debug'
+    legion:
+      require: '@24.0.12 network=ucx'
+    mfem:
+      require: '@4.8.0 +shared'
+    singularity-eos:
+      require: '@main +spiner +eospac +hdf5 build_extra=sesame'
+  view: true
+  concretizer:
+    unify: true
+  repos:
+    barchetta: /home/bergen/devel/re-git.lanl.gov/barchetta/spack_repo/barchetta

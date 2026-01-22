@@ -1,0 +1,18 @@
+spack:
+  specs:
+  - gdb
+  - cgdb
+  - llvm
+  - radio
+  packages:
+    flecsi:
+      require: +flog +graphviz +hdf5 build_type=Debug backend=legion
+    legion:
+      require: network=gasnet conduit=mpi
+    singularity-eos:
+      require: '@main +spiner +eospac +hdf5 build_extra=sesame'
+  view: true
+  concretizer:
+    unify: true
+  repos:
+    radio: /home/bergen/devel/re-git.lanl.gov/radio/spack-repo

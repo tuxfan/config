@@ -32,12 +32,12 @@ set-alias ms "module show"
 # Misc
 #------------------------------------------------------------------------------#
 
+set-alias g "git"
 set-alias bc "bc -l"
 set-alias top "htop -t"
 set-alias sc "systemctl"
 set-alias ssh "ssh -YA"
 set-alias nj "ninja"
-set-alias cb "rm -rf * .*"
 set-alias lc "launchctl"
 set-alias ol "ollama"
 
