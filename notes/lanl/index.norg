@@ -42,7 +42,7 @@ _*LANL Notes*_
 * [Resources]{:3-resources/index:}
 * [Archives]{:4-archives/index:}
 
-* *Canon Video Settings*
+* Canon Video Settings
 ** Autofocus: Expand AF Area
 ** Recording size: 4K-U, 23.98P, IPB
 ** Audio: Manual 4th tic from left (recommended with DJI Mic 3)
@@ -50,6 +50,20 @@ _*LANL Notes*_
  * Canon CLOG3
 ** Zebra 1 (faces) adjust exposure until face is striped
 ** Shutter speed: for 23.98 fps, use 1/50th and adjust ISO or use ND filter
+
+* Perform Goals 2026
+** Continue mentorship of younger staff. In particular, I will continue my
+   weekly meetings with younger staff members (Andrés & Sumathi) to help them
+   with skills and career development.
+** DOE Lead for programming languages and models working group for the  MEXT
+   (Ministry of Education, Culture, Sports, Science and Technology)/DOE
+   collaboration. This collaboration is still in the early stages and will
+   require diplomacy and technical insight to discover the most effective areas
+   of collaboration with our Japanese partners.
+** Lead the Task-Parallel Project: Design and coordinate efforts between the
+   FleCSI, Task-Parallel Specializations, and Task-Parallel Applications
+   sub-projects. Participate in developing ASC strategy and insuring
+   coordination between CSSE and IC to further production code goals.
 
 * *System Setup*
 ** [Ubuntu 24.04]{:setup/ubuntu-24.04:}
