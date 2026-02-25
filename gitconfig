@@ -25,6 +25,8 @@
 
 [alias]
   st = status
+  ft = fetch
+  sf = submodule foreach
   sst = submodule foreach git status
   sinit = submodule update --init --recursive
   ci = commit
@@ -57,6 +59,7 @@
   rbs = "!f() { git sq $1 | xargs -o git rebase -i; }; f"
   ss = submodule status --recursive
   sco = submodule foreach 'git co $1'
+  sfe = submodule foreach git
   ane = commit --amend --no-edit
 
 [safe]

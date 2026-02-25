@@ -2,17 +2,25 @@
 #include <type_traits>
 
 template<typename T>
-concept Integer = std::is_integral_v<T>;
+concept arithmetic = std::is_arithmetic_v<T>;
 
-template<Integer T>
+template<int M>
+concept size_type = M<=10;
+
+template<arithmetic T>
 void print(T t) {
-  std::cout << "Integer value: " << t << std::endl;
+  std::cout << "T: " << t << std::endl;
 }
 
 int main(int argc, char ** argv) {
-  int i = 10;
-  double d = 10.0;
-  print(i);
-  print(d);
-  return 0;
+  {
+  double v{10.0};
+  print(v);
+  }
+
+  {
+  int v{5};
+  print(v);
+  }
+	return 0;
 } // main
