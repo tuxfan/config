@@ -1,0 +1,4 @@
+[submodule "nvim"]
+	path = nvim
+	url = https://github.com/AndresYague/nvim-config.git
+    branch = nvim12-minimal
