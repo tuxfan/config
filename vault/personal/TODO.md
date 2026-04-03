@@ -1,3 +1,0 @@
-# *TODO* List
-  - [ ] Book hotel for Los Alamos (if necessary)
-  - [x] Follow up on STR with Dana Greene
