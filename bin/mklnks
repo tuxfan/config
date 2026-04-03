@@ -47,7 +47,7 @@ function link_nvim() {
 
 link_file "bin"
 link_file "test"
-link_dotfile "notes"
+link_dotfile "vault"
 link_dotfile "bash.d"
 link_dotfile "bashrc"
 link_dotfile "clangd"
