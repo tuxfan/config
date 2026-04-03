@@ -33,7 +33,10 @@ vim.api.nvim_create_autocmd("VimLeave", {
   once = true,
 })
 
-local ok = pcall(obsidian.Workspace.set, workspace_name)
-if not ok and workspace_name ~= "lanl" then
-  obsidian.Workspace.set("lanl")
+local current = _G.Obsidian and _G.Obsidian.workspace
+if current.name ~= workspace_name then
+  local ok = pcall(obsidian.Workspace.set, workspace_name)
+  if not ok and workspace_name ~= "lanl" then
+    obsidian.Workspace.set("lanl")
+  end
 end
