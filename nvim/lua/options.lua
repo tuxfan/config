@@ -64,7 +64,7 @@ vim.o.inccommand = 'split'
 
 -- Show current line and column
 vim.o.cursorline = true
-vim.o.cursorcolumn = true
+vim.o.cursorcolumn = false
 vim.o.scrolloff = 10
 
 -- Unsaved changes prompt

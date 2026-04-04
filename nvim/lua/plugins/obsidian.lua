@@ -18,6 +18,10 @@ vim.keymap.set('n', '<leader>oo', '<cmd>Obsidian quick_switch<CR>', { desc = 'Ob
 vim.keymap.set('n', '<leader>ow', '<cmd>Obsidian workspace<CR>', { desc = 'Obsidian change workspace' })
 vim.keymap.set('n', '<leader>on', '<cmd>Obsidian new<CR>', { desc = 'Obsidian new note' })
 vim.keymap.set('n', '<leader>ob', '<cmd>Obsidian backlinks<CR>', { desc = 'Obsidian backlinks' })
+vim.keymap.set('n', '<leader>oc', '<cmd>Obsidian check<CR>', { desc = 'Obsidian backlinks' })
+vim.keymap.set({ 'n', 'x' }, '<leader>ox', '<cmd>Obsidian toggle_checkbox<CR>', {
+  desc = 'Obsidian cycle checkbox state',
+})
 vim.keymap.set('n', '<leader>oi', function()
   local notes = search.resolve_note('index')
   if vim.tbl_isempty(notes) then
