@@ -13,10 +13,14 @@ require('lazydev').setup {
 --    That is to say, every time a new file is opened that is associated with
 --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
 --    function will be executed to configure the current buffer
+local lsp_attach_group = vim.api.nvim_create_augroup('lsp-attach', { clear = true })
+local lsp_detach_group = vim.api.nvim_create_augroup('lsp-detach', { clear = true })
+
 vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
+  group = lsp_attach_group,
   callback = function(event)
     local client = vim.lsp.get_client_by_id(event.data.client_id)
+    local highlight_augroup
 
     -- Uncomment to enable inlay hints automatically
     -- vim.lsp.inlay_hint.enable()
@@ -57,8 +61,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- When you move your cursor, the highlights will be cleared (the second
     -- autocommand).
     if client and client:supports_method 'textDocument/documentHighlight' then
-      local highlight_augroup =
-          vim.api.nvim_create_augroup('lsp-highlight', { clear = true })
+      highlight_augroup = vim.api.nvim_create_augroup(
+        ('lsp-highlight-%d'):format(event.buf),
+        { clear = true }
+      )
       vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
         buffer = event.buf,
         group = highlight_augroup,
@@ -73,13 +79,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 
     vim.api.nvim_create_autocmd('LspDetach', {
-      group = vim.api.nvim_create_augroup('lsp-detach', { clear = true }),
+      group = lsp_detach_group,
+      buffer = event.buf,
       callback = function(event2)
         vim.lsp.buf.clear_references()
-        vim.api.nvim_clear_autocmds {
-          group = 'lsp-highlight',
-          buffer = event2.buf,
-        }
+        if highlight_augroup then
+          vim.api.nvim_clear_autocmds {
+            group = highlight_augroup,
+            buffer = event2.buf,
+          }
+        end
       end,
     })
   end,
