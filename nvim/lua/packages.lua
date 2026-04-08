@@ -77,6 +77,9 @@ vim.pack.add {
   -- snacks
   'https://github.com/folke/snacks.nvim',
 
+  -- transparent
+  'https://github.com/xiyaowong/transparent.nvim',
+
   -- treesitter
   'https://github.com/nvim-treesitter/nvim-treesitter-context',
   {
@@ -107,6 +110,7 @@ require 'plugins.obsidian'
 require 'plugins.oil'
 require 'plugins.others'
 require 'plugins.picker' -- after lsp
+require 'plugins.transparent'
 require 'plugins.treesitter'
 require 'plugins.vcs'
 require 'plugins.which-key'
