@@ -119,3 +119,10 @@ vim.api.nvim_create_autocmd('ModeChanged', {
   end,
   desc = 'Change from absolute numbers to relativenumber',
 })
+vim.api.nvim_create_autocmd("VimLeave", {
+  callback = function()
+    -- Reset cursor to blinking block (or your preferred style)
+    -- \27[1 q is a common escape sequence for blinking block
+    io.write("\27[1 q")
+  end,
+})
