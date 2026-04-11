@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "lanl/cheatsheets/1775240464-JQJN.md",
+                "file": "lanl/setup/1775315706-BZKR.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1775240464-JQJN"
+              "title": "1775315706-BZKR"
             }
           }
         ]
@@ -185,7 +185,8 @@
   },
   "active": "6e1525d4620fe1c6",
   "lastOpenFiles": [
-    "lanl/1775238929-USPT.md",
-    "lanl/setup/1775315706-BZKR.md"
+    "lanl/setup/1775315706-BZKR.md",
+    "lanl/cheatsheets/1775240464-JQJN.md",
+    "lanl/1775238929-USPT.md"
   ]
 }
