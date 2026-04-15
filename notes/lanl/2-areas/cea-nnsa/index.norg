@@ -1,9 +1,0 @@
-* _*CEA/NNSA Notes*_
-
-* Seminar: Philipp Edelmann
-  - Experiences with Venado
-
-* Francois Letierce
-  -- ( ) Look for performance for std::variant
-  -- ( ) Look at variant example to be able to articulate data/interface design
-  -- ( ) Consider joint paper on data structures for multi-material/multi-model.
