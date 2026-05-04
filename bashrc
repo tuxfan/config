@@ -78,6 +78,14 @@ export ANTHROPIC_SMALL_FAST_MODEL=anthropic.claude-3-haiku-20240307-v1:0
 export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 
 #------------------------------------------------------------------------------#
+# Planner
+#------------------------------------------------------------------------------#
+
+export TUXFAN_PLANNER_DATAFILE=$HOME/devel/re-git.lanl.gov/tpp/admin/planning/FY27/tpp.yaml
+export TUXFAN_PLANNER_EXPORT_OPTIONS=$HOME/devel/re-git.lanl.gov/tpp/admin/planning/formats/doe.yaml
+
+
+#------------------------------------------------------------------------------#
 # Check window size after each command.
 #------------------------------------------------------------------------------#
 
