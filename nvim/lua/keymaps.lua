@@ -9,6 +9,9 @@ vim.keymap.set(
   { desc = 'Open diagnostic Quickfix list' }
 )
 
+-- Codex Escape
+vim.keymap.set('t', '<C-e>', [[<C-\><C-n>]], { noremap = true, silent = true })
+
 -- Other window keymaps
 vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Go to upper window' })
 vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Go to lower window' })
