@@ -38,7 +38,7 @@
       "src": "https://github.com/ysmb-wtsg/in-and-out.nvim"
     },
     "jj.nvim": {
-      "rev": "a6e163bcc3a6b75e5b6d4190b64ed4b39f8ddb0c",
+      "rev": "f30eefeaf3ce19a045ff12deb065ddb60cf611e5",
       "src": "https://github.com/NicolasGB/jj.nvim.git"
     },
     "kanagawa.nvim": {
@@ -95,7 +95,7 @@
       "src": "https://github.com/MunifTanjim/nui.nvim"
     },
     "nvim": {
-      "rev": "16408d203973da7e43fab87c6f9d3bf7fa98fa8b",
+      "rev": "0303a7208dba448c459767486a38a6ec05c4216b",
       "src": "https://github.com/catppuccin/nvim"
     },
     "nvim-autopairs": {
@@ -107,7 +107,7 @@
       "src": "https://github.com/AndresYague/nvim-colorizer.lua"
     },
     "nvim-lspconfig": {
-      "rev": "8e2084bf5e40c79c1f42210a6ef96a0a4793a763",
+      "rev": "9573948c38bfabeec353ae7dd7d3ffec4c506a6b",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-notify": {
@@ -133,11 +133,11 @@
       "version": "'main'"
     },
     "nvim-web-devicons": {
-      "rev": "40e9d5a6cc3db11b309e39593fc7ac03bb844e38",
+      "rev": "dfbfaa967a6f7ec50789bead7ef87e336c1fa63c",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "obsidian.nvim": {
-      "rev": "fb74e1f3179d5768f79213068d4439ecedac026c",
+      "rev": "d2349fdeb2c1e30cc2126fc6c7712f5103de8d15",
       "src": "https://github.com/obsidian-nvim/obsidian.nvim"
     },
     "oil.nvim": {
