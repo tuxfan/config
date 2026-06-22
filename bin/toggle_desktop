@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+desktop="${1:-$HOME/Desktop}"
+echo "Toggling $desktop"
+
+if [[ ! -d "$desktop" ]]; then
+  printf 'Directory not found: %s\n' "$desktop" >&2
+  exit 1
+fi
+
+state=`cat $desktop/.state`
+newstate=""
+if [[ "$state" == "hidden" ]]; then
+  newstate="visible"
+else
+  newstate="hidden"
+fi
+while IFS= read -r -d '' file; do
+  #flags="$(/usr/bin/stat -f '%Sf' "$file")"
+
+  if [[ $state == "hidden" ]]; then
+    /usr/bin/chflags nohidden "$file"
+  else
+    /usr/bin/chflags hidden "$file"
+  fi
+done < <(/usr/bin/find "$desktop" -mindepth 1 -name '.*' -prune -o -print0)
+echo "$newstate" > $desktop/.state
