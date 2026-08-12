@@ -36,6 +36,8 @@
   dc = diff --cached
   ed = commit --amend
   lg = log -p
+  he = rev-parse HEAD
+  pf = push -f
   rls = remote -v
   who = shortlog -s --
   sstash = stash save --keep-index

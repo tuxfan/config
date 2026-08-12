@@ -9,6 +9,7 @@ namespace dynamic_polymorphism {
 
 struct pet {
   explicit pet(std::string const & name) : name(name) {}
+  virtual ~pet() {}
 
   // Dynamic polymorphism: callers can use pet* or pet& without knowing the
   // concrete derived type. The virtual call is resolved at run time.
@@ -245,13 +246,17 @@ main(int argc, char ** argv) {
     // Both variables have the same static type, std::unique_ptr<pet>. The
     // concrete type is chosen at allocation time and recovered by virtual
     // dispatch when print() is called.
-    std::unique_ptr<pet> alberta = std::make_unique<dog>(
+    {
+    std::unique_ptr<pet> p = std::make_unique<dog>(
       "Alberta", dog::breed_t::cane_corso, dog::diet_t::raw);
-    alberta->print();
+    p->print();
+    }
 
-    std::unique_ptr<pet> romulus =
+    {
+    std::unique_ptr<pet> p =
       std::make_unique<cat>("Romulus", cat::breed_t::siamese, false);
-    romulus->print();
+    p->print();
+    }
   }
 
   {
@@ -266,17 +271,17 @@ main(int argc, char ** argv) {
     using my_cat_t = cat<cat_attributes::breed_t::siamese, false>;
 
     {
-      my_dog_t alberta("Alberta");
+      my_dog_t p("Alberta");
       // The template argument P is deduced as my_dog_t, so the compiler emits a
       // direct call to my_dog_t::print().
-      print(alberta);
+      print(p);
     }
 
     {
-      my_cat_t romulus("Romulus");
+      my_cat_t p("Romulus");
       // This is a different instantiation of static_polymorphism::print(), with
       // P deduced as my_cat_t.
-      print(romulus);
+      print(p);
     }
   }
 
