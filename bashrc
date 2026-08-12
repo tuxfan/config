@@ -223,7 +223,7 @@ fi
 #------------------------------------------------------------------------------#
 
 if [[ $host != *darwin* && $host != *cn* && $host != *grac* && $host != *X1* && \
-  $host != *u24* && $host != *loft* && $host != *scratch* && \
+  $host != *u24* && $host != *u26* && $host != *loft* && $host != *scratch* && \
   "$os" == "Linux" && "$(sudo dmidecode | grep Vendor)" == *"Parallels"* ]]; then
   fd=$(nc -vz google.com 443 2>&1)
   if [[ "$fd" == *"succeeded"* ]]; then
