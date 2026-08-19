@@ -68,6 +68,15 @@ vim.api.nvim_create_autocmd('DiffUpdated', {
   desc = 'Clear or add p as operator mode',
 })
 
+vim.api.nvim_create_autocmd('VimEnter', {
+    group = vim.api.nvim_create_augroup('disable-diff-folds', { clear = true }),
+    callback = function()
+      if vim.o.diff then
+        vim.cmd 'windo setlocal nofoldenable'
+      end
+    end,
+  })
+
 -- Loadview for this file if it exists
 local loadview_g = vim.api.nvim_create_augroup('Loadview', { clear = true })
 vim.api.nvim_create_autocmd('BufWinEnter', {
