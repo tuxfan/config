@@ -2,6 +2,11 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 
+-- Use the terminal clipboard when connected over SSH.
+if vim.env.SSH_TTY then
+  vim.g.clipboard = 'osc52'
+end
+
 -- Colors
 vim.o.termguicolors = true
 

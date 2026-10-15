@@ -18,11 +18,11 @@ $compiler = $opts{'c'};
 $cxxflags = $opts{'f'};
 
 if(!$compiler) {
-	$compiler = "g++";
+	$compiler = "/usr/bin/clang++";
 }
 
 if(!$cxxflags) {
-	$cxxflags = "-g -O2 -std=c++20 -fdiagnostics-color=always -I.";
+	$cxxflags = "-g -O2 -std=c++20 -fcolor-diagnostics -I.";
 }
 
 # create new directory for project
@@ -56,6 +56,8 @@ project(Test LANGUAGES CXX C)
 set(CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_CXX_COMPILER $compiler)
+set(CMAKE_CXX_FLAGS "$cxxflags")
 
 add_executable(test main.cc)
 EOF
