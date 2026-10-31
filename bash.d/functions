@@ -67,4 +67,23 @@ function set_http_proxy() {
 	fi
 }
 
+glab_lanl() {
+    local tunnel_jump="m4"
+    local tunnel_socket="$HOME/.ssh/glab-lanl.sock"
+
+    if ! ssh -S "$tunnel_socket" -O check "$tunnel_jump" \
+            >/dev/null 2>&1; then
+        ssh -M -S "$tunnel_socket" \
+            -o ControlPersist=10m \
+            -o ExitOnForwardFailure=yes \
+            -o ServerAliveInterval=30 \
+            -o ServerAliveCountMax=3 \
+            -fN -D 127.0.0.1:1080 "$tunnel_jump" || return
+    fi
+
+    GITLAB_HOST=re-git.lanl.gov \
+    GLAB_PROXY=socks5h://127.0.0.1:1080 \
+        command glab "$@"
+}
+
 # vim: set syntax=sh : set ts=3 :

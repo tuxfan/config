@@ -81,7 +81,13 @@ export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 # Planner
 #------------------------------------------------------------------------------#
 
-export TUXFAN_PLANNER_EXPORT_OPTIONS=$HOME/devel/re-git.lanl.gov/tpp/admin/planning/formats/doe.yaml
+export TUXFAN_PLANNER_EXPORT_OPTIONS=\
+$HOME/devel/re-git.lanl.gov/tpp/shared/formats/doe.yaml
+export TUXFAN_PLANNER_DATA_DIRECTORY=\
+$HOME/devel/re-git.lanl.gov/tpp/shared/FY27
+export TUXFAN_PLANNER_DATAFILE=\
+$HOME/devel/re-git.lanl.gov/tpp/shared/FY27/tpp.yaml
+export TUXFAN_PLANNER_PAGER='less -R'
 
 
 #------------------------------------------------------------------------------#

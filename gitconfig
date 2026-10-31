@@ -48,7 +48,7 @@
   mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
   mrt = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git worktree add ../mr-$1-$2 mr-$1-$2' -
   mb = merge --no-ff --no-commit
-  mbc = !sh -c 'find . -name "*.orig" -delete'
+  mbc = !sh -c 'find . -name "*.orig" -o -name "*.bak" -delete'
   wls = worktree list
   wrm = worktree remove
   wadd = "!f() { git worktree add --track -b $1 ../$1 $2; }; f"
