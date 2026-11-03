@@ -33,6 +33,7 @@
   br = branch
   co = checkout
   df = diff
+  dr = diff HEAD~1 HEAD
   dc = diff --cached
   ed = commit --amend
   lg = log -p
