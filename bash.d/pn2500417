@@ -11,6 +11,21 @@ export CMAKE_EXPORT_COMPILE_COMMANDS=1
 export CONFIG_SCRIPT_GENERATOR=Ninja
 
 #------------------------------------------------------------------------------#
+# Claude
+#------------------------------------------------------------------------------#
+
+export ANTHROPIC_BASE_URL=https://aiportal-api.aws.lanl.gov
+export ANTHROPIC_AUTH_TOKEN=sk-eJTjv94DrNjBJa9IN4wkEA
+export ANTHROPIC_MODEL=aws-gov.claude-opus-5-5
+# This may be updated once Haiku access is restored on the AI Portal
+export ANTHROPIC_DEFAULT_HAIKU_MODEL=""
+export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 
+# Helps with LiteLLM endpoint compatibility
+export CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1
+# Allows context up to 1M tokens
+export _CLAUDE_CODE_ASSUME_FIRST_PARTY_BASE_URL=1
+
+#------------------------------------------------------------------------------#
 # OneDrive
 #------------------------------------------------------------------------------#
 
